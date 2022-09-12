@@ -1,8 +1,6 @@
 # Maximus78
 Maximus78 Front End for the A7800 Emulator
 <body>
-  
-Still in Debugging Phase, will update this readme when it's ready to install and use.
 
 <p class="auto-style1"><strong>Welcome to Maximus78!</strong><br />
 </p>
