@@ -9,7 +9,7 @@ full experience of Maximus78 with all of the associated artwork, manuals, help f
 screenshots.  If you don't add all of this content prior to using the application, you may see some functions not work correctly - such as blank screens or boxes.<br />
 <br />
 1. <strong>Download the A7800 Windows file</strong><br />
-&nbsp;Unzip it to the folder of your choice.<br />
+Unzip it to the folder of your choice.<br />
 <a href="https://github.com/7800-devtools/a7800/releases/download/v5.2/a7800-win-v5.2.zip">
 https://github.com/7800-devtools/a7800/releases/download/v5.2/a7800-win-v5.2.zip</a><br />
 <br />
@@ -44,7 +44,7 @@ It's important to note that all of the screenshots, manuals, and box art are tie
 </strong><br />
 You can unzip it anywhere, however I would suggest creating a "manuals" subfolder in your main A7800 Directory.<br />
 You&#39;ll need to download all of the files, they are a split archive due to the 
-25MB file limit on GitHub.<br />
+25MB file limit on GitHub. The archive will be periodically updated as it does not yet contain screenshots and/or manuals for every game in Trebor's ROM pack, however all Retail releases are included.<br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.zip">Maximus78_Manuals.zip</a><br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z01">Maximus78_Manuals.z01</a><br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z02">Maximus78_Manuals.z02</a><br />
@@ -56,8 +56,8 @@ You&#39;ll need to download all of the files, they are a split archive due to th
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z08">Maximus78_Manuals.z08</a><br />
 <br>The files includes all of the screenshots and manuals for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br><br>
 5. <strong>Download the Box Art zip file for Maximus78.</strong> <br />
-You can unzip it anywhere, however I would suggest creating a "boxart" subfolder in your main A7800 Directory.<br />
-<br>This file includes all of the box art for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br />
+You can unzip the manuals archive anywhere, however I would suggest creating a "boxart" subfolder in your main A7800 Directory.<br />
+<br>This file includes all of the box art for Maximus78.<br />
 </p>
 <hr />
 <p class="auto-style1">
