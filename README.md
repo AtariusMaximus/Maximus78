@@ -7,8 +7,8 @@ Still in Debugging Phase, will update this readme when it's ready to install and
 <p class="auto-style1"><strong>Welcome to Maximus78!</strong><br />
 </p>
 <p class="auto-style1">You&#39;ll need to complete the following steps to enjoy the 
-full experience of Maximus78 with all of the associated artwork, manuals, and 
-screenshots.<br />
+full experience of Maximus78 with all of the associated artwork, manuals, help files and 
+screenshots.  If you don't add all of this content prior to using the application, you may see some functions not work correctly - such as blank screens or boxes.<br />
 <br />
 1. <strong>Download the A7800 Windows file</strong><br />
 &nbsp;Unzip it to the folder of your choice.<br />
