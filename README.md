@@ -1,20 +1,5 @@
 # Maximus78
 Maximus78 Front End for the A7800 Emulator
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-<meta content="en-us" http-equiv="Content-Language" />
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Setting up Maximus78 and A7800</title>
-<style type="text/css">
-.auto-style1 {
-	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-	font-size: small;
-}
-</style>
-</head>
-
 <body>
 
 <p class="auto-style1"><strong>Welcome to Maximus78!</strong><br />
@@ -58,9 +43,21 @@ It's important to note that all of the screenshots, manuals, and box art are tie
 4. <strong>Download the Manauls and screenshots zip file for Maximus78. 
 </strong><br />
 You can unzip it anywhere, however I would suggest creating a "manuals" subfolder in your main A7800 Directory.<br />
-<a href="TBD">(Maximus78_Manuals.zip)</a><br />
-<br>This file includes all of the screenshots and manuals for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br>
-<br>This file is included in the Maximus78 GitHub repository at 
+You&#39;ll need to download all of the files, they are a split archive due to the 
+25MB file limit on GitHub.<br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.zip">Maximus78_Manuals.zip</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z01">Maximus78_Manuals.z01</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z02">Maximus78_Manuals.z02</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z03">Maximus78_Manuals.z03</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z04">Maximus78_Manuals.z04</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z05">Maximus78_Manuals.z05</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z06">Maximus78_Manuals.z06</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z07">Maximus78_Manuals.z07</a><br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z08">Maximus78_Manuals.z08</a><br />
+<br /
+
+<br>The files includes all of the screenshots and manuals for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br>
+<br>The files included in the Maximus78 GitHub repository at 
 <a href="https://github.com/AtariusMaximus/Maximus78">https://github.com/AtariusMaximus/Maximus78
 </a>
 <br>
@@ -68,7 +65,7 @@ You can unzip it anywhere, however I would suggest creating a "manuals" subfolde
 5. <strong>Download the Box Art zip file for Maximus78.</strong> <br />
 You can unzip it anywhere, however I would suggest creating a "boxart" subfolder in your main A7800 Directory.<br />
 <br>This file includes all of the box art for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br />
-<a href="TBD">(Maximus78_BoxArt.zip)</a><br>
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_boxart.zip">Maximus78_BoxArt.zip</a><br>
 <br>This file is included in the Maximus78 GitHub repository 
 <a href="https://github.com/AtariusMaximus/Maximus78">https://github.com/AtariusMaximus/Maximus78</a>
 <br />
@@ -91,5 +88,3 @@ A7800 - the Atari 7800 Emulator - Atari 7800 - AtariAge Forums</a><br />
 </p>
 
 </body>
-
-</html>
