@@ -28,7 +28,7 @@ Note that the roms folder contains an older version of Trebor&#39;s 7800 ROM pac
 so we&#39;ll want to dowload the latest in the next step.<br>
 <br />
 3. <strong>Download Trebor&#39;s 7800 ROM ProPack</strong><br />
-, unzip anywhere you&#39;d like, I&#39;d suggest the 
+Unzip anywhere you&#39;d like, I&#39;d suggest the 
 roms folder in your A7800 Directory.<br />
 <a href="http://7800.8bitdev.org/index.php/Trebors_7800_ROM_PROPack">
 http://7800.8bitdev.org/index.php/Trebors_7800_ROM_PROPack</a><br />
@@ -58,6 +58,7 @@ You&#39;ll need to download all of the files, they are a split archive due to th
 5. <strong>Download the Box Art zip file for Maximus78.</strong> <br />
 You can unzip the manuals archive anywhere, however I would suggest creating a "boxart" subfolder in your main A7800 Directory.<br />
 <br>This file includes all of the box art for Maximus78.<br />
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_boxart.zip">Maximus78_BoxArt.zip</a><br>
 </p>
 <hr />
 <p class="auto-style1">
