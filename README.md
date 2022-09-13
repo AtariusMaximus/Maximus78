@@ -54,11 +54,16 @@ You&#39;ll need to download all of the files, they are a split archive due to th
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z06">Maximus78_Manuals.z06</a><br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z07">Maximus78_Manuals.z07</a><br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_Manuals.z08">Maximus78_Manuals.z08</a><br />
-<br>The files includes all of the screenshots and manuals for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br><br>
+<br>The files includes all of the screenshots and manuals for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack. It covers all of the retail releases and some of the homebrews and Prototypes.<br><br>
 5. <strong>Download the Box Art zip file for Maximus78.</strong> <br />
 You can unzip the manuals archive anywhere, however I would suggest creating a "boxart" subfolder in your main A7800 Directory.<br />
 <br>This file includes all of the box art for Maximus78.<br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_boxart.zip">Maximus78_BoxArt.zip</a><br>
+<br>
+6. <strong>Download the Windows Setup package for Maximus78.</strong> <br />
+You'll want to download the Windows setup package.  It includes native code for both x86 and ARM. It requires .NET Framework 4.8, so Windows 10 or later only.<br />
+This is the current build, v0.99.12.  Newer packages will be uploaded to the file archive, feel free to browse and check there for any updates.
+<a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_0.99.12_win64.zip">Maximus78 Windows Setup Package</a><br>
 </p>
 <hr />
 <p class="auto-style1">
@@ -72,7 +77,7 @@ A7800 - the Atari 7800 Emulator - Atari 7800 - AtariAge Forums</a><br />
 2. For the latest documentation and downloads for A7800, you can view the Home Page for A7800 here:
 here:<br />
 <a href="http://7800.8bitdev.org/index.php/Main_Page">
-A7800 - the Atari 7800 Emulator - Atari 7800 - AtariAge Forums</a><br />
+8BitDev.Org Home Page</a><br />
 
 <br />
 </p>
