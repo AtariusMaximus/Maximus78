@@ -23,6 +23,7 @@ Partial Class frmMain
     Dim strArguments As String = ""
     Dim strAddArguments As String = ""
     Dim strDebug As String = ""
+    Dim strFileName As String = ""
 
     'Dim aPath As String = Application.StartupPath()
     'Dim strFolder As String = My.Computer.Registry.CurrentUser.GetValue("Maximus78 ROM Path")
@@ -42,34 +43,61 @@ Partial Class frmMain
         Me.pctBoxArt = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuLoadGame = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartSelectedGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripTextBox4 = New System.Windows.Forms.ToolStripTextBox()
         Me.SetGameROMPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetGameBoxArtPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetManualsScreenshotPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetA7800EmulatorPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripTextBox5 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.SetTVTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NTSCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PALToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripTextBox6 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripTextBox2 = New System.Windows.Forms.ToolStripTextBox()
+        Me.SetPaletteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.paletteWARM = New System.Windows.Forms.ToolStripMenuItem()
+        Me.paletteCOOL = New System.Windows.Forms.ToolStripMenuItem()
+        Me.paletteHOT = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripTextBox7 = New System.Windows.Forms.ToolStripTextBox()
         Me.SetXMSupportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.xmON = New System.Windows.Forms.ToolStripMenuItem()
         Me.xmOFF = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetHSCSupportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.hscON = New System.Windows.Forms.ToolStripMenuItem()
         Me.hscOFF = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripTextBox8 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripTextBox3 = New System.Windows.Forms.ToolStripTextBox()
+        Me.setDeveloperMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.devON = New System.Windows.Forms.ToolStripMenuItem()
+        Me.devOFF = New System.Windows.Forms.ToolStripMenuItem()
         Me.SetDebugToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.debugON = New System.Windows.Forms.ToolStripMenuItem()
         Me.debugOFF = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripTextBox9 = New System.Windows.Forms.ToolStripTextBox()
+        Me.EditA7800ConfigurationFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Atari7800ProSystemOwnersManualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.A7800UsersGuideToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.statusDev = New System.Windows.Forms.ToolStripTextBox()
+        Me.statusDebug = New System.Windows.Forms.ToolStripTextBox()
+        Me.statusHSC = New System.Windows.Forms.ToolStripTextBox()
+        Me.statusXM = New System.Windows.Forms.ToolStripTextBox()
+        Me.statusPalette = New System.Windows.Forms.ToolStripTextBox()
+        Me.statusTVType = New System.Windows.Forms.ToolStripTextBox()
         Me.txtA7800path = New System.Windows.Forms.TextBox()
         Me.txtRomPath = New System.Windows.Forms.TextBox()
         Me.txtBoxArtPath = New System.Windows.Forms.TextBox()
@@ -82,8 +110,7 @@ Partial Class frmMain
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.EditA7800ConfigurationFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripTextBox10 = New System.Windows.Forms.ToolStripTextBox()
         CType(Me.pctBoxArt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -125,78 +152,122 @@ Partial Class frmMain
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.HelpToolStripMenuItem, Me.statusDev, Me.statusDebug, Me.statusHSC, Me.statusXM, Me.statusPalette, Me.statusTVType})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1350, 24)
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.MenuStrip1.Size = New System.Drawing.Size(1350, 25)
         Me.MenuStrip1.TabIndex = 34
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StartSelectedGameToolStripMenuItem, Me.ToolStripSeparator2, Me.ExitToolStripMenuItem1})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox10, Me.mnuLoadGame, Me.StartSelectedGameToolStripMenuItem, Me.ToolStripSeparator2, Me.ExitToolStripMenuItem1})
+        Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 21)
         Me.FileToolStripMenuItem.Text = "File"
+        '
+        'mnuLoadGame
+        '
+        Me.mnuLoadGame.Name = "mnuLoadGame"
+        Me.mnuLoadGame.Size = New System.Drawing.Size(240, 22)
+        Me.mnuLoadGame.Text = "Launch External ROM"
         '
         'StartSelectedGameToolStripMenuItem
         '
         Me.StartSelectedGameToolStripMenuItem.Name = "StartSelectedGameToolStripMenuItem"
-        Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.StartSelectedGameToolStripMenuItem.Text = "Start Selected Game"
+        Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(240, 22)
+        Me.StartSelectedGameToolStripMenuItem.Text = "Launch ROM from List"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(237, 6)
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(240, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'EditToolStripMenuItem
         '
-        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SetGameROMPathToolStripMenuItem, Me.SetGameBoxArtPathToolStripMenuItem, Me.SetManualsScreenshotPathToolStripMenuItem, Me.SetA7800EmulatorPathToolStripMenuItem, Me.ToolStripSeparator3, Me.SetTVTypeToolStripMenuItem, Me.ToolStripSeparator4, Me.SetXMSupportToolStripMenuItem, Me.SetHSCSupportToolStripMenuItem, Me.SetDebugToolStripMenuItem, Me.ToolStripSeparator1, Me.EditA7800ConfigurationFileToolStripMenuItem})
+        Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox4, Me.SetGameROMPathToolStripMenuItem, Me.SetGameBoxArtPathToolStripMenuItem, Me.SetManualsScreenshotPathToolStripMenuItem, Me.SetA7800EmulatorPathToolStripMenuItem, Me.ToolStripSeparator3, Me.ToolStripTextBox5, Me.ToolStripTextBox1, Me.SetTVTypeToolStripMenuItem, Me.ToolStripSeparator7, Me.ToolStripTextBox6, Me.ToolStripTextBox2, Me.SetPaletteToolStripMenuItem, Me.ToolStripSeparator4, Me.ToolStripTextBox7, Me.SetXMSupportToolStripMenuItem, Me.SetHSCSupportToolStripMenuItem, Me.ToolStripSeparator5, Me.ToolStripTextBox8, Me.ToolStripTextBox3, Me.setDeveloperMenuItem1, Me.SetDebugToolStripMenuItem, Me.ToolStripSeparator1, Me.ToolStripTextBox9, Me.EditA7800ConfigurationFileToolStripMenuItem})
+        Me.EditToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(40, 21)
         Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'ToolStripTextBox4
+        '
+        Me.ToolStripTextBox4.Enabled = False
+        Me.ToolStripTextBox4.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox4.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.ToolStripTextBox4.Name = "ToolStripTextBox4"
+        Me.ToolStripTextBox4.ReadOnly = True
+        Me.ToolStripTextBox4.Size = New System.Drawing.Size(282, 23)
+        Me.ToolStripTextBox4.Text = "Select Directory Paths"
         '
         'SetGameROMPathToolStripMenuItem
         '
         Me.SetGameROMPathToolStripMenuItem.Name = "SetGameROMPathToolStripMenuItem"
-        Me.SetGameROMPathToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetGameROMPathToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetGameROMPathToolStripMenuItem.Text = "Set Game ROM Path"
         '
         'SetGameBoxArtPathToolStripMenuItem
         '
         Me.SetGameBoxArtPathToolStripMenuItem.Name = "SetGameBoxArtPathToolStripMenuItem"
-        Me.SetGameBoxArtPathToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetGameBoxArtPathToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetGameBoxArtPathToolStripMenuItem.Text = "Set Game Box Art Path"
         '
         'SetManualsScreenshotPathToolStripMenuItem
         '
         Me.SetManualsScreenshotPathToolStripMenuItem.Name = "SetManualsScreenshotPathToolStripMenuItem"
-        Me.SetManualsScreenshotPathToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetManualsScreenshotPathToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetManualsScreenshotPathToolStripMenuItem.Text = "Set Manuals and Screenshot Path"
         '
         'SetA7800EmulatorPathToolStripMenuItem
         '
         Me.SetA7800EmulatorPathToolStripMenuItem.Name = "SetA7800EmulatorPathToolStripMenuItem"
-        Me.SetA7800EmulatorPathToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetA7800EmulatorPathToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetA7800EmulatorPathToolStripMenuItem.Text = "Set A7800 Emulator Path"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(246, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(339, 6)
+        '
+        'ToolStripTextBox5
+        '
+        Me.ToolStripTextBox5.Enabled = False
+        Me.ToolStripTextBox5.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox5.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ToolStripTextBox5.Name = "ToolStripTextBox5"
+        Me.ToolStripTextBox5.ReadOnly = True
+        Me.ToolStripTextBox5.Size = New System.Drawing.Size(282, 23)
+        Me.ToolStripTextBox5.Text = "Select TV Type"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ToolStripTextBox1.Enabled = False
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!)
+        Me.ToolStripTextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.ReadOnly = True
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(282, 16)
+        Me.ToolStripTextBox1.Text = "TV Type Change Sets Palette and Dev Mode to Default"
         '
         'SetTVTypeToolStripMenuItem
         '
         Me.SetTVTypeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NTSCToolStripMenuItem, Me.PALToolStripMenuItem})
         Me.SetTVTypeToolStripMenuItem.Name = "SetTVTypeToolStripMenuItem"
-        Me.SetTVTypeToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetTVTypeToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetTVTypeToolStripMenuItem.Text = "Set TV Type"
         '
         'NTSCToolStripMenuItem
@@ -204,31 +275,95 @@ Partial Class frmMain
         Me.NTSCToolStripMenuItem.Checked = True
         Me.NTSCToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.NTSCToolStripMenuItem.Name = "NTSCToolStripMenuItem"
-        Me.NTSCToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NTSCToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
         Me.NTSCToolStripMenuItem.Text = "NTSC"
         '
         'PALToolStripMenuItem
         '
         Me.PALToolStripMenuItem.Name = "PALToolStripMenuItem"
-        Me.PALToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PALToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
         Me.PALToolStripMenuItem.Text = "PAL"
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(339, 6)
+        '
+        'ToolStripTextBox6
+        '
+        Me.ToolStripTextBox6.Enabled = False
+        Me.ToolStripTextBox6.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox6.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ToolStripTextBox6.Name = "ToolStripTextBox6"
+        Me.ToolStripTextBox6.ReadOnly = True
+        Me.ToolStripTextBox6.Size = New System.Drawing.Size(282, 23)
+        Me.ToolStripTextBox6.Text = "Select Palette Colors"
+        '
+        'ToolStripTextBox2
+        '
+        Me.ToolStripTextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ToolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ToolStripTextBox2.Enabled = False
+        Me.ToolStripTextBox2.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!)
+        Me.ToolStripTextBox2.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.ToolStripTextBox2.Name = "ToolStripTextBox2"
+        Me.ToolStripTextBox2.ReadOnly = True
+        Me.ToolStripTextBox2.Size = New System.Drawing.Size(282, 16)
+        Me.ToolStripTextBox2.Text = "Palette Change Sets Developer Mode to Off"
+        '
+        'SetPaletteToolStripMenuItem
+        '
+        Me.SetPaletteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.paletteWARM, Me.paletteCOOL, Me.paletteHOT})
+        Me.SetPaletteToolStripMenuItem.Name = "SetPaletteToolStripMenuItem"
+        Me.SetPaletteToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
+        Me.SetPaletteToolStripMenuItem.Text = "Set Palette"
+        '
+        'paletteWARM
+        '
+        Me.paletteWARM.Checked = True
+        Me.paletteWARM.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.paletteWARM.Name = "paletteWARM"
+        Me.paletteWARM.Size = New System.Drawing.Size(180, 22)
+        Me.paletteWARM.Text = "Warm Palette"
+        '
+        'paletteCOOL
+        '
+        Me.paletteCOOL.Name = "paletteCOOL"
+        Me.paletteCOOL.Size = New System.Drawing.Size(180, 22)
+        Me.paletteCOOL.Text = "Cool Palette"
+        '
+        'paletteHOT
+        '
+        Me.paletteHOT.Name = "paletteHOT"
+        Me.paletteHOT.Size = New System.Drawing.Size(180, 22)
+        Me.paletteHOT.Text = "Hot Palette"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(246, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(339, 6)
+        '
+        'ToolStripTextBox7
+        '
+        Me.ToolStripTextBox7.Enabled = False
+        Me.ToolStripTextBox7.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox7.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ToolStripTextBox7.Name = "ToolStripTextBox7"
+        Me.ToolStripTextBox7.ReadOnly = True
+        Me.ToolStripTextBox7.Size = New System.Drawing.Size(282, 23)
+        Me.ToolStripTextBox7.Text = "Select Add-On Hardware"
         '
         'SetXMSupportToolStripMenuItem
         '
         Me.SetXMSupportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xmON, Me.xmOFF})
         Me.SetXMSupportToolStripMenuItem.Name = "SetXMSupportToolStripMenuItem"
-        Me.SetXMSupportToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetXMSupportToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetXMSupportToolStripMenuItem.Text = "Set XM Support"
         '
         'xmON
         '
         Me.xmON.Name = "xmON"
-        Me.xmON.Size = New System.Drawing.Size(180, 22)
+        Me.xmON.Size = New System.Drawing.Size(91, 22)
         Me.xmON.Text = "On"
         '
         'xmOFF
@@ -236,20 +371,20 @@ Partial Class frmMain
         Me.xmOFF.Checked = True
         Me.xmOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.xmOFF.Name = "xmOFF"
-        Me.xmOFF.Size = New System.Drawing.Size(180, 22)
+        Me.xmOFF.Size = New System.Drawing.Size(91, 22)
         Me.xmOFF.Text = "Off"
         '
         'SetHSCSupportToolStripMenuItem
         '
         Me.SetHSCSupportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hscON, Me.hscOFF})
         Me.SetHSCSupportToolStripMenuItem.Name = "SetHSCSupportToolStripMenuItem"
-        Me.SetHSCSupportToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
+        Me.SetHSCSupportToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
         Me.SetHSCSupportToolStripMenuItem.Text = "Set HSC Support"
         '
         'hscON
         '
         Me.hscON.Name = "hscON"
-        Me.hscON.Size = New System.Drawing.Size(180, 22)
+        Me.hscON.Size = New System.Drawing.Size(91, 22)
         Me.hscON.Text = "On"
         '
         'hscOFF
@@ -257,20 +392,68 @@ Partial Class frmMain
         Me.hscOFF.Checked = True
         Me.hscOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.hscOFF.Name = "hscOFF"
-        Me.hscOFF.Size = New System.Drawing.Size(180, 22)
+        Me.hscOFF.Size = New System.Drawing.Size(91, 22)
         Me.hscOFF.Text = "Off"
+        '
+        'ToolStripSeparator5
+        '
+        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(339, 6)
+        '
+        'ToolStripTextBox8
+        '
+        Me.ToolStripTextBox8.Enabled = False
+        Me.ToolStripTextBox8.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox8.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ToolStripTextBox8.Name = "ToolStripTextBox8"
+        Me.ToolStripTextBox8.ReadOnly = True
+        Me.ToolStripTextBox8.Size = New System.Drawing.Size(282, 23)
+        Me.ToolStripTextBox8.Text = "Select Developer Options"
+        '
+        'ToolStripTextBox3
+        '
+        Me.ToolStripTextBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ToolStripTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ToolStripTextBox3.Enabled = False
+        Me.ToolStripTextBox3.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!)
+        Me.ToolStripTextBox3.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.ToolStripTextBox3.Name = "ToolStripTextBox3"
+        Me.ToolStripTextBox3.ReadOnly = True
+        Me.ToolStripTextBox3.Size = New System.Drawing.Size(282, 16)
+        Me.ToolStripTextBox3.Text = "Developer Mode Change Sets Palette to Warm"
+        '
+        'setDeveloperMenuItem1
+        '
+        Me.setDeveloperMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.devON, Me.devOFF})
+        Me.setDeveloperMenuItem1.Name = "setDeveloperMenuItem1"
+        Me.setDeveloperMenuItem1.Size = New System.Drawing.Size(342, 22)
+        Me.setDeveloperMenuItem1.Text = "Set Developer Mode Palette"
+        '
+        'devON
+        '
+        Me.devON.Name = "devON"
+        Me.devON.Size = New System.Drawing.Size(180, 22)
+        Me.devON.Text = "On"
+        '
+        'devOFF
+        '
+        Me.devOFF.Checked = True
+        Me.devOFF.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.devOFF.Name = "devOFF"
+        Me.devOFF.Size = New System.Drawing.Size(180, 22)
+        Me.devOFF.Text = "Off"
         '
         'SetDebugToolStripMenuItem
         '
         Me.SetDebugToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.debugON, Me.debugOFF})
         Me.SetDebugToolStripMenuItem.Name = "SetDebugToolStripMenuItem"
-        Me.SetDebugToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
-        Me.SetDebugToolStripMenuItem.Text = "Set Debug"
+        Me.SetDebugToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
+        Me.SetDebugToolStripMenuItem.Text = "Set Debug Mode"
         '
         'debugON
         '
         Me.debugON.Name = "debugON"
-        Me.debugON.Size = New System.Drawing.Size(180, 22)
+        Me.debugON.Size = New System.Drawing.Size(91, 22)
         Me.debugON.Text = "On"
         '
         'debugOFF
@@ -278,45 +461,133 @@ Partial Class frmMain
         Me.debugOFF.Checked = True
         Me.debugOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.debugOFF.Name = "debugOFF"
-        Me.debugOFF.Size = New System.Drawing.Size(180, 22)
+        Me.debugOFF.Size = New System.Drawing.Size(91, 22)
         Me.debugOFF.Text = "Off"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(339, 6)
+        '
+        'ToolStripTextBox9
+        '
+        Me.ToolStripTextBox9.Enabled = False
+        Me.ToolStripTextBox9.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox9.ForeColor = System.Drawing.SystemColors.MenuHighlight
+        Me.ToolStripTextBox9.Name = "ToolStripTextBox9"
+        Me.ToolStripTextBox9.ReadOnly = True
+        Me.ToolStripTextBox9.Size = New System.Drawing.Size(282, 23)
+        Me.ToolStripTextBox9.Text = "Select A7800 Emulator Options"
+        '
+        'EditA7800ConfigurationFileToolStripMenuItem
+        '
+        Me.EditA7800ConfigurationFileToolStripMenuItem.Name = "EditA7800ConfigurationFileToolStripMenuItem"
+        Me.EditA7800ConfigurationFileToolStripMenuItem.Size = New System.Drawing.Size(342, 22)
+        Me.EditA7800ConfigurationFileToolStripMenuItem.Text = "Edit A7800 Configuration File"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ToolStripSeparator6, Me.ViewToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 21)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(242, 22)
-        Me.AboutToolStripMenuItem.Text = "Version and License Information"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(239, 6)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(177, 6)
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Atari7800ProSystemOwnersManualToolStripMenuItem, Me.A7800UsersGuideToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(242, 22)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ViewToolStripMenuItem.Text = "View Manuals"
         '
         'Atari7800ProSystemOwnersManualToolStripMenuItem
         '
         Me.Atari7800ProSystemOwnersManualToolStripMenuItem.Name = "Atari7800ProSystemOwnersManualToolStripMenuItem"
-        Me.Atari7800ProSystemOwnersManualToolStripMenuItem.Size = New System.Drawing.Size(273, 22)
+        Me.Atari7800ProSystemOwnersManualToolStripMenuItem.Size = New System.Drawing.Size(284, 22)
         Me.Atari7800ProSystemOwnersManualToolStripMenuItem.Text = "Atari 7800 ProSystem Owner's Manual"
         '
         'A7800UsersGuideToolStripMenuItem
         '
         Me.A7800UsersGuideToolStripMenuItem.Name = "A7800UsersGuideToolStripMenuItem"
-        Me.A7800UsersGuideToolStripMenuItem.Size = New System.Drawing.Size(273, 22)
+        Me.A7800UsersGuideToolStripMenuItem.Size = New System.Drawing.Size(284, 22)
         Me.A7800UsersGuideToolStripMenuItem.Text = "A7800 User's Manual"
+        '
+        'statusDev
+        '
+        Me.statusDev.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.statusDev.BackColor = System.Drawing.SystemColors.Window
+        Me.statusDev.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.statusDev.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusDev.Name = "statusDev"
+        Me.statusDev.ReadOnly = True
+        Me.statusDev.Size = New System.Drawing.Size(100, 21)
+        Me.statusDev.Text = "Dev Mode: OFF"
+        '
+        'statusDebug
+        '
+        Me.statusDebug.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.statusDebug.BackColor = System.Drawing.SystemColors.Window
+        Me.statusDebug.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.statusDebug.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusDebug.Name = "statusDebug"
+        Me.statusDebug.ReadOnly = True
+        Me.statusDebug.Size = New System.Drawing.Size(110, 21)
+        Me.statusDebug.Text = "Debug Mode: OFF"
+        '
+        'statusHSC
+        '
+        Me.statusHSC.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.statusHSC.BackColor = System.Drawing.SystemColors.Window
+        Me.statusHSC.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.statusHSC.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusHSC.Name = "statusHSC"
+        Me.statusHSC.ReadOnly = True
+        Me.statusHSC.Size = New System.Drawing.Size(118, 21)
+        Me.statusHSC.Text = "HSC Support: OFF"
+        '
+        'statusXM
+        '
+        Me.statusXM.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.statusXM.BackColor = System.Drawing.SystemColors.Window
+        Me.statusXM.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.statusXM.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusXM.Name = "statusXM"
+        Me.statusXM.ReadOnly = True
+        Me.statusXM.Size = New System.Drawing.Size(112, 21)
+        Me.statusXM.Text = "XM Support: OFF"
+        '
+        'statusPalette
+        '
+        Me.statusPalette.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.statusPalette.BackColor = System.Drawing.SystemColors.Window
+        Me.statusPalette.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.statusPalette.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusPalette.Name = "statusPalette"
+        Me.statusPalette.ReadOnly = True
+        Me.statusPalette.Size = New System.Drawing.Size(95, 21)
+        Me.statusPalette.Text = "Palette: Warm"
+        '
+        'statusTVType
+        '
+        Me.statusTVType.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.statusTVType.BackColor = System.Drawing.SystemColors.Window
+        Me.statusTVType.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.statusTVType.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusTVType.Name = "statusTVType"
+        Me.statusTVType.ReadOnly = True
+        Me.statusTVType.Size = New System.Drawing.Size(100, 21)
+        Me.statusTVType.Text = "TV Type: NTSC"
         '
         'txtA7800path
         '
@@ -438,21 +709,20 @@ Partial Class frmMain
         Me.TabPage2.Text = "Defined Directory Paths"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'ToolStripSeparator1
+        'ToolStripTextBox10
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(246, 6)
-        '
-        'EditA7800ConfigurationFileToolStripMenuItem
-        '
-        Me.EditA7800ConfigurationFileToolStripMenuItem.Name = "EditA7800ConfigurationFileToolStripMenuItem"
-        Me.EditA7800ConfigurationFileToolStripMenuItem.Size = New System.Drawing.Size(249, 22)
-        Me.EditA7800ConfigurationFileToolStripMenuItem.Text = "Edit A7800 Configuration File"
+        Me.ToolStripTextBox10.Enabled = False
+        Me.ToolStripTextBox10.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox10.Name = "ToolStripTextBox10"
+        Me.ToolStripTextBox10.ReadOnly = True
+        Me.ToolStripTextBox10.Size = New System.Drawing.Size(180, 23)
+        Me.ToolStripTextBox10.Text = "Start Game"
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1350, 693)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.WebBrowser1)
@@ -474,7 +744,6 @@ Partial Class frmMain
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents lstAllGames As ListBox
@@ -524,4 +793,30 @@ Partial Class frmMain
     Friend WithEvents A7800UsersGuideToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents EditA7800ConfigurationFileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mnuLoadGame As ToolStripMenuItem
+    Friend WithEvents SetPaletteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents paletteWARM As ToolStripMenuItem
+    Friend WithEvents paletteCOOL As ToolStripMenuItem
+    Friend WithEvents paletteHOT As ToolStripMenuItem
+    Friend WithEvents statusHSC As ToolStripTextBox
+    Friend WithEvents statusXM As ToolStripTextBox
+    Friend WithEvents statusPalette As ToolStripTextBox
+    Friend WithEvents statusTVType As ToolStripTextBox
+    Public WithEvents statusDebug As ToolStripTextBox
+    Friend WithEvents ToolStripSeparator5 As ToolStripSeparator
+    Friend WithEvents setDeveloperMenuItem1 As ToolStripMenuItem
+    Friend WithEvents devON As ToolStripMenuItem
+    Friend WithEvents devOFF As ToolStripMenuItem
+    Friend WithEvents statusDev As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
+    Friend WithEvents ToolStripTextBox2 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox4 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox5 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox6 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox7 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox3 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox8 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox9 As ToolStripTextBox
+    Friend WithEvents ToolStripTextBox10 As ToolStripTextBox
 End Class

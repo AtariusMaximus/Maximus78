@@ -128,6 +128,24 @@
     End Sub
 
     Private Sub frmContinue_Click(sender As Object, e As EventArgs) Handles frmContinue.Click
+
+
+        'If the Then registry entry For the path isn't already set, this code will display a warning msg.
+        Try
+            Dim a78filesMain = strFolder
+            For Each file As String In System.IO.Directory.GetFiles(a78filesMain, "*.a78")
+                frmMain.lstAllGames.Items.Add(System.IO.Path.GetFileNameWithoutExtension(file))
+            Next
+        Catch ex As Exception
+            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+        End Try
+
+        Try
+            frmMain.pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        Catch ex As Exception
+        End Try
+
+
         frmMain.Show()
 
         Me.Close()
