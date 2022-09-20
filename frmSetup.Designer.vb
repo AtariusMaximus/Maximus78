@@ -36,10 +36,10 @@ Partial Class frmSetup
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -59,6 +59,7 @@ Partial Class frmSetup
         '
         'btnGameROMpath
         '
+        Me.btnGameROMpath.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGameROMpath.Location = New System.Drawing.Point(6, 12)
         Me.btnGameROMpath.Name = "btnGameROMpath"
         Me.btnGameROMpath.Size = New System.Drawing.Size(154, 23)
@@ -68,6 +69,7 @@ Partial Class frmSetup
         '
         'btnBoxArtPath
         '
+        Me.btnBoxArtPath.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBoxArtPath.Location = New System.Drawing.Point(6, 41)
         Me.btnBoxArtPath.Name = "btnBoxArtPath"
         Me.btnBoxArtPath.Size = New System.Drawing.Size(154, 23)
@@ -77,6 +79,7 @@ Partial Class frmSetup
         '
         'Button1
         '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(6, 70)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(154, 23)
@@ -86,6 +89,7 @@ Partial Class frmSetup
         '
         'Button2
         '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(3, 99)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(154, 23)
@@ -123,6 +127,7 @@ Partial Class frmSetup
         '
         'frmContinue
         '
+        Me.frmContinue.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.frmContinue.Location = New System.Drawing.Point(356, 131)
         Me.frmContinue.Name = "frmContinue"
         Me.frmContinue.Size = New System.Drawing.Size(143, 33)
@@ -165,6 +170,15 @@ Partial Class frmSetup
         Me.TabPage1.Text = "Step 1: Review Setup Requirements"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(3, 3)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(527, 273)
+        Me.WebBrowser1.TabIndex = 0
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.Label1)
@@ -181,7 +195,7 @@ Partial Class frmSetup
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(533, 262)
+        Me.TabPage2.Size = New System.Drawing.Size(533, 279)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Step 2: Set Directory Paths"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -189,9 +203,10 @@ Partial Class frmSetup
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(19, 141)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(398, 15)
+        Me.Label1.Size = New System.Drawing.Size(296, 13)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Please Click Continue after all Directory Paths have been set."
         '
@@ -203,15 +218,6 @@ Partial Class frmSetup
         Me.PictureBox2.Size = New System.Drawing.Size(141, 70)
         Me.PictureBox2.TabIndex = 14
         Me.PictureBox2.TabStop = False
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(3, 3)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(527, 273)
-        Me.WebBrowser1.TabIndex = 0
         '
         'TextBox1
         '

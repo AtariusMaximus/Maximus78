@@ -28,11 +28,11 @@ Partial Class frmAbout
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -92,6 +92,15 @@ Partial Class frmAbout
         Me.TabPage2.Text = "License"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'WebBrowser2
+        '
+        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser2.Location = New System.Drawing.Point(3, 3)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.Size = New System.Drawing.Size(520, 393)
+        Me.WebBrowser2.TabIndex = 0
+        '
         'TextBox1
         '
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -100,7 +109,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.10b"
+        Me.TextBox1.Text = "Maximus78 v0.99.12b"
         '
         'TextBox2
         '
@@ -134,15 +143,6 @@ Partial Class frmAbout
         Me.TextBox4.TabIndex = 5
         Me.TextBox4.Text = "Maximus78 is a front end for the A7800 Emlulator" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'WebBrowser2
-        '
-        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser2.Location = New System.Drawing.Point(3, 3)
-        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser2.Name = "WebBrowser2"
-        Me.WebBrowser2.Size = New System.Drawing.Size(520, 393)
-        Me.WebBrowser2.TabIndex = 0
         '
         'PictureBox2
         '

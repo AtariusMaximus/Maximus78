@@ -2002,21 +2002,12 @@ Public Class frmMain
     Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem1.Click
         Application.Exit()
     End Sub
-
-    Private Sub NTSCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NTSCToolStripMenuItem.Click
-        strArguments = "a7800"
-        NTSCToolStripMenuItem.Checked = True
-        PALToolStripMenuItem.Checked = False
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
-    End Sub
-
-    Private Sub PALToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PALToolStripMenuItem.Click
-        strArguments = "a7800p"
-        NTSCToolStripMenuItem.Checked = False
-        PALToolStripMenuItem.Checked = True
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
-    End Sub
     Private Sub xmON_Click(sender As Object, e As EventArgs) Handles xmON.Click
+
+        'Update Status Bar
+        statusXM.Text = "XM Support: ON"
+        statusHSC.Text = "HSC Support: OFF"
+
         strAddArguments = "-cart1 xm -cart2"
         xmON.Checked = True
         xmOFF.Checked = False
@@ -2026,6 +2017,10 @@ Public Class frmMain
     End Sub
 
     Private Sub xmOFF_Click(sender As Object, e As EventArgs) Handles xmOFF.Click
+
+        'Update Status Bar
+        statusXM.Text = "XM Support: OFF"
+
         strAddArguments = "-cart"
         xmOFF.Checked = True
         xmON.Checked = False
@@ -2033,6 +2028,11 @@ Public Class frmMain
     End Sub
 
     Private Sub hscON_Click(sender As Object, e As EventArgs) Handles hscON.Click
+
+        'Update Status Bar
+        statusXM.Text = "XM Support: OFF"
+        statusHSC.Text = "HSC Support: ON"
+
         strAddArguments = "-cart1 hiscore -cart2"
         hscON.Checked = True
         hscOFF.Checked = False
@@ -2042,23 +2042,13 @@ Public Class frmMain
     End Sub
 
     Private Sub hscOFF_Click(sender As Object, e As EventArgs) Handles hscOFF.Click
+
+        'Update Status Bar
+        statusHSC.Text = "HSC Support: OFF"
+
         strAddArguments = "-cart"
         hscOFF.Checked = True
         hscON.Checked = False
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
-    End Sub
-
-    Private Sub debugON_Click(sender As Object, e As EventArgs) Handles debugON.Click
-        strDebug = "-debug"
-        debugON.Checked = True
-        debugOFF.Checked = False
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
-    End Sub
-
-    Private Sub debugOFF_Click(sender As Object, e As EventArgs) Handles debugOFF.Click
-        strDebug = ""
-        debugON.Checked = False
-        debugOFF.Checked = True
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
     End Sub
 
@@ -2072,5 +2062,282 @@ Public Class frmMain
 
     Private Sub EditA7800ConfigurationFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditA7800ConfigurationFileToolStripMenuItem.Click
         frmA7800Config.Show()
+    End Sub
+
+    Private Sub NTSCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NTSCToolStripMenuItem.Click
+
+        'TV Type
+        'Changing Resets Developer Mode to OFF and resets Palette to WARM
+
+        'Update Status Bar
+        statusTVType.Text = "TV Type: NTSC"
+        statusPalette.Text = "Palette: Warm"
+        statusDebug.Text = "Debug Mode: OFF"
+        statusDev.Text = "Dev Mode: OFF"
+
+        'Reset Palette back to default 'WARM'
+        paletteWARM.Checked = True
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = False
+
+        'Reset Debug back to 'OFF'
+        debugON.Checked = False
+        debugOFF.Checked = True
+
+        'MsgBox("NTSC selected: Palette set to Warm and Debug turned off")
+
+        strArguments = "a7800"
+        NTSCToolStripMenuItem.Checked = True
+        PALToolStripMenuItem.Checked = False
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+    End Sub
+
+    Private Sub PALToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PALToolStripMenuItem.Click
+
+        'TV Type
+        'Changing Resets Developer Mode to OFF and resets Palette to WARM
+
+        'Update Status Bar
+        statusTVType.Text = "TV Type: PAL"
+        statusPalette.Text = "Palette: Warm"
+        statusDebug.Text = "Debug Mode: OFF"
+        statusDev.Text = "Dev Mode: OFF"
+
+        'Reset Palette back to default 'WARM'
+        paletteWARM.Checked = True
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = False
+
+        'Reset Debug back to default 'OFF'
+        debugON.Checked = False
+        debugOFF.Checked = True
+
+        'MsgBox("PAL selected: Palette set to Warm and Debug turned off")
+
+        strArguments = "a7800p"
+        NTSCToolStripMenuItem.Checked = False
+        PALToolStripMenuItem.Checked = True
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+    End Sub
+
+    Private Sub paletteWARM_Click(sender As Object, e As EventArgs) Handles paletteWARM.Click
+
+        'Set WARM Palette
+
+        'Update Status Bar
+        statusTVType.Text = "TV Type: PAL"
+        statusPalette.Text = "Palette: Warm"
+        statusDev.Text = "Dev Mode: OFF"
+
+        If NTSCToolStripMenuItem.Checked = True Then
+            strArguments = "a7800"
+            statusTVType.Text = "TV Type: NTSC"
+        End If
+
+        If PALToolStripMenuItem.Checked = True Then
+            strArguments = "a7800p"
+            statusTVType.Text = "TV Type: PAL"
+        End If
+
+        'Reset Dev back to default 'OFF'
+        devON.Checked = False
+        devOFF.Checked = True
+
+        'Update Palette Selection on Menu Strip
+        paletteWARM.Checked = True
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = False
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+
+    End Sub
+
+    Private Sub paletteCOOL_Click(sender As Object, e As EventArgs) Handles paletteCOOL.Click
+
+        'Set COOL Palette
+
+        If NTSCToolStripMenuItem.Checked = True Then
+            strArguments = "a7800u1"
+            statusTVType.Text = "TV Type: NTSC"
+        End If
+
+        If PALToolStripMenuItem.Checked = True Then
+            strArguments = "a7800pu1"
+            statusTVType.Text = "TV Type: PAL"
+        End If
+
+        'Reset Dev back to default 'OFF'
+        devON.Checked = False
+        devOFF.Checked = True
+
+        'Update Palette Selection on Menu Strip
+        paletteWARM.Checked = False
+        paletteCOOL.Checked = True
+        paletteHOT.Checked = False
+
+        'Update Status Bar
+        statusPalette.Text = "Palette: Cool"
+        statusDev.Text = "Dev Mode: OFF"
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+
+    End Sub
+
+    Private Sub paletteHOT_Click(sender As Object, e As EventArgs) Handles paletteHOT.Click
+
+        'Set HOT Palette
+
+        If NTSCToolStripMenuItem.Checked = True Then
+            strArguments = "a7800u2"
+            statusTVType.Text = "TV Type: NTSC"
+        End If
+
+        If PALToolStripMenuItem.Checked = True Then
+            strArguments = "a7800pu2"
+            statusTVType.Text = "TV Type: PAL"
+        End If
+
+        'Reset Dev back to default 'OFF'
+        devON.Checked = False
+        devOFF.Checked = True
+
+        'Update Palette Selection on Menu Strip
+        paletteWARM.Checked = False
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = True
+
+        'Update Status Bar
+        statusPalette.Text = "Palette: Hot"
+        statusDev.Text = "Dev Mode: OFF"
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+
+    End Sub
+
+    Private Sub OnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles devON.Click
+        If NTSCToolStripMenuItem.Checked = True Then
+            strArguments = "a7800dev"
+        End If
+
+        If PALToolStripMenuItem.Checked = True Then
+            strArguments = "a7800pdev"
+        End If
+
+        'Update Status Bar
+        'Turning On Dev mode sets palette to Warm
+        statusPalette.Text = "Palette: Warm"
+
+        'Update Status Bar
+        statusDev.Text = "Dev Mode: ON"
+
+        'MsgBox("Debug Mode Enabled: Palette set to Warm")
+
+        paletteWARM.Checked = True
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = False
+
+        devOFF.Checked = False
+        devON.Checked = True
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+
+    End Sub
+
+    Private Sub OffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles devOFF.Click
+
+
+        If NTSCToolStripMenuItem.Checked = True Then
+            strArguments = "a7800"
+        End If
+
+        If PALToolStripMenuItem.Checked = True Then
+            strArguments = "a7800p"
+        End If
+
+        'Update Status Bar
+        'Turning off Dev mode sets palette to Warm
+        statusPalette.Text = "Palette: Warm"
+
+        'Update Status Bar
+        statusDev.Text = "Dev Mode: OFF"
+
+        'MsgBox("Debug Mode Enabled: Palette set to Warm")
+
+        paletteWARM.Checked = True
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = False
+
+        devOFF.Checked = True
+        devON.Checked = False
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+
+    End Sub
+
+    Private Sub debugON_Click(sender As Object, e As EventArgs) Handles debugON.Click
+
+        'Update Status Bar
+        statusDebug.Text = "Debug Mode: ON"
+
+        strDebug = "-debug"
+        debugON.Checked = True
+        debugOFF.Checked = False
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+    End Sub
+
+    Private Sub debugOFF_Click(sender As Object, e As EventArgs) Handles debugOFF.Click
+
+        'Update Status Bar
+        statusDebug.Text = "Debug Mode: OFF"
+
+        strDebug = ""
+        debugON.Checked = False
+        debugOFF.Checked = True
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
+    End Sub
+
+    Private Sub mnuLoadGame_Click(sender As Object, e As EventArgs) Handles mnuLoadGame.Click
+
+        'Load Game Directly
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                              .AutoUpgradeEnabled = True,
+                                              .CheckFileExists = False,
+                                              .CheckPathExists = True,
+                                              .Filter = "All files (*.*)|*.*",
+                                              .FilterIndex = 1,
+                                              .InitialDirectory = "C:\",
+                                              .SupportMultiDottedExtensions = True,
+                                              .Title = "Select Atari 7800 Game ROM",
+                                              .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                strFolder = System.IO.Path.GetDirectoryName(dlg.FileName.ToString)
+                strFileName = System.IO.Path.GetFileName(strLaunchGame)
+                'MsgBox(strFileName)
+            End If
+        End Using
+
+
+        Dim ProcessProperties2 As New ProcessStartInfo
+        ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+        ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+        ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + " " + strDebug
+        ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+        Dim myProcess As Process = Process.Start(ProcessProperties2)
+
+        'Choosing file does not update the strFolder folder path
+        'Look at OpenFileDialog Option
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + " " + strDebug
+        'MsgBox(txtPath.Text)
+    End Sub
+
+    Private Sub FileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileToolStripMenuItem.Click
+        'Add Recent ROMS to List?
+    End Sub
+
+    Private Sub setDeveloperMenuItem1_Click(sender As Object, e As EventArgs) Handles setDeveloperMenuItem1.Click
+
     End Sub
 End Class
