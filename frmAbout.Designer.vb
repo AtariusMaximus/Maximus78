@@ -28,16 +28,21 @@ Partial Class frmAbout
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.btnFirstTime = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,6 +59,7 @@ Partial Class frmAbout
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(254, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -92,6 +98,45 @@ Partial Class frmAbout
         Me.TabPage2.Text = "License"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'WebBrowser2
+        '
+        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser2.Location = New System.Drawing.Point(3, 3)
+        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser2.Name = "WebBrowser2"
+        Me.WebBrowser2.Size = New System.Drawing.Size(520, 393)
+        Me.WebBrowser2.TabIndex = 0
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.btnFirstTime)
+        Me.TabPage3.Controls.Add(Me.Label1)
+        Me.TabPage3.Controls.Add(Me.Button1)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(526, 399)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Debug"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 13)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(389, 13)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Warning:  Making changes on this screen will change your configuration settings."
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(13, 42)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(182, 23)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Clear Maximus78 Registry Keys"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'TextBox1
         '
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -100,7 +145,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.10b"
+        Me.TextBox1.Text = "Maximus78 v0.99.17b"
         '
         'TextBox2
         '
@@ -120,7 +165,7 @@ Partial Class frmAbout
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(244, 13)
         Me.TextBox3.TabIndex = 4
-        Me.TextBox3.Text = "9/12/2022"
+        Me.TextBox3.Text = "9/25/2022"
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox4
@@ -135,15 +180,6 @@ Partial Class frmAbout
         Me.TextBox4.Text = "Maximus78 is a front end for the A7800 Emlulator" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'WebBrowser2
-        '
-        Me.WebBrowser2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser2.Location = New System.Drawing.Point(3, 3)
-        Me.WebBrowser2.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser2.Name = "WebBrowser2"
-        Me.WebBrowser2.Size = New System.Drawing.Size(520, 393)
-        Me.WebBrowser2.TabIndex = 0
-        '
         'PictureBox2
         '
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
@@ -152,6 +188,15 @@ Partial Class frmAbout
         Me.PictureBox2.Size = New System.Drawing.Size(143, 74)
         Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
+        '
+        'btnFirstTime
+        '
+        Me.btnFirstTime.Location = New System.Drawing.Point(13, 71)
+        Me.btnFirstTime.Name = "btnFirstTime"
+        Me.btnFirstTime.Size = New System.Drawing.Size(182, 23)
+        Me.btnFirstTime.TabIndex = 2
+        Me.btnFirstTime.Text = "Show First-Time Setup Window"
+        Me.btnFirstTime.UseVisualStyleBackColor = True
         '
         'frmAbout
         '
@@ -173,6 +218,8 @@ Partial Class frmAbout
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -190,4 +237,8 @@ Partial Class frmAbout
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents WebBrowser2 As WebBrowser
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btnFirstTime As Button
 End Class
