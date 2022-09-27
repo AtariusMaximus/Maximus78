@@ -3599,38 +3599,13 @@ Public Class frmMain
         fullScreenON.Checked = True
         fullscreenOFF.Checked = False
     End Sub
+    Private Sub xmON_Click(sender As Object, e As EventArgs) Handles xmON.Click
 
-    Private Sub vsyncON_Click(sender As Object, e As EventArgs) Handles vsyncON.Click
-        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
-            strFileName = lstNTSCRetail.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
-            strFileName = lstPALRetail.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
-            strFileName = lstHomebrews.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
-            strFileName = lstHacks.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
-            strFileName = lstProtos.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
-            strFileName = lstDemos.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
-            strFileName = lstUtilities.Text + ".a78"
-        End If
-
-        strVsync = " -waitvsync"
-        stripVsync.Text = "Vsync Wait: On  "
-        'statusTripleBuffer.Text = "Video: CRT" 'There is no status bar item for this yet.
-
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
-        vsyncON.Checked = True
-        vsyncOFF.Checked = False
+    Private Sub NTSCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NTSCToolStripMenuItem.Click
+        strArguments = "a7800"
+        NTSCToolStripMenuItem.Checked = True
+        PALToolStripMenuItem.Checked = False
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstAllGames.Text + ".a78""" + " " + strDebug
     End Sub
 
     Private Sub vsyncOFF_Click(sender As Object, e As EventArgs) Handles vsyncOFF.Click
@@ -3742,6 +3717,14 @@ Public Class frmMain
         My.Computer.Registry.CurrentUser.SetValue("Maximus78 Manuals Path", txtManualsPath.Text)
         My.Computer.Registry.CurrentUser.SetValue("Maximus78 A7800 Path", txtA7800path.Text)
         My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", txtRomPath.Text)
+    End Sub
+
+    Private Sub Atari7800ProSystemOwnersManualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Atari7800ProSystemOwnersManualToolStripMenuItem.Click
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\7800_Owners_Manual.htm"))
+    End Sub
+
+    Private Sub A7800UsersGuideToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles A7800UsersGuideToolStripMenuItem.Click
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\A7800_Manual.htm"))
     End Sub
 
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click

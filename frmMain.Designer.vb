@@ -151,6 +151,7 @@ Partial Class frmMain
         Me.triplebufferOFF = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripTextBox3 = New System.Windows.Forms.ToolStripTextBox()
+        Me.ToolStripTextBox7 = New System.Windows.Forms.ToolStripTextBox()
         Me.SetXMSupportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.xmON = New System.Windows.Forms.ToolStripMenuItem()
         Me.xmOFF = New System.Windows.Forms.ToolStripMenuItem()
@@ -1598,7 +1599,6 @@ Partial Class frmMain
         Me.TabPage2.ResumeLayout(False)
         CType(Me.pctBoxArt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents WebBrowser1 As WebBrowser
