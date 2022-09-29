@@ -77,7 +77,6 @@ Partial Class frmMain
         Me.lstProtos = New System.Windows.Forms.ListBox()
         Me.tabUtilities = New System.Windows.Forms.TabPage()
         Me.lstUtilities = New System.Windows.Forms.ListBox()
-        Me.tabROMpaths = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtNTSCRetailPath = New System.Windows.Forms.TextBox()
         Me.btnSaveROMPaths = New System.Windows.Forms.Button()
@@ -151,7 +150,6 @@ Partial Class frmMain
         Me.triplebufferOFF = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripTextBox3 = New System.Windows.Forms.ToolStripTextBox()
-        Me.ToolStripTextBox7 = New System.Windows.Forms.ToolStripTextBox()
         Me.SetXMSupportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.xmON = New System.Windows.Forms.ToolStripMenuItem()
         Me.xmOFF = New System.Windows.Forms.ToolStripMenuItem()
@@ -203,9 +201,11 @@ Partial Class frmMain
         Me.btnLoad = New System.Windows.Forms.Button()
         Me.btnSaveHTML = New System.Windows.Forms.Button()
         Me.txtHTMLEditor = New System.Windows.Forms.TextBox()
-        Me.TabControl2 = New System.Windows.Forms.TabControl()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.pctBoxArt = New System.Windows.Forms.PictureBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.tabBoxArt = New System.Windows.Forms.TabPage()
+        Me.tabDirectoryPaths = New System.Windows.Forms.TabPage()
+        Me.tabFavorites = New System.Windows.Forms.TabPage()
         Me.TabControlRoms.SuspendLayout()
         Me.tabNTSC.SuspendLayout()
         Me.tabPAL.SuspendLayout()
@@ -214,7 +214,6 @@ Partial Class frmMain
         Me.tabDemos.SuspendLayout()
         Me.tabProtos.SuspendLayout()
         Me.tabUtilities.SuspendLayout()
-        Me.tabROMpaths.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -222,9 +221,10 @@ Partial Class frmMain
         Me.TabEditor.SuspendLayout()
         Me.tabManuals.SuspendLayout()
         Me.tabHTMLEditor.SuspendLayout()
-        Me.TabControl2.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         CType(Me.pctBoxArt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.tabBoxArt.SuspendLayout()
+        Me.tabDirectoryPaths.SuspendLayout()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -260,8 +260,9 @@ Partial Class frmMain
         Me.txtA7800path.BackColor = System.Drawing.SystemColors.MenuText
         Me.txtA7800path.ForeColor = System.Drawing.SystemColors.Window
         Me.txtA7800path.Location = New System.Drawing.Point(87, 28)
+        Me.txtA7800path.Multiline = True
         Me.txtA7800path.Name = "txtA7800path"
-        Me.txtA7800path.Size = New System.Drawing.Size(306, 20)
+        Me.txtA7800path.Size = New System.Drawing.Size(250, 20)
         Me.txtA7800path.TabIndex = 36
         '
         'txtRomPath
@@ -270,8 +271,10 @@ Partial Class frmMain
         Me.txtRomPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtRomPath.ForeColor = System.Drawing.SystemColors.Window
         Me.txtRomPath.Location = New System.Drawing.Point(9, 42)
+        Me.txtRomPath.Multiline = True
         Me.txtRomPath.Name = "txtRomPath"
-        Me.txtRomPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtRomPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtRomPath.Size = New System.Drawing.Size(328, 29)
         Me.txtRomPath.TabIndex = 37
         '
         'txtBoxArtPath
@@ -279,8 +282,9 @@ Partial Class frmMain
         Me.txtBoxArtPath.BackColor = System.Drawing.SystemColors.MenuText
         Me.txtBoxArtPath.ForeColor = System.Drawing.SystemColors.Window
         Me.txtBoxArtPath.Location = New System.Drawing.Point(87, 54)
+        Me.txtBoxArtPath.Multiline = True
         Me.txtBoxArtPath.Name = "txtBoxArtPath"
-        Me.txtBoxArtPath.Size = New System.Drawing.Size(306, 20)
+        Me.txtBoxArtPath.Size = New System.Drawing.Size(250, 20)
         Me.txtBoxArtPath.TabIndex = 38
         '
         'txtManualsPath
@@ -288,8 +292,9 @@ Partial Class frmMain
         Me.txtManualsPath.BackColor = System.Drawing.SystemColors.MenuText
         Me.txtManualsPath.ForeColor = System.Drawing.SystemColors.Window
         Me.txtManualsPath.Location = New System.Drawing.Point(87, 80)
+        Me.txtManualsPath.Multiline = True
         Me.txtManualsPath.Name = "txtManualsPath"
-        Me.txtManualsPath.Size = New System.Drawing.Size(306, 20)
+        Me.txtManualsPath.Size = New System.Drawing.Size(250, 20)
         Me.txtManualsPath.TabIndex = 44
         '
         'Label2
@@ -316,11 +321,11 @@ Partial Class frmMain
         Me.txtPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtPath.Font = New System.Drawing.Font("Lucida Console", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPath.ForeColor = System.Drawing.SystemColors.Window
-        Me.txtPath.Location = New System.Drawing.Point(456, 582)
+        Me.txtPath.Location = New System.Drawing.Point(6, 497)
         Me.txtPath.Multiline = True
         Me.txtPath.Name = "txtPath"
         Me.txtPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtPath.Size = New System.Drawing.Size(384, 98)
+        Me.txtPath.Size = New System.Drawing.Size(360, 125)
         Me.txtPath.TabIndex = 31
         '
         'TabControlRoms
@@ -332,7 +337,7 @@ Partial Class frmMain
         Me.TabControlRoms.Controls.Add(Me.tabDemos)
         Me.TabControlRoms.Controls.Add(Me.tabProtos)
         Me.TabControlRoms.Controls.Add(Me.tabUtilities)
-        Me.TabControlRoms.Controls.Add(Me.tabROMpaths)
+        Me.TabControlRoms.Controls.Add(Me.tabFavorites)
         Me.TabControlRoms.Location = New System.Drawing.Point(12, 24)
         Me.TabControlRoms.Name = "TabControlRoms"
         Me.TabControlRoms.SelectedIndex = 0
@@ -501,19 +506,6 @@ Partial Class frmMain
         Me.lstUtilities.Size = New System.Drawing.Size(427, 632)
         Me.lstUtilities.TabIndex = 33
         '
-        'tabROMpaths
-        '
-        Me.tabROMpaths.AutoScroll = True
-        Me.tabROMpaths.Controls.Add(Me.GroupBox2)
-        Me.tabROMpaths.Controls.Add(Me.GroupBox1)
-        Me.tabROMpaths.Controls.Add(Me.txtRootROMPath)
-        Me.tabROMpaths.Location = New System.Drawing.Point(4, 22)
-        Me.tabROMpaths.Name = "tabROMpaths"
-        Me.tabROMpaths.Size = New System.Drawing.Size(433, 637)
-        Me.tabROMpaths.TabIndex = 7
-        Me.tabROMpaths.Text = " ROM Paths"
-        Me.tabROMpaths.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label2)
@@ -533,9 +525,9 @@ Partial Class frmMain
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Location = New System.Drawing.Point(10, 172)
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 164)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(399, 458)
+        Me.GroupBox2.Size = New System.Drawing.Size(353, 458)
         Me.GroupBox2.TabIndex = 54
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "ROM Directory Paths"
@@ -548,16 +540,17 @@ Partial Class frmMain
         Me.txtNTSCRetailPath.Location = New System.Drawing.Point(9, 90)
         Me.txtNTSCRetailPath.Multiline = True
         Me.txtNTSCRetailPath.Name = "txtNTSCRetailPath"
-        Me.txtNTSCRetailPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtNTSCRetailPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtNTSCRetailPath.Size = New System.Drawing.Size(328, 30)
         Me.txtNTSCRetailPath.TabIndex = 0
         '
         'btnSaveROMPaths
         '
         Me.btnSaveROMPaths.Location = New System.Drawing.Point(6, 423)
         Me.btnSaveROMPaths.Name = "btnSaveROMPaths"
-        Me.btnSaveROMPaths.Size = New System.Drawing.Size(387, 27)
+        Me.btnSaveROMPaths.Size = New System.Drawing.Size(331, 27)
         Me.btnSaveROMPaths.TabIndex = 16
-        Me.btnSaveROMPaths.Text = "Save ROM Path Changes to the Registry and Refresh all ROM Lists"
+        Me.btnSaveROMPaths.Text = "Save ROM Paths to the Registry and Refresh all Lists"
         Me.btnSaveROMPaths.UseVisualStyleBackColor = True
         '
         'txtPALRetailPath
@@ -568,7 +561,8 @@ Partial Class frmMain
         Me.txtPALRetailPath.Location = New System.Drawing.Point(9, 139)
         Me.txtPALRetailPath.Multiline = True
         Me.txtPALRetailPath.Name = "txtPALRetailPath"
-        Me.txtPALRetailPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtPALRetailPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtPALRetailPath.Size = New System.Drawing.Size(328, 30)
         Me.txtPALRetailPath.TabIndex = 1
         '
         'txtHomebrewPath
@@ -579,7 +573,8 @@ Partial Class frmMain
         Me.txtHomebrewPath.Location = New System.Drawing.Point(9, 188)
         Me.txtHomebrewPath.Multiline = True
         Me.txtHomebrewPath.Name = "txtHomebrewPath"
-        Me.txtHomebrewPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtHomebrewPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtHomebrewPath.Size = New System.Drawing.Size(328, 30)
         Me.txtHomebrewPath.TabIndex = 2
         '
         'Label11
@@ -599,7 +594,8 @@ Partial Class frmMain
         Me.txtHacksPath.Location = New System.Drawing.Point(9, 237)
         Me.txtHacksPath.Multiline = True
         Me.txtHacksPath.Name = "txtHacksPath"
-        Me.txtHacksPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtHacksPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtHacksPath.Size = New System.Drawing.Size(328, 31)
         Me.txtHacksPath.TabIndex = 3
         '
         'Label10
@@ -619,7 +615,8 @@ Partial Class frmMain
         Me.txtDemosPath.Location = New System.Drawing.Point(9, 287)
         Me.txtDemosPath.Multiline = True
         Me.txtDemosPath.Name = "txtDemosPath"
-        Me.txtDemosPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtDemosPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtDemosPath.Size = New System.Drawing.Size(328, 31)
         Me.txtDemosPath.TabIndex = 4
         '
         'Label9
@@ -639,7 +636,8 @@ Partial Class frmMain
         Me.txtProtosPath.Location = New System.Drawing.Point(9, 337)
         Me.txtProtosPath.Multiline = True
         Me.txtProtosPath.Name = "txtProtosPath"
-        Me.txtProtosPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtProtosPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtProtosPath.Size = New System.Drawing.Size(328, 32)
         Me.txtProtosPath.TabIndex = 5
         '
         'txtUtilitiesPath
@@ -650,7 +648,8 @@ Partial Class frmMain
         Me.txtUtilitiesPath.Location = New System.Drawing.Point(9, 388)
         Me.txtUtilitiesPath.Multiline = True
         Me.txtUtilitiesPath.Name = "txtUtilitiesPath"
-        Me.txtUtilitiesPath.Size = New System.Drawing.Size(384, 20)
+        Me.txtUtilitiesPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtUtilitiesPath.Size = New System.Drawing.Size(328, 29)
         Me.txtUtilitiesPath.TabIndex = 6
         '
         'Label8
@@ -698,9 +697,9 @@ Partial Class frmMain
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtBoxArtPath)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(10, 14)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(399, 152)
+        Me.GroupBox1.Size = New System.Drawing.Size(353, 152)
         Me.GroupBox1.TabIndex = 53
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "A7800 Directory Paths"
@@ -709,19 +708,19 @@ Partial Class frmMain
         '
         Me.Button1.Location = New System.Drawing.Point(7, 115)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(391, 27)
+        Me.Button1.Size = New System.Drawing.Size(342, 27)
         Me.Button1.TabIndex = 53
-        Me.Button1.Text = "Save Changs to Registry (Changes reflected on application restart)"
+        Me.Button1.Text = "Save Changs to Registry (Application Restart Required)"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'txtRootROMPath
         '
         Me.txtRootROMPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtRootROMPath.Location = New System.Drawing.Point(10, 610)
+        Me.txtRootROMPath.Location = New System.Drawing.Point(6, 576)
         Me.txtRootROMPath.Multiline = True
         Me.txtRootROMPath.Name = "txtRootROMPath"
         Me.txtRootROMPath.ReadOnly = True
-        Me.txtRootROMPath.Size = New System.Drawing.Size(393, 20)
+        Me.txtRootROMPath.Size = New System.Drawing.Size(360, 20)
         Me.txtRootROMPath.TabIndex = 14
         Me.txtRootROMPath.Visible = False
         '
@@ -1100,7 +1099,7 @@ Partial Class frmMain
         'vsyncON
         '
         Me.vsyncON.Name = "vsyncON"
-        Me.vsyncON.Size = New System.Drawing.Size(91, 22)
+        Me.vsyncON.Size = New System.Drawing.Size(180, 22)
         Me.vsyncON.Text = "On"
         '
         'vsyncOFF
@@ -1108,7 +1107,7 @@ Partial Class frmMain
         Me.vsyncOFF.Checked = True
         Me.vsyncOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.vsyncOFF.Name = "vsyncOFF"
-        Me.vsyncOFF.Size = New System.Drawing.Size(91, 22)
+        Me.vsyncOFF.Size = New System.Drawing.Size(180, 22)
         Me.vsyncOFF.Text = "Off"
         '
         'setTripleBufferMenuItem3
@@ -1121,7 +1120,7 @@ Partial Class frmMain
         'triplebufferON
         '
         Me.triplebufferON.Name = "triplebufferON"
-        Me.triplebufferON.Size = New System.Drawing.Size(91, 22)
+        Me.triplebufferON.Size = New System.Drawing.Size(180, 22)
         Me.triplebufferON.Text = "On"
         '
         'triplebufferOFF
@@ -1129,7 +1128,7 @@ Partial Class frmMain
         Me.triplebufferOFF.Checked = True
         Me.triplebufferOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.triplebufferOFF.Name = "triplebufferOFF"
-        Me.triplebufferOFF.Size = New System.Drawing.Size(91, 22)
+        Me.triplebufferOFF.Size = New System.Drawing.Size(180, 22)
         Me.triplebufferOFF.Text = "Off"
         '
         'ToolStripSeparator11
@@ -1280,7 +1279,7 @@ Partial Class frmMain
         '
         Me.mnuStatus.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusON, Me.statusOFF})
         Me.mnuStatus.Name = "mnuStatus"
-        Me.mnuStatus.Size = New System.Drawing.Size(130, 22)
+        Me.mnuStatus.Size = New System.Drawing.Size(180, 22)
         Me.mnuStatus.Text = "Status Bar"
         '
         'statusON
@@ -1301,7 +1300,7 @@ Partial Class frmMain
         '
         Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.displayFULL, Me.displayMED, Me.displaySMALL})
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.WindowToolStripMenuItem.Text = "Window"
         '
         'displayFULL
@@ -1375,8 +1374,8 @@ Partial Class frmMain
         '
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(67, 20)
-        Me.ToolStripStatusLabel1.Text = " v0.99.17b   "
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(68, 20)
+        Me.ToolStripStatusLabel1.Text = " v0.99.20b   "
         '
         'stripPalette
         '
@@ -1474,7 +1473,7 @@ Partial Class frmMain
         Me.tabManuals.Padding = New System.Windows.Forms.Padding(3)
         Me.tabManuals.Size = New System.Drawing.Size(504, 634)
         Me.tabManuals.TabIndex = 0
-        Me.tabManuals.Text = "  Manuals and Screenshots          "
+        Me.tabManuals.Text = "Game Info:  Manuals and Screenshots"
         Me.tabManuals.UseVisualStyleBackColor = True
         '
         'tabHTMLEditor
@@ -1488,7 +1487,7 @@ Partial Class frmMain
         Me.tabHTMLEditor.Padding = New System.Windows.Forms.Padding(3)
         Me.tabHTMLEditor.Size = New System.Drawing.Size(504, 634)
         Me.tabHTMLEditor.TabIndex = 1
-        Me.tabHTMLEditor.Text = "  Editor          "
+        Me.tabHTMLEditor.Text = "Game Info Editor      "
         Me.tabHTMLEditor.UseVisualStyleBackColor = True
         '
         'txtEditorFile
@@ -1526,34 +1525,58 @@ Partial Class frmMain
         Me.txtHTMLEditor.Size = New System.Drawing.Size(498, 575)
         Me.txtHTMLEditor.TabIndex = 2
         '
-        'TabControl2
-        '
-        Me.TabControl2.Controls.Add(Me.TabPage2)
-        Me.TabControl2.Location = New System.Drawing.Point(452, 24)
-        Me.TabControl2.Name = "TabControl2"
-        Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(392, 552)
-        Me.TabControl2.TabIndex = 59
-        '
-        'TabPage2
-        '
-        Me.TabPage2.Controls.Add(Me.pctBoxArt)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(384, 526)
-        Me.TabPage2.TabIndex = 0
-        Me.TabPage2.Text = "  Box Art    "
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
         'pctBoxArt
         '
         Me.pctBoxArt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pctBoxArt.Location = New System.Drawing.Point(-2, 2)
+        Me.pctBoxArt.Location = New System.Drawing.Point(6, 6)
         Me.pctBoxArt.Name = "pctBoxArt"
-        Me.pctBoxArt.Size = New System.Drawing.Size(386, 518)
+        Me.pctBoxArt.Size = New System.Drawing.Size(360, 485)
         Me.pctBoxArt.TabIndex = 33
         Me.pctBoxArt.TabStop = False
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.tabBoxArt)
+        Me.TabControl1.Controls.Add(Me.tabDirectoryPaths)
+        Me.TabControl1.Location = New System.Drawing.Point(460, 24)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(380, 659)
+        Me.TabControl1.TabIndex = 59
+        '
+        'tabBoxArt
+        '
+        Me.tabBoxArt.Controls.Add(Me.txtPath)
+        Me.tabBoxArt.Controls.Add(Me.pctBoxArt)
+        Me.tabBoxArt.Location = New System.Drawing.Point(4, 22)
+        Me.tabBoxArt.Name = "tabBoxArt"
+        Me.tabBoxArt.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabBoxArt.Size = New System.Drawing.Size(372, 633)
+        Me.tabBoxArt.TabIndex = 0
+        Me.tabBoxArt.Text = "Box Art"
+        Me.tabBoxArt.UseVisualStyleBackColor = True
+        '
+        'tabDirectoryPaths
+        '
+        Me.tabDirectoryPaths.Controls.Add(Me.GroupBox2)
+        Me.tabDirectoryPaths.Controls.Add(Me.txtRootROMPath)
+        Me.tabDirectoryPaths.Controls.Add(Me.GroupBox1)
+        Me.tabDirectoryPaths.Location = New System.Drawing.Point(4, 22)
+        Me.tabDirectoryPaths.Name = "tabDirectoryPaths"
+        Me.tabDirectoryPaths.Padding = New System.Windows.Forms.Padding(3)
+        Me.tabDirectoryPaths.Size = New System.Drawing.Size(372, 633)
+        Me.tabDirectoryPaths.TabIndex = 1
+        Me.tabDirectoryPaths.Text = "Directory Paths"
+        Me.tabDirectoryPaths.UseVisualStyleBackColor = True
+        '
+        'tabFavorites
+        '
+        Me.tabFavorites.Location = New System.Drawing.Point(4, 22)
+        Me.tabFavorites.Name = "tabFavorites"
+        Me.tabFavorites.Size = New System.Drawing.Size(433, 637)
+        Me.tabFavorites.TabIndex = 7
+        Me.tabFavorites.Text = "Favorites"
+        Me.tabFavorites.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -1561,8 +1584,7 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.MenuBar
         Me.ClientSize = New System.Drawing.Size(1358, 725)
-        Me.Controls.Add(Me.txtPath)
-        Me.Controls.Add(Me.TabControl2)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.TabEditor)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -1581,8 +1603,6 @@ Partial Class frmMain
         Me.tabDemos.ResumeLayout(False)
         Me.tabProtos.ResumeLayout(False)
         Me.tabUtilities.ResumeLayout(False)
-        Me.tabROMpaths.ResumeLayout(False)
-        Me.tabROMpaths.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -1595,10 +1615,14 @@ Partial Class frmMain
         Me.tabManuals.ResumeLayout(False)
         Me.tabHTMLEditor.ResumeLayout(False)
         Me.tabHTMLEditor.PerformLayout()
-        Me.TabControl2.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
         CType(Me.pctBoxArt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.tabBoxArt.ResumeLayout(False)
+        Me.tabBoxArt.PerformLayout()
+        Me.tabDirectoryPaths.ResumeLayout(False)
+        Me.tabDirectoryPaths.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents WebBrowser1 As WebBrowser
@@ -1621,7 +1645,6 @@ Partial Class frmMain
     Friend WithEvents tabUtilities As TabPage
     Friend WithEvents lstNTSCRetail As ListBox
     Friend WithEvents lstPALRetail As ListBox
-    Friend WithEvents tabROMpaths As TabPage
     Friend WithEvents lstHomebrews As ListBox
     Friend WithEvents lstHacks As ListBox
     Friend WithEvents lstDemos As ListBox
@@ -1751,7 +1774,9 @@ Partial Class frmMain
     Friend WithEvents btnSaveHTML As Button
     Friend WithEvents btnLoad As Button
     Friend WithEvents txtEditorFile As TextBox
-    Friend WithEvents TabControl2 As TabControl
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents pctBoxArt As PictureBox
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents tabBoxArt As TabPage
+    Friend WithEvents tabDirectoryPaths As TabPage
+    Friend WithEvents tabFavorites As TabPage
 End Class
