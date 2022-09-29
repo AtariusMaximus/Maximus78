@@ -37,4 +37,8 @@
     Private Sub btnFirstTime_Click(sender As Object, e As EventArgs) Handles btnFirstTime.Click
         frmSetup.ShowDialog()
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
 End Class

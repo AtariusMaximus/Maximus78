@@ -30,6 +30,7 @@ Partial Class frmAbout
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnFirstTime = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -37,7 +38,6 @@ Partial Class frmAbout
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.btnFirstTime = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -119,6 +119,15 @@ Partial Class frmAbout
         Me.TabPage3.Text = "Debug"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'btnFirstTime
+        '
+        Me.btnFirstTime.Location = New System.Drawing.Point(13, 71)
+        Me.btnFirstTime.Name = "btnFirstTime"
+        Me.btnFirstTime.Size = New System.Drawing.Size(182, 23)
+        Me.btnFirstTime.TabIndex = 2
+        Me.btnFirstTime.Text = "Show First-Time Setup Window"
+        Me.btnFirstTime.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -145,7 +154,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.17b"
+        Me.TextBox1.Text = "Maximus78 v0.99.20b"
         '
         'TextBox2
         '
@@ -165,7 +174,7 @@ Partial Class frmAbout
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(244, 13)
         Me.TextBox3.TabIndex = 4
-        Me.TextBox3.Text = "9/25/2022"
+        Me.TextBox3.Text = "9/28/2022"
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox4
@@ -188,15 +197,6 @@ Partial Class frmAbout
         Me.PictureBox2.Size = New System.Drawing.Size(143, 74)
         Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
-        '
-        'btnFirstTime
-        '
-        Me.btnFirstTime.Location = New System.Drawing.Point(13, 71)
-        Me.btnFirstTime.Name = "btnFirstTime"
-        Me.btnFirstTime.Size = New System.Drawing.Size(182, 23)
-        Me.btnFirstTime.TabIndex = 2
-        Me.btnFirstTime.Text = "Show First-Time Setup Window"
-        Me.btnFirstTime.UseVisualStyleBackColor = True
         '
         'frmAbout
         '
