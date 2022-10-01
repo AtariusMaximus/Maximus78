@@ -71,7 +71,125 @@ Public Class frmMain
         strAddArguments = "-cart"
         NTSCToolStripMenuItem.Checked = True
         PALToolStripMenuItem.Checked = False
+        strFolder = txtNTSCRetailPath.Text
 
+        'WebBrowser1.Url = "c:\a7800\manuals\Blank.htm"
+
+        'Check and Load Edit Menu Registry Saves
+        'NTSC or PAL
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Option NTSC") = "On" Then
+            Call NTSCToolStripMenuItem_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Option PAL") = "On" Then
+            Call PALToolStripMenuItem_Click(Me, e)
+        End If
+
+        'Video Output
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option Compatibility") = "On" Then
+            Call videoCompatibility_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option Basic") = "On" Then
+            Call videoBasic_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option CRT") = "On" Then
+            Call videoCRT_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option CRT Deluxe") = "On" Then
+            Call videoCRTDeluxe_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option Super Eagle") = "On" Then
+            Call videoSuperEagle_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option HLSL") = "On" Then
+            Call videoHLSL_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option HQ2x") = "On" Then
+            Call videoHQ2x_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option HQ4x") = "On" Then
+            Call videoHQ4x_Click(Me, e)
+        End If
+
+        'Palette Option
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Warm Palette") = "On" Then
+            Call paletteWARM_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Cool Palette") = "On" Then
+            Call paletteCOOL_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Hot Palette") = "On" Then
+            Call paletteHOT_Click(Me, e)
+        End If
+
+        'Screen Stretch
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Window Option Stretch") = "On" Then
+            Call stretchON_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Window Option Stretch") = "Off" Then
+            Call stretchOFF_Click(Me, e)
+        End If
+
+        'Full Screen
+        '                                             Maximus78 Window A7800 Full Screen
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Window A7800 Full Screen") = "On" Then
+            Call fullScreenON_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 WindowA7800 Full Screen") = "Off" Then
+            Call fullscreenOFF_Click(Me, e)
+        End If
+
+        'Vsync Wait
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Vsync Wait") = "On" Then
+            Call vsyncON_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Vsync Wait") = "Off" Then
+            Call vsyncOFF_Click(Me, e)
+        End If
+
+        'Triple Buffer
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option TripleBuffer") = "On" Then
+            Call triplebufferON_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option TripleBuffer") = "Off" Then
+            Call triplebufferOFF_Click(Me, e)
+        End If
+
+        'XM Support 
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option XM") = "On" Then
+            Call xmON_Click(Me, e)
+            'If XM Support is on, we skip checking for HSC Support as they can't both be on at once.
+            GoTo SkiptoHere
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option XM") = "Off" Then
+            Call xmOFF_Click(Me, e)
+        End If
+
+        'HSC Support
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option HSC") = "On" Then
+            Call hscON_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option HSC") = "Off" Then
+            Call hscOFF_Click(Me, e)
+        End If
+
+        'If XM Support is on, we skip checking for HSC Support as they can't both be on at once.
+SkiptoHere:
+
+        'Developer Mode
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Developer Mode") = "On" Then
+            Call OnToolStripMenuItem_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Developer Mode") = "Off" Then
+            Call OffToolStripMenuItem_Click(Me, e)
+        End If
+
+        'Debug Mode
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Debug Mode") = "On" Then
+            Call debugON_Click(Me, e)
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Debug Mode") = "Off" Then
+            Call debugOFF_Click(Me, e)
+        End If
 
         '-----------------------------------------------------------------------------
         'Check Registry entry for Status Bar
@@ -190,7 +308,7 @@ Public Class frmMain
                 lstNTSCRetail.Items.Add(System.IO.Path.GetFileNameWithoutExtension(file))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
         'If the registry entry For the PAL path isn't already set, this code will display a warning msg.
@@ -200,7 +318,7 @@ Public Class frmMain
                 lstPALRetail.Items.Add(System.IO.Path.GetFileNameWithoutExtension(filePAL))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
         'If the registry entry For the Homebrews path isn't already set, this code will display a warning msg.
@@ -210,7 +328,7 @@ Public Class frmMain
                 lstHomebrews.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileHomebrews))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
         'If the registry entry For the Hacks path isn't already set, this code will display a warning msg.
@@ -220,7 +338,7 @@ Public Class frmMain
                 lstHacks.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileHacks))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
         'If the registry entry For the Demos path isn't already set, this code will display a warning msg.
@@ -230,7 +348,7 @@ Public Class frmMain
                 lstDemos.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileDemos))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
         'If the registry entry For the Prototypes path isn't already set, this code will display a warning msg.
@@ -240,7 +358,7 @@ Public Class frmMain
                 lstProtos.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileProtos))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
         'If the registry entry For the Utilities path isn't already set, this code will display a warning msg.
@@ -250,8 +368,19 @@ Public Class frmMain
                 lstUtilities.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileUtilities))
             Next
         Catch ex As Exception
-            'MsgBox("ROM Path has not been set", 64, "Maximus78 Notification")
+            'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
+
+        'For Testing
+
+        'Try
+        'Dim a78filesUtilities = txtUtilitiesPath.Text
+        'For Each fileUtilities As String In System.IO.Directory.GetFiles(a78filesUtilities, "*.a78")
+        'Ch'eckedListBox1.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileUtilities))
+        'Next
+        'Catch ex As Exception
+        'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
+        'End Try
 
         txtRootROMPath.Text = strFolder
         'txtNTSCRetailPath.Text = strFolder + "\Retail_v3_0\NTSC"
@@ -262,13 +391,22 @@ Public Class frmMain
         'txtProtosPath.Text = strFolder + "\HHDP_20220627\Prototypes"
         'txtUtilitiesPath.Text = strFolder + "\HHDP_20220627\Utilities"
 
-
+        'Load Blank file into Game Info HTML Editor on first launch
+        Try
+            WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+            txtEditorFile.Text = strManualsFolder + "\blank.htm"
+            For Each s As String In System.IO.File.ReadAllLines(txtEditorFile.Text)
+                txtHTMLEditor.AppendText(s + vbNewLine)
+            Next
+        Catch ex As Exception
+        End Try
 
         Try
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         Catch ex As Exception
         End Try
 
+        txtPath.Text = ""
 
     End Sub
 
@@ -278,10 +416,30 @@ Public Class frmMain
 
     Private Sub lstNTSCRetail_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstNTSCRetail.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtNTSCRetailPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstNTSCRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstNTSCRetail.Text + ".htm"
         txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstNTSCRetail.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
+        'Load HTML into editor window
         Try
             For Each s As String In System.IO.File.ReadAllLines(txtEditorFile.Text)
                 txtHTMLEditor.AppendText(s + vbNewLine)
@@ -289,26 +447,13 @@ Public Class frmMain
         Catch ex As Exception
         End Try
 
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        strFolder = txtNTSCRetailPath.Text
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstNTSCRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
-        'If System.Windows.Forms.ListBox.SelectedItem = Nothing Then
-        '  Exit Sub
-        'End If
-
-        'System.NullReferenceException 'Object reference not set to an instance of an object.'
-        'System.Windows.Forms.ListBox.SelectedItem.get returned Nothing.
-
-        If lstNTSCRetail.SelectedItem.ToString = "Ace of Aces (NTSC) (Atari) (1988)" Then
-            If System.IO.File.Exists(strBoxArtFolder & "\Ace of Aces (USA).jpg") Then
-                pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Ace of Aces (USA).jpg")
+        'Check for Specific Games known to be in the ProPack.  Redundant now.
+        If lstNTSCRetail.SelectedItem.ToString = "Ace Of Aces (NTSC)(Atari)(1988) Then" Then
+            If System.IO.File.Exists(strBoxArtFolder & "\Ace Of Aces (USA).jpg") Then
+                pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Ace Of Aces (USA).jpg")
             End If
-            If System.IO.File.Exists(strManualsFolder & "\Ace of Aces (NTSC) (Atari) (1988).htm") Then
-                WebBrowser1.Navigate(New Uri(strManualsFolder + "\Ace of Aces (NTSC) (Atari) (1988).htm"))
+            If System.IO.File.Exists(strManualsFolder & "\Ace Of Aces (NTSC) (Atari) (1988).htm") Then
+                WebBrowser1.Navigate(New Uri(strManualsFolder + "\Ace Of Aces (NTSC) (Atari) (1988).htm"))
             End If
         End If
 
@@ -1167,6 +1312,10 @@ Public Class frmMain
     End Sub
     Private Sub xmON_Click(sender As Object, e As EventArgs) Handles xmON.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "Off")
+
         'Update Status Bar
         stripXM.Text = "XM Support: On  "
         stripHSC.Text = "HSC Support: Off  "
@@ -1181,6 +1330,9 @@ Public Class frmMain
 
     Private Sub xmOFF_Click(sender As Object, e As EventArgs) Handles xmOFF.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "Off")
+
         'Update Status Bar
         stripXM.Text = "XM Support: Off  "
 
@@ -1191,6 +1343,10 @@ Public Class frmMain
     End Sub
 
     Private Sub hscON_Click(sender As Object, e As EventArgs) Handles hscON.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "Off")
 
         'Update Status Bar
         stripXM.Text = "XM Support: Off  "
@@ -1205,6 +1361,9 @@ Public Class frmMain
     End Sub
 
     Private Sub hscOFF_Click(sender As Object, e As EventArgs) Handles hscOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "Off")
 
         'Update Status Bar
         stripHSC.Text = "HSC Support: Off  "
@@ -1249,6 +1408,14 @@ Public Class frmMain
 
     Private Sub NTSCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NTSCToolStripMenuItem.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option NTSC", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option PAL", "Off")
+
+        'dev mode & debug mode off
+        'Call OffToolStripMenuItem_Click(Me, e)
+        'Call debugOFF_Click(Me, e)
+
         'TV Type
         'Changing Resets Developer Mode to OFF and resets Palette to WARM
 
@@ -1277,19 +1444,16 @@ Public Class frmMain
         'Update Status Bar
         stripTVType.Text = "TV Type: NTSC  "
         stripPalette.Text = "Palette: Warm  "
-        stripDebug.Text = "Debug Mode: Off  "
-        stripDev.Text = "Dev Mode: On  "
+        stripDev.Text = "Dev Mode: Off  "
 
         'Reset Palette back to default 'WARM'
         paletteWARM.Checked = True
         paletteCOOL.Checked = False
         paletteHOT.Checked = False
 
-        'Reset Debug back to 'OFF'
-        debugON.Checked = False
-        debugOFF.Checked = True
-
         'MsgBox("NTSC selected: Palette set to Warm and Debug turned off")
+        devOFF.Checked = True
+        devON.Checked = False
 
         strArguments = "a7800"
         NTSCToolStripMenuItem.Checked = True
@@ -1298,6 +1462,14 @@ Public Class frmMain
     End Sub
 
     Private Sub PALToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PALToolStripMenuItem.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option PAL", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option NTSC", "Off")
+
+        'dev mode & debug mode off
+        'Call OffToolStripMenuItem_Click(Me, e)
+        'Call debugOFF_Click(Me, e)
 
         'TV Type
         'Changing Resets Developer Mode to OFF and resets Palette to WARM
@@ -1327,7 +1499,6 @@ Public Class frmMain
         'Update Status Bar
         stripTVType.Text = "TV Type: PAL  "
         stripPalette.Text = "Palette: Warm  "
-        stripDebug.Text = "Debug Mode: Off  "
         stripDev.Text = "Dev Mode: Off  "
 
         'Reset Palette back to default 'WARM'
@@ -1335,11 +1506,9 @@ Public Class frmMain
         paletteCOOL.Checked = False
         paletteHOT.Checked = False
 
-        'Reset Debug back to default 'OFF'
-        debugON.Checked = False
-        debugOFF.Checked = True
-
         'MsgBox("PAL selected: Palette set to Warm and Debug turned off")
+        devOFF.Checked = True
+        devON.Checked = False
 
         strArguments = "a7800p"
         NTSCToolStripMenuItem.Checked = False
@@ -1348,6 +1517,11 @@ Public Class frmMain
     End Sub
 
     Private Sub paletteWARM_Click(sender As Object, e As EventArgs) Handles paletteWARM.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "Off")
 
         'Set WARM Palette
 
@@ -1403,6 +1577,12 @@ Public Class frmMain
 
     Private Sub paletteCOOL_Click(sender As Object, e As EventArgs) Handles paletteCOOL.Click
 
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "Off")
+
         'Set COOL Palette
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
@@ -1455,6 +1635,12 @@ Public Class frmMain
     End Sub
 
     Private Sub paletteHOT_Click(sender As Object, e As EventArgs) Handles paletteHOT.Click
+
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "On")
 
         'Set HOT Palette
 
@@ -1509,6 +1695,9 @@ Public Class frmMain
 
     Private Sub OnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles devON.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "On")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -1552,6 +1741,7 @@ Public Class frmMain
         paletteCOOL.Checked = False
         paletteHOT.Checked = False
 
+
         devOFF.Checked = False
         devON.Checked = True
 
@@ -1560,6 +1750,9 @@ Public Class frmMain
     End Sub
 
     Private Sub OffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles devOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1613,6 +1806,9 @@ Public Class frmMain
 
     Private Sub debugON_Click(sender As Object, e As EventArgs) Handles debugON.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "On")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -1645,6 +1841,9 @@ Public Class frmMain
     End Sub
 
     Private Sub debugOFF_Click(sender As Object, e As EventArgs) Handles debugOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1839,6 +2038,16 @@ Public Class frmMain
 
     Private Sub videoBasic_Click(sender As Object, e As EventArgs) Handles videoBasic.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -1880,6 +2089,15 @@ Public Class frmMain
 
     Private Sub videoCRT_Click(sender As Object, e As EventArgs) Handles videoCRT.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1920,6 +2138,16 @@ Public Class frmMain
 
     Private Sub videoCRTDeluxe_Click(sender As Object, e As EventArgs) Handles videoCRTDeluxe.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -1958,6 +2186,16 @@ Public Class frmMain
     End Sub
 
     Private Sub videoSuperEagle_Click(sender As Object, e As EventArgs) Handles videoSuperEagle.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1998,6 +2236,16 @@ Public Class frmMain
 
     Private Sub videoHLSL_Click(sender As Object, e As EventArgs) Handles videoHLSL.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -2036,6 +2284,16 @@ Public Class frmMain
     End Sub
 
     Private Sub videoHQ2x_Click(sender As Object, e As EventArgs) Handles videoHQ2x.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2076,6 +2334,16 @@ Public Class frmMain
 
     Private Sub videoHQ4x_Click(sender As Object, e As EventArgs) Handles videoHQ4x.Click
 
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "On")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -2114,6 +2382,16 @@ Public Class frmMain
     End Sub
 
     Private Sub videoCompatibility_Click(sender As Object, e As EventArgs) Handles videoCompatibility.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2154,6 +2432,29 @@ Public Class frmMain
 
     Private Sub lstPALRetail_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPALRetail.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtPALRetailPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstPALRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+        'Update Game Info HTML Editor
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstPALRetail.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstPALRetail.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstPALRetail.Text + ".htm"
@@ -2165,12 +2466,6 @@ Public Class frmMain
         Catch ex As Exception
         End Try
 
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        strFolder = txtPALRetailPath.Text
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstPALRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
         'Retail PAL
 
         If lstPALRetail.SelectedItem.ToString = "Ace of Aces (PAL) (Atari) (1988)" Then
@@ -2735,6 +3030,29 @@ Public Class frmMain
 
     Private Sub lstHomebrews_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHomebrews.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtHomebrewPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstHomebrews.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+        'Update Game Info HTML Editor
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstHomebrews.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstHomebrews.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstHomebrews.Text + ".htm"
@@ -2746,12 +3064,6 @@ Public Class frmMain
         Catch ex As Exception
         End Try
 
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        strFolder = txtHomebrewPath.Text
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstHomebrews.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
 
         'Homebrews
 
@@ -4311,6 +4623,29 @@ Public Class frmMain
 
     Private Sub lstHacks_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHacks.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtHacksPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstHacks.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+        'Update Game Info HTML Editor
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstHacks.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstHacks.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstHacks.Text + ".htm"
@@ -4321,13 +4656,6 @@ Public Class frmMain
             Next
         Catch ex As Exception
         End Try
-
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstHacks.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
 
         If lstHacks.SelectedItem.ToString = "Pac Pollux (Hack) (20060305)" Then
             If System.IO.File.Exists(strBoxArtFolder & "\Pac-Pollux (USA) (Unl).jpg") Then
@@ -6998,6 +7326,29 @@ Public Class frmMain
 
     Private Sub lstDemos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDemos.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtDemosPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstDemos.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+        'Update Game Info HTML Editor
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstDemos.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstDemos.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstDemos.Text + ".htm"
@@ -7008,15 +7359,6 @@ Public Class frmMain
             Next
         Catch ex As Exception
         End Try
-
-
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstDemos.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
-
 
         If lstDemos.SelectedItem.ToString = "1E78 Demo (PAL) (20190420)" Then
             If System.IO.File.Exists(strBoxArtFolder & "\1E78 Demo (PAL) (20190420).jpg") Then
@@ -10262,6 +10604,29 @@ Public Class frmMain
 
     Private Sub lstProtos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstProtos.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtProtosPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstProtos.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+        'Update Game Info HTML Editor
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstProtos.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstProtos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstProtos.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstProtos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstProtos.Text + ".htm"
@@ -10273,11 +10638,6 @@ Public Class frmMain
         Catch ex As Exception
         End Try
 
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstProtos.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
         If lstProtos.SelectedItem.ToString = "Plutos (Prototype)" Then
             If System.IO.File.Exists(strBoxArtFolder & "\Plutos (USA) (Proto).jpg") Then
                 pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Plutos (USA) (Proto).jpg")
@@ -10511,6 +10871,29 @@ Public Class frmMain
 
     Private Sub lstUtilities_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUtilities.SelectedIndexChanged
 
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        strFolder = txtUtilitiesPath.Text
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstUtilities.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+        'Update Game Info HTML Editor
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstUtilities.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+        'Check and see if a custom html file was saved for a game not in the ROM ProPack.
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            'MsgBox(strManualsFolder + strFileName)
+        End If
+        'Display custom user-created box art jpg if it exists
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstUtilities.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstUtilities.Text + ".htm"
@@ -10521,12 +10904,6 @@ Public Class frmMain
             Next
         Catch ex As Exception
         End Try
-
-        'Set Defaults if they're not found
-        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
-
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstUtilities.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
 
         If lstUtilities.SelectedItem.ToString = "24bit Value Comparison (20170811)" Then
             If System.IO.File.Exists(strBoxArtFolder & "\24bit Value Comparison (20170811).jpg") Then
@@ -11151,6 +11528,10 @@ Public Class frmMain
     End Sub
 
     Private Sub stretchON_Click(sender As Object, e As EventArgs) Handles stretchON.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "On")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -11184,6 +11565,10 @@ Public Class frmMain
     End Sub
 
     Private Sub stretchOFF_Click(sender As Object, e As EventArgs) Handles stretchOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "Off")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -11217,6 +11602,10 @@ Public Class frmMain
     End Sub
 
     Private Sub fullscreenOFF_Click(sender As Object, e As EventArgs) Handles fullscreenOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window A7800 Full Screen", "Off")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -11250,6 +11639,10 @@ Public Class frmMain
     End Sub
 
     Private Sub fullScreenON_Click(sender As Object, e As EventArgs) Handles fullScreenON.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window A7800 Full Screen", "On")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -11282,42 +11675,10 @@ Public Class frmMain
         fullscreenOFF.Checked = False
     End Sub
 
-
-    Private Sub vsyncOFF_Click(sender As Object, e As EventArgs) Handles vsyncOFF.Click
-
-        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
-            strFileName = lstNTSCRetail.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
-            strFileName = lstPALRetail.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
-            strFileName = lstHomebrews.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
-            strFileName = lstHacks.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
-            strFileName = lstProtos.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
-            strFileName = lstDemos.Text + ".a78"
-        End If
-        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
-            strFileName = lstUtilities.Text + ".a78"
-        End If
-
-        strVsync = ""
-        stripVsync.Text = "Vsync Wait: Off  "
-        'statusTripleBuffer.Text = "Video: CRT" 'There is no status bar item for this yet.
-
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
-        vsyncOFF.Checked = True
-        vsyncON.Checked = False
-    End Sub
-
     Private Sub triplebufferON_Click(sender As Object, e As EventArgs) Handles triplebufferON.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -11352,6 +11713,9 @@ Public Class frmMain
     End Sub
 
     Private Sub triplebufferOFF_Click(sender As Object, e As EventArgs) Handles triplebufferOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -11453,6 +11817,10 @@ Public Class frmMain
     End Sub
 
     Private Sub vsyncON_Click(sender As Object, e As EventArgs) Handles vsyncON.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "On")
+
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
         End If
@@ -11481,7 +11849,154 @@ Public Class frmMain
 
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
 
+        vsyncOFF.Checked = False
+        vsyncON.Checked = True
+    End Sub
+
+    Private Sub vsyncOFF_Click(sender As Object, e As EventArgs) Handles vsyncOFF.Click
+
+        'Save Settings to the Registry
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "Off")
+
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text + ".a78"
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text + ".a78"
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text + ".a78"
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text + ".a78"
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text + ".a78"
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text + ".a78"
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text + ".a78"
+        End If
+
+        strVsync = ""
+        stripVsync.Text = "Vsync Wait: Off  "
+        'statusTripleBuffer.Text = "Video: CRT" 'There is no status bar item for this yet.
+
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
         vsyncOFF.Checked = True
         vsyncON.Checked = False
+    End Sub
+
+    Private Sub ResetAllOptionsToDefaultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetAllOptionsToDefaultToolStripMenuItem.Click
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "Off")
+        debugON.Checked = False
+        debugOFF.Checked = True
+        stripDebug.Text = "Debug Mode: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "Off")
+        devON.Checked = False
+        devOFF.Checked = True
+        stripDev.Text = "Dev Mode: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "Off")
+        hscON.Checked = False
+        hscOFF.Checked = True
+        stripHSC.Text = "HSC Support: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "Off")
+        xmON.Checked = False
+        xmOFF.Checked = True
+        stripXM.Text = "XM Support: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "Off")
+        triplebufferON.Checked = False
+        triplebufferOFF.Checked = True
+        stripTripleBuffer.Text = "Triple Buffer: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "Off")
+        vsyncON.Checked = False
+        vsyncOFF.Checked = True
+        stripVsync.Text = "Vsync Wait: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Full Screen", "Off")
+        fullScreenON.Checked = False
+        fullscreenOFF.Checked = True
+        stripWindow.Text = "Window Mode: Windowed  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "Off")
+        stretchON.Checked = False
+        stretchOFF.Checked = True
+        stripStretch.Text = "Screen Stretch: Off  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "Off")
+        paletteWARM.Checked = True
+        paletteCOOL.Checked = False
+        paletteHOT.Checked = False
+        stripPalette.Text = "Palette: Warm  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        videoBasic.Checked = True
+        videoCRT.Checked = False
+        videoCRTDeluxe.Checked = False
+        videoSuperEagle.Checked = False
+        videoHLSL.Checked = False
+        videoHQ2x.Checked = False
+        videoHQ4x.Checked = False
+        videoCompatibility.Checked = False
+        stripVideo.Text = "Video Output: Basic  "
+
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option NTSC", "On")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option PAL", "Off")
+        NTSCToolStripMenuItem.Checked = True
+        PALToolStripMenuItem.Checked = False
+        stripTVType.Text = "TV Type: NTSC  "
+
+        'Check and Load Edit Menu Registry Saves
+        'NTSC or PAL
+        Call NTSCToolStripMenuItem_Click(Me, e)
+
+        'Video Output
+        Call videoBasic_Click(Me, e)
+
+        'Palette Option
+        Call paletteWARM_Click(Me, e)
+
+        'Screen Stretch
+        Call stretchOFF_Click(Me, e)
+
+        'Full Screen
+        Call fullscreenOFF_Click(Me, e)
+
+        'Vsync Wait
+        Call vsyncOFF_Click(Me, e)
+
+        'Triple Buffer
+        Call triplebufferOFF_Click(Me, e)
+
+        'XM Support 
+        Call xmOFF_Click(Me, e)
+
+        'HSC Support
+        Call hscOFF_Click(Me, e)
+
+        'Developer Mode
+        Call OffToolStripMenuItem_Click(Me, e)
+
+        'Debug Mode
+        Call debugOFF_Click(Me, e)
+
+        MsgBox("All Edit Menu Options set to Default")
     End Sub
 End Class
