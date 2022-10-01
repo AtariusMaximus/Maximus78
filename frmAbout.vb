@@ -31,7 +31,26 @@
         My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", "")
         My.Computer.Registry.CurrentUser.SetValue("Maximus78 Display Mode", "")
         My.Computer.Registry.CurrentUser.SetValue("Maximus78 StatusBar", "")
-
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Full Screen", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "")
+        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ4x", "")
     End Sub
 
     Private Sub btnFirstTime_Click(sender As Object, e As EventArgs) Handles btnFirstTime.Click

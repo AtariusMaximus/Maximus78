@@ -145,30 +145,30 @@ Partial Class frmSetup
         '
         Me.txtBoxArtPath.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtBoxArtPath.Font = New System.Drawing.Font("Trebuchet MS", 11.25!)
-        Me.txtBoxArtPath.Location = New System.Drawing.Point(233, 46)
+        Me.txtBoxArtPath.Location = New System.Drawing.Point(281, 46)
         Me.txtBoxArtPath.Multiline = True
         Me.txtBoxArtPath.Name = "txtBoxArtPath"
-        Me.txtBoxArtPath.Size = New System.Drawing.Size(683, 26)
+        Me.txtBoxArtPath.Size = New System.Drawing.Size(635, 26)
         Me.txtBoxArtPath.TabIndex = 7
         '
         'txtManualsPath
         '
         Me.txtManualsPath.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtManualsPath.Font = New System.Drawing.Font("Trebuchet MS", 11.25!)
-        Me.txtManualsPath.Location = New System.Drawing.Point(233, 71)
+        Me.txtManualsPath.Location = New System.Drawing.Point(281, 71)
         Me.txtManualsPath.Multiline = True
         Me.txtManualsPath.Name = "txtManualsPath"
-        Me.txtManualsPath.Size = New System.Drawing.Size(683, 26)
+        Me.txtManualsPath.Size = New System.Drawing.Size(635, 26)
         Me.txtManualsPath.TabIndex = 8
         '
         'txtA7800path
         '
         Me.txtA7800path.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtA7800path.Font = New System.Drawing.Font("Trebuchet MS", 11.25!)
-        Me.txtA7800path.Location = New System.Drawing.Point(233, 21)
+        Me.txtA7800path.Location = New System.Drawing.Point(281, 21)
         Me.txtA7800path.Multiline = True
         Me.txtA7800path.Name = "txtA7800path"
-        Me.txtA7800path.Size = New System.Drawing.Size(683, 26)
+        Me.txtA7800path.Size = New System.Drawing.Size(635, 26)
         Me.txtA7800path.TabIndex = 9
         '
         'frmContinue
@@ -489,7 +489,7 @@ Partial Class frmSetup
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(25, 20)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(209, 77)
+        Me.PictureBox4.Size = New System.Drawing.Size(256, 77)
         Me.PictureBox4.TabIndex = 34
         Me.PictureBox4.TabStop = False
         '
