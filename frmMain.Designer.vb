@@ -51,6 +51,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -77,6 +78,8 @@ Partial Class frmMain
         Me.lstProtos = New System.Windows.Forms.ListBox()
         Me.tabUtilities = New System.Windows.Forms.TabPage()
         Me.lstUtilities = New System.Windows.Forms.ListBox()
+        Me.tabFavorites = New System.Windows.Forms.TabPage()
+        Me.lstFavorites = New System.Windows.Forms.ListBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtNTSCRetailPath = New System.Windows.Forms.TextBox()
         Me.btnSaveROMPaths = New System.Windows.Forms.Button()
@@ -110,6 +113,9 @@ Partial Class frmMain
         Me.mnuLoadGame = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartSelectedGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.munAddFavorite = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuRemoveFavorite = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
@@ -207,6 +213,8 @@ Partial Class frmMain
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabBoxArt = New System.Windows.Forms.TabPage()
         Me.tabDirectoryPaths = New System.Windows.Forms.TabPage()
+        Me.contextNTSC = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.contextNTSCRetail = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControlRoms.SuspendLayout()
         Me.tabNTSC.SuspendLayout()
         Me.tabPAL.SuspendLayout()
@@ -215,6 +223,7 @@ Partial Class frmMain
         Me.tabDemos.SuspendLayout()
         Me.tabProtos.SuspendLayout()
         Me.tabUtilities.SuspendLayout()
+        Me.tabFavorites.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -226,6 +235,7 @@ Partial Class frmMain
         Me.TabControl1.SuspendLayout()
         Me.tabBoxArt.SuspendLayout()
         Me.tabDirectoryPaths.SuspendLayout()
+        Me.contextNTSC.SuspendLayout()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -338,10 +348,12 @@ Partial Class frmMain
         Me.TabControlRoms.Controls.Add(Me.tabDemos)
         Me.TabControlRoms.Controls.Add(Me.tabProtos)
         Me.TabControlRoms.Controls.Add(Me.tabUtilities)
+        Me.TabControlRoms.Controls.Add(Me.tabFavorites)
         Me.TabControlRoms.Location = New System.Drawing.Point(12, 24)
+        Me.TabControlRoms.MaximumSize = New System.Drawing.Size(427, 632)
         Me.TabControlRoms.Name = "TabControlRoms"
         Me.TabControlRoms.SelectedIndex = 0
-        Me.TabControlRoms.Size = New System.Drawing.Size(441, 663)
+        Me.TabControlRoms.Size = New System.Drawing.Size(427, 632)
         Me.TabControlRoms.TabIndex = 54
         '
         'tabNTSC
@@ -350,7 +362,7 @@ Partial Class frmMain
         Me.tabNTSC.Location = New System.Drawing.Point(4, 22)
         Me.tabNTSC.Name = "tabNTSC"
         Me.tabNTSC.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabNTSC.Size = New System.Drawing.Size(433, 637)
+        Me.tabNTSC.Size = New System.Drawing.Size(419, 606)
         Me.tabNTSC.TabIndex = 0
         Me.tabNTSC.Text = "NTSC Retail"
         Me.tabNTSC.UseVisualStyleBackColor = True
@@ -374,7 +386,7 @@ Partial Class frmMain
         Me.tabPAL.Location = New System.Drawing.Point(4, 22)
         Me.tabPAL.Name = "tabPAL"
         Me.tabPAL.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPAL.Size = New System.Drawing.Size(433, 637)
+        Me.tabPAL.Size = New System.Drawing.Size(419, 606)
         Me.tabPAL.TabIndex = 1
         Me.tabPAL.Text = "PAL Retail"
         Me.tabPAL.UseVisualStyleBackColor = True
@@ -397,7 +409,7 @@ Partial Class frmMain
         Me.tabHomebrews.Controls.Add(Me.lstHomebrews)
         Me.tabHomebrews.Location = New System.Drawing.Point(4, 22)
         Me.tabHomebrews.Name = "tabHomebrews"
-        Me.tabHomebrews.Size = New System.Drawing.Size(433, 637)
+        Me.tabHomebrews.Size = New System.Drawing.Size(419, 606)
         Me.tabHomebrews.TabIndex = 2
         Me.tabHomebrews.Text = "Homebew"
         Me.tabHomebrews.UseVisualStyleBackColor = True
@@ -420,7 +432,7 @@ Partial Class frmMain
         Me.tabHacks.Controls.Add(Me.lstHacks)
         Me.tabHacks.Location = New System.Drawing.Point(4, 22)
         Me.tabHacks.Name = "tabHacks"
-        Me.tabHacks.Size = New System.Drawing.Size(433, 637)
+        Me.tabHacks.Size = New System.Drawing.Size(419, 606)
         Me.tabHacks.TabIndex = 3
         Me.tabHacks.Text = "Hacks"
         Me.tabHacks.UseVisualStyleBackColor = True
@@ -443,7 +455,7 @@ Partial Class frmMain
         Me.tabDemos.Controls.Add(Me.lstDemos)
         Me.tabDemos.Location = New System.Drawing.Point(4, 22)
         Me.tabDemos.Name = "tabDemos"
-        Me.tabDemos.Size = New System.Drawing.Size(433, 637)
+        Me.tabDemos.Size = New System.Drawing.Size(419, 606)
         Me.tabDemos.TabIndex = 4
         Me.tabDemos.Text = "Demos"
         Me.tabDemos.UseVisualStyleBackColor = True
@@ -456,6 +468,7 @@ Partial Class frmMain
         Me.lstDemos.FormattingEnabled = True
         Me.lstDemos.ItemHeight = 14
         Me.lstDemos.Location = New System.Drawing.Point(3, 2)
+        Me.lstDemos.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstDemos.Name = "lstDemos"
         Me.lstDemos.Size = New System.Drawing.Size(427, 632)
         Me.lstDemos.TabIndex = 32
@@ -465,7 +478,7 @@ Partial Class frmMain
         Me.tabProtos.Controls.Add(Me.lstProtos)
         Me.tabProtos.Location = New System.Drawing.Point(4, 22)
         Me.tabProtos.Name = "tabProtos"
-        Me.tabProtos.Size = New System.Drawing.Size(433, 637)
+        Me.tabProtos.Size = New System.Drawing.Size(419, 606)
         Me.tabProtos.TabIndex = 5
         Me.tabProtos.Text = "Protos"
         Me.tabProtos.UseVisualStyleBackColor = True
@@ -488,7 +501,7 @@ Partial Class frmMain
         Me.tabUtilities.Controls.Add(Me.lstUtilities)
         Me.tabUtilities.Location = New System.Drawing.Point(4, 22)
         Me.tabUtilities.Name = "tabUtilities"
-        Me.tabUtilities.Size = New System.Drawing.Size(433, 637)
+        Me.tabUtilities.Size = New System.Drawing.Size(419, 606)
         Me.tabUtilities.TabIndex = 6
         Me.tabUtilities.Text = "Utilities"
         Me.tabUtilities.UseVisualStyleBackColor = True
@@ -505,6 +518,29 @@ Partial Class frmMain
         Me.lstUtilities.Name = "lstUtilities"
         Me.lstUtilities.Size = New System.Drawing.Size(427, 632)
         Me.lstUtilities.TabIndex = 33
+        '
+        'tabFavorites
+        '
+        Me.tabFavorites.Controls.Add(Me.lstFavorites)
+        Me.tabFavorites.Location = New System.Drawing.Point(4, 22)
+        Me.tabFavorites.Name = "tabFavorites"
+        Me.tabFavorites.Size = New System.Drawing.Size(419, 606)
+        Me.tabFavorites.TabIndex = 7
+        Me.tabFavorites.Text = "Favorites"
+        Me.tabFavorites.UseVisualStyleBackColor = True
+        '
+        'lstFavorites
+        '
+        Me.lstFavorites.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lstFavorites.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstFavorites.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lstFavorites.FormattingEnabled = True
+        Me.lstFavorites.ItemHeight = 14
+        Me.lstFavorites.Location = New System.Drawing.Point(3, 2)
+        Me.lstFavorites.MaximumSize = New System.Drawing.Size(427, 632)
+        Me.lstFavorites.Name = "lstFavorites"
+        Me.lstFavorites.Size = New System.Drawing.Size(427, 632)
+        Me.lstFavorites.TabIndex = 34
         '
         'GroupBox2
         '
@@ -839,7 +875,7 @@ Partial Class frmMain
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLoadGame, Me.StartSelectedGameToolStripMenuItem, Me.ToolStripSeparator7, Me.ExitToolStripMenuItem1})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLoadGame, Me.StartSelectedGameToolStripMenuItem, Me.ToolStripSeparator7, Me.munAddFavorite, Me.mnuRemoveFavorite, Me.ToolStripSeparator2, Me.ExitToolStripMenuItem1})
         Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 21)
@@ -849,26 +885,45 @@ Partial Class frmMain
         '
         Me.mnuLoadGame.Name = "mnuLoadGame"
         Me.mnuLoadGame.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
-        Me.mnuLoadGame.Size = New System.Drawing.Size(233, 22)
+        Me.mnuLoadGame.Size = New System.Drawing.Size(244, 22)
         Me.mnuLoadGame.Text = "Launch External ROM"
         '
         'StartSelectedGameToolStripMenuItem
         '
         Me.StartSelectedGameToolStripMenuItem.Name = "StartSelectedGameToolStripMenuItem"
         Me.StartSelectedGameToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(233, 22)
+        Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(244, 22)
         Me.StartSelectedGameToolStripMenuItem.Text = "Launch ROM from List"
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(230, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(241, 6)
+        '
+        'munAddFavorite
+        '
+        Me.munAddFavorite.Name = "munAddFavorite"
+        Me.munAddFavorite.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.munAddFavorite.Size = New System.Drawing.Size(244, 22)
+        Me.munAddFavorite.Text = "Add to Favorites"
+        '
+        'mnuRemoveFavorite
+        '
+        Me.mnuRemoveFavorite.Name = "mnuRemoveFavorite"
+        Me.mnuRemoveFavorite.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.mnuRemoveFavorite.Size = New System.Drawing.Size(244, 22)
+        Me.mnuRemoveFavorite.Text = "Remove from Favorites"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(241, 6)
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(233, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(244, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'EditToolStripMenuItem
@@ -1391,7 +1446,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 20)
-        Me.ToolStripStatusLabel1.Text = " v0.99.22b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.23b  "
         '
         'stripPalette
         '
@@ -1586,6 +1641,19 @@ Partial Class frmMain
         Me.tabDirectoryPaths.Text = "Directory Paths"
         Me.tabDirectoryPaths.UseVisualStyleBackColor = True
         '
+        'contextNTSC
+        '
+        Me.contextNTSC.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.contextNTSCRetail})
+        Me.contextNTSC.Name = "contextNTSC"
+        Me.contextNTSC.Size = New System.Drawing.Size(161, 26)
+        Me.contextNTSC.Text = "Add to Favorites"
+        '
+        'contextNTSCRetail
+        '
+        Me.contextNTSCRetail.Name = "contextNTSCRetail"
+        Me.contextNTSCRetail.Size = New System.Drawing.Size(160, 22)
+        Me.contextNTSCRetail.Text = "Add to Favorites"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1611,6 +1679,7 @@ Partial Class frmMain
         Me.tabDemos.ResumeLayout(False)
         Me.tabProtos.ResumeLayout(False)
         Me.tabUtilities.ResumeLayout(False)
+        Me.tabFavorites.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -1629,6 +1698,7 @@ Partial Class frmMain
         Me.tabBoxArt.PerformLayout()
         Me.tabDirectoryPaths.ResumeLayout(False)
         Me.tabDirectoryPaths.PerformLayout()
+        Me.contextNTSC.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1788,4 +1858,11 @@ Partial Class frmMain
     Friend WithEvents tabDirectoryPaths As TabPage
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ResetAllOptionsToDefaultToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents tabFavorites As TabPage
+    Friend WithEvents lstFavorites As ListBox
+    Friend WithEvents munAddFavorite As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents mnuRemoveFavorite As ToolStripMenuItem
+    Friend WithEvents contextNTSC As ContextMenuStrip
+    Friend WithEvents contextNTSCRetail As ToolStripMenuItem
 End Class

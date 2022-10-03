@@ -4,6 +4,10 @@ Imports System.Net
 Public Class frmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'My.Computer.Registry.CurrentUser.CreateSubKey("Software")
+        'My.Computer.Registry.CurrentUser.CreateSubKey("Software\Maximus78")
+
+
         'Get Current Registry Settings for Directory Paths
         txtRomPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 ROM Path")
         txtA7800path.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 A7800 Path")
@@ -405,6 +409,10 @@ SkiptoHere:
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         Catch ex As Exception
         End Try
+
+        'Load Favorites into list
+        lstFavorites.Items.Clear()
+        lstFavorites.Items.AddRange(IO.File.ReadAllLines(strA7800Folder + "\Maximus78_Favorites.sav"))
 
         txtPath.Text = ""
 
@@ -1297,6 +1305,10 @@ SkiptoHere:
         If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
             strFileName = lstUtilities.Text + ".a78"
         End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            Call lstFavorites_DoubleClick(Me, e)
+            GoTo RunIsDone
+        End If
 
         Dim ProcessProperties2 As New ProcessStartInfo
         ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
@@ -1305,6 +1317,9 @@ SkiptoHere:
         ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+RunIsDone:
+
     End Sub
 
     Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs)
@@ -1898,6 +1913,9 @@ SkiptoHere:
             End If
         End Using
 
+        If strFileName = "" Then
+            GoTo SkipLaunching
+        End If
 
         Dim ProcessProperties2 As New ProcessStartInfo
         ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
@@ -1911,6 +1929,8 @@ SkiptoHere:
 
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
         'MsgBox(txtPath.Text)
+SkipLaunching:
+
     End Sub
 
     Private Sub FileToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles FileToolStripMenuItem.Click
@@ -11999,4 +12019,291 @@ SkiptoHere:
 
         MsgBox("All Edit Menu Options set to Default")
     End Sub
+
+    Private Sub lstFavorites_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstFavorites.SelectedIndexChanged
+
+        'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
+        pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
+        'strFolder = txtProtosPath.Text
+
+        'Update A7800 Command Path for any ROM Subdirectory
+
+        'NTSC Retail
+        If System.IO.File.Exists(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+        'PAL Retail
+        If System.IO.File.Exists(txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+        'Homebrews
+        If System.IO.File.Exists(txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+        'Hacks
+        If System.IO.File.Exists(txtHacksPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+        'Demos
+        If System.IO.File.Exists(txtDemosPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+        'Protos
+        If System.IO.File.Exists(txtProtosPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+        'Utilities
+        If System.IO.File.Exists(txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        End If
+
+        'Update Game Info HTML Editor for any ROM
+        txtHTMLEditor.Clear()
+        strFileName = "\" + lstFavorites.Text + ".htm"
+        txtEditorFile.Text = strManualsFolder + strFileName
+
+        'Update Game HTML Information Browser for any ROM
+        If System.IO.File.Exists(strManualsFolder & strFileName) Then
+            WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+        End If
+
+        'Update Game Info HTML Display Box (not the editor), checking all possible ROM subfolders
+        Try
+            If System.IO.File.Exists(strManualsFolder & "\" + lstFavorites.Text + ".htm") Then
+                strFileName = "\" + lstFavorites.Text + ".htm"
+                txtEditorFile.Text = strManualsFolder + strFileName
+                WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
+            End If
+        Catch ex As Exception
+        End Try
+        Try
+            For Each s As String In System.IO.File.ReadAllLines(txtEditorFile.Text)
+                txtHTMLEditor.AppendText(s + vbNewLine)
+            Next
+        Catch ex As Exception
+        End Try
+
+        'Check all directories for the Box Art File
+        'Original version of Maximus78 looks for alternate box art names.
+
+        'NTSC Retail
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstFavorites.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstFavorites.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstFavorites.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+        'PAL Retail
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstPALRetail.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+        'Homebrews
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstHomebrews.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+        'Hacks
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstHacks.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+        'Protos
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstProtos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstProtos.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstProtos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+        'Demos
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstDemos.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+        'Utilities
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstUtilities.Text + ".jpg")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
+    End Sub
+
+    Private Sub lstFavorites_DoubleClick(sender As Object, e As EventArgs) Handles lstFavorites.DoubleClick
+
+        'Run Selected Game, checking all ROM Paths
+
+        If System.IO.File.Exists(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+        If System.IO.File.Exists(txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+        If System.IO.File.Exists(txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+        If System.IO.File.Exists(txtHacksPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+        If System.IO.File.Exists(txtDemosPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+        If System.IO.File.Exists(txtProtosPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+        If System.IO.File.Exists(txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78") Then
+            Dim ProcessProperties2 As New ProcessStartInfo
+            ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+            ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+            ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+            Dim myProcess As Process = Process.Start(ProcessProperties2)
+            txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+            'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+        End If
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub munAddFavorite_Click(sender As Object, e As EventArgs) Handles munAddFavorite.Click
+        Try
+            If TabControlRoms.SelectedTab Is tabNTSC Then
+                lstFavorites.Items.Add(lstNTSCRetail.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Try
+            If TabControlRoms.SelectedTab Is tabPAL Then
+                lstFavorites.Items.Add(lstPALRetail.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Try
+            If TabControlRoms.SelectedTab Is tabHomebrews Then
+                lstFavorites.Items.Add(lstHomebrews.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Try
+            If TabControlRoms.SelectedTab Is tabHacks Then
+                lstFavorites.Items.Add(lstHacks.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Try
+            If TabControlRoms.SelectedTab Is tabDemos Then
+                lstFavorites.Items.Add(lstDemos.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Try
+            If TabControlRoms.SelectedTab Is tabProtos Then
+                lstFavorites.Items.Add(lstProtos.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        Try
+            If TabControlRoms.SelectedTab Is tabUtilities Then
+                lstFavorites.Items.Add(lstUtilities.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        'Write Listbox to a file to load later
+
+        IO.File.WriteAllLines(strA7800Folder + "\Maximus78_Favorites.sav", lstFavorites.Items.Cast(Of String).ToArray())
+    End Sub
+
+    Private Sub mnuRemoveFavorite_Click(sender As Object, e As EventArgs) Handles mnuRemoveFavorite.Click
+        Try
+            If TabControlRoms.SelectedTab Is tabFavorites Then
+                lstFavorites.Items.Remove(lstFavorites.SelectedItem)
+            End If
+        Catch ex As Exception
+        End Try
+
+        IO.File.WriteAllLines(strA7800Folder + "\Maximus78_Favorites.sav", lstFavorites.Items.Cast(Of String).ToArray())
+
+        lstFavorites.Items.Clear()
+        lstFavorites.Items.AddRange(IO.File.ReadAllLines(strA7800Folder + "\Maximus78_Favorites.sav"))
+
+    End Sub
+
+    'Private Sub lstFavorites_RightClick(sender As Object, e As EventArgs) Handles lstFavorites.Click
+    'contextNTSC.Show()
+    'MsgBox("Content Activated.", MsgBoxStyle.Information, "Success!")
+    'End Sub
+
+    'Private Sub AddToFavoritesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles contextNTSCRetail.Click
+    'Call munAddFavorite_Click(Me, e)
+    'End Sub
 End Class
