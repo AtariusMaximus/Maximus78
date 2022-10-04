@@ -424,6 +424,14 @@ SkiptoHere:
 
     Private Sub lstNTSCRetail_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstNTSCRetail.SelectedIndexChanged
 
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
+
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
@@ -439,13 +447,57 @@ SkiptoHere:
             WebBrowser1.Navigate(New Uri(strManualsFolder + strFileName))
             'MsgBox(strManualsFolder + strFileName)
         End If
+
         'Display custom user-created box art jpg if it exists
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstNTSCRetail.Text + ".jpg")
         End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".jpg") Then
+        If System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".png") Then
+            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstNTSCRetail.Text + ".png")
+        End If
+        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".jpg") And Not System.IO.File.Exists(strBoxArtFolder & "\" + lstNTSCRetail.Text + ".png") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
+
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstNTSCRetail.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstNTSCRetail.Text + ".screenshot.6.jpg")
+        End If
+
 
         'Load HTML into editor window
         Try
@@ -1901,7 +1953,7 @@ RunIsDone:
                                               .CheckPathExists = True,
                                               .Filter = "All files (*.*)|*.*",
                                               .FilterIndex = 1,
-                                              .InitialDirectory = "C:\",
+                                              .InitialDirectory = strA7800Folder,
                                               .SupportMultiDottedExtensions = True,
                                               .Title = "Select Atari 7800 Game ROM",
                                               .ValidateNames = True}
@@ -1909,11 +1961,12 @@ RunIsDone:
                 Dim strLaunchGame As String = dlg.FileName
                 strFolder = System.IO.Path.GetDirectoryName(dlg.FileName.ToString)
                 strFileName = System.IO.Path.GetFileName(strLaunchGame)
-                'MsgBox(strFileName)
+
             End If
         End Using
 
-        If strFileName = "" Then
+        'MsgBox(strFileName)
+        If strFileName = ".a78" Then
             GoTo SkipLaunching
         End If
 
@@ -2473,6 +2526,45 @@ SkipLaunching:
         End If
         If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstPALRetail.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstPALRetail.Text + ".screenshot.6.jpg")
         End If
 
         'Update Game Info HTML Editor
@@ -3072,6 +3164,46 @@ SkipLaunching:
         If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
+
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHomebrews.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHomebrews.Text + ".screenshot.6.jpg")
+        End If
+
 
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
@@ -4664,6 +4796,45 @@ SkipLaunching:
         End If
         If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstHacks.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstHacks.Text + ".screenshot.6.jpg")
         End If
 
         'Update Game Info HTML Editor
@@ -7367,6 +7538,45 @@ SkipLaunching:
         End If
         If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        End If
+
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstDemos.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstDemos.Text + ".screenshot.6.jpg")
         End If
 
         'Update Game Info HTML Editor
@@ -10647,6 +10857,45 @@ SkipLaunching:
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
 
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstProtos.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstProtos.Text + ".screenshot.6.jpg")
+        End If
+
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
         strFileName = "\" + lstProtos.Text + ".htm"
@@ -10913,6 +11162,46 @@ SkipLaunching:
         If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
+
+        'Display screenshots if they exist
+
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.1.png") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.1.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.2.png") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.2.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.3.png") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.3.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.4.png") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.4.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.5.png") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.5.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.6.png") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.6.png")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.1.jpg") Then
+            Screenshot1.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.1.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.2.jpg") Then
+            Screenshot2.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.2.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.3.jpg") Then
+            Screenshot3.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.3.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.4.jpg") Then
+            Screenshot4.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.4.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.5.jpg") Then
+            Screenshot5.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.5.jpg")
+        End If
+        If System.IO.File.Exists(strManualsFolder & "\" + lstUtilities.Text + ".screenshot.6.jpg") Then
+            Screenshot6.BackgroundImage = Image.FromFile(strManualsFolder + "\" + lstUtilities.Text + ".screenshot.6.jpg")
+        End If
+
 
         'Update Game Info HTML Editor
         txtHTMLEditor.Clear()
@@ -12091,50 +12380,29 @@ SkipLaunching:
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstFavorites.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstFavorites.Text + ".jpg")
         End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstFavorites.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        End If
         'PAL Retail
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstPALRetail.Text + ".jpg")
-        End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstPALRetail.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
         'Homebrews
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstHomebrews.Text + ".jpg")
         End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHomebrews.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        End If
         'Hacks
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstHacks.Text + ".jpg")
-        End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstHacks.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
         'Protos
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstProtos.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstProtos.Text + ".jpg")
         End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstProtos.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        End If
         'Demos
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstDemos.Text + ".jpg")
         End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstDemos.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        End If
         'Utilities
         If System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\" + lstUtilities.Text + ".jpg")
-        End If
-        If Not System.IO.File.Exists(strBoxArtFolder & "\" + lstUtilities.Text + ".jpg") Then
-            pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         End If
 
     End Sub
@@ -12298,12 +12566,432 @@ SkipLaunching:
 
     End Sub
 
-    'Private Sub lstFavorites_RightClick(sender As Object, e As EventArgs) Handles lstFavorites.Click
-    'contextNTSC.Show()
-    'MsgBox("Content Activated.", MsgBoxStyle.Information, "Success!")
-    'End Sub
+    Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles Screenshot1.Click
 
-    'Private Sub AddToFavoritesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles contextNTSCRetail.Click
-    'Call munAddFavorite_Click(Me, e)
-    'End Sub
+        If Screenshot1.BackgroundImage IsNot Nothing Then
+            Screenshot1.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot1.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                              .AutoUpgradeEnabled = True,
+                                              .CheckFileExists = False,
+                                              .CheckPathExists = True,
+                                              .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                              .FilterIndex = 1,
+                                              .InitialDirectory = strManualsFolder,
+                                              .SupportMultiDottedExtensions = True,
+                                              .Title = "Select Screenshot 1",
+                                              .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    Screenshot1.BackgroundImage = Image.FromFile(dlg.FileName)
+                    Screenshot1.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+
+    End Sub
+
+    Private Sub Screenshot2_Click(sender As Object, e As EventArgs) Handles Screenshot2.Click
+
+        If Screenshot2.BackgroundImage IsNot Nothing Then
+            Screenshot2.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot2.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                      .AutoUpgradeEnabled = True,
+                                      .CheckFileExists = False,
+                                      .CheckPathExists = True,
+                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .FilterIndex = 1,
+                                      .InitialDirectory = strManualsFolder,
+                                      .SupportMultiDottedExtensions = True,
+                                      .Title = "Select Screenshot 2",
+                                      .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    Screenshot2.BackgroundImage = Image.FromFile(dlg.FileName)
+                    Screenshot2.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub Screenshot3_Click(sender As Object, e As EventArgs) Handles Screenshot3.Click
+
+        If Screenshot3.BackgroundImage IsNot Nothing Then
+            Screenshot3.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot3.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                      .AutoUpgradeEnabled = True,
+                                      .CheckFileExists = False,
+                                      .CheckPathExists = True,
+                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .FilterIndex = 1,
+                                      .InitialDirectory = strManualsFolder,
+                                      .SupportMultiDottedExtensions = True,
+                                      .Title = "Select Screenshot 3",
+                                      .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    Screenshot3.BackgroundImage = Image.FromFile(dlg.FileName)
+                    Screenshot3.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub Screenshot4_Click(sender As Object, e As EventArgs) Handles Screenshot4.Click
+
+        If Screenshot4.BackgroundImage IsNot Nothing Then
+            Screenshot4.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot4.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                      .AutoUpgradeEnabled = True,
+                                      .CheckFileExists = False,
+                                      .CheckPathExists = True,
+                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .FilterIndex = 1,
+                                      .InitialDirectory = strManualsFolder,
+                                      .SupportMultiDottedExtensions = True,
+                                      .Title = "Select Screenshot 4",
+                                      .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    Screenshot4.BackgroundImage = Image.FromFile(dlg.FileName)
+                    Screenshot4.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub Screenshot5_Click(sender As Object, e As EventArgs) Handles Screenshot5.Click
+
+        If Screenshot5.BackgroundImage IsNot Nothing Then
+            Screenshot5.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot5.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                      .AutoUpgradeEnabled = True,
+                                      .CheckFileExists = False,
+                                      .CheckPathExists = True,
+                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .FilterIndex = 1,
+                                      .InitialDirectory = strManualsFolder,
+                                      .SupportMultiDottedExtensions = True,
+                                      .Title = "Select Screenshot 5",
+                                      .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    Screenshot5.BackgroundImage = Image.FromFile(dlg.FileName)
+                    Screenshot5.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub Screenshot6_Click(sender As Object, e As EventArgs) Handles Screenshot6.Click
+
+        If Screenshot6.BackgroundImage IsNot Nothing Then
+            Screenshot6.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot6.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                      .AutoUpgradeEnabled = True,
+                                      .CheckFileExists = False,
+                                      .CheckPathExists = True,
+                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .FilterIndex = 1,
+                                      .InitialDirectory = strManualsFolder,
+                                      .SupportMultiDottedExtensions = True,
+                                      .Title = "Select Screenshot 6",
+                                      .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    Screenshot6.BackgroundImage = Image.FromFile(dlg.FileName)
+                    Screenshot6.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub contextNTSC_Click(sender As Object, e As EventArgs) Handles contextNTSC.Click
+        Call munAddFavorite_Click(Me, e)
+    End Sub
+
+    Private Sub contextFavorites_Click(sender As Object, e As EventArgs) Handles contextFavorites.Click
+        Call mnuRemoveFavorite_Click(Me, e)
+    End Sub
+
+    Private Sub SavePicture()
+        'If Not TextBox1.Text.ToLower.EndsWith(".jpg") Then TextBox1.Text = TextBox1.Text & ".jpg"
+        'Dim picPathName As String = System.IO.Path.Combine(My.Application.Info.DirectoryPath, TextBox1.Text)
+        Screenshot1.Image.Save(strManualsFolder, Imaging.ImageFormat.Png)
+    End Sub
+
+    Private Sub btnUnload1_Click(sender As Object, e As EventArgs) Handles btnUnload1.Click
+        If Screenshot1.BackgroundImage IsNot Nothing Then
+            Screenshot1.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot1.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+    End Sub
+
+    Private Sub btnLoad1_Click(sender As Object, e As EventArgs) Handles btnLoad1.Click
+        Call PictureBox1_DoubleClick(Me, e)
+    End Sub
+
+    Private Sub btnSave1_Click(sender As Object, e As EventArgs) Handles btnSave1.Click
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+        If Screenshot1.BackgroundImage IsNot Nothing Then
+            Screenshot1.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.1.png", Imaging.ImageFormat.Png)
+        End If
+    End Sub
+
+    Private Sub btnLoad2_Click(sender As Object, e As EventArgs) Handles btnLoad2.Click
+        Call Screenshot2_Click(Me, e)
+    End Sub
+
+    Private Sub btnUnload2_Click(sender As Object, e As EventArgs) Handles btnUnload2.Click
+        If Screenshot2.BackgroundImage IsNot Nothing Then
+            Screenshot2.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot2.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+    End Sub
+
+    Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+        If Screenshot2.BackgroundImage IsNot Nothing Then
+            Screenshot2.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.2.png", Imaging.ImageFormat.Png)
+        End If
+    End Sub
+
+    Private Sub btnLoad3_Click(sender As Object, e As EventArgs) Handles btnLoad3.Click
+        Call Screenshot3_Click(Me, e)
+    End Sub
+
+    Private Sub btnUnload3_Click(sender As Object, e As EventArgs) Handles btnUnload3.Click
+        If Screenshot3.BackgroundImage IsNot Nothing Then
+            Screenshot3.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot3.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+    End Sub
+
+    Private Sub btnSave3_Click(sender As Object, e As EventArgs) Handles btnSave3.Click
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+        If Screenshot3.BackgroundImage IsNot Nothing Then
+            Screenshot3.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.3.png", Imaging.ImageFormat.Png)
+        End If
+    End Sub
+
+    Private Sub btnLoad4_Click(sender As Object, e As EventArgs) Handles btnLoad4.Click
+        Call Screenshot4_Click(Me, e)
+    End Sub
+
+    Private Sub btnUnload4_Click(sender As Object, e As EventArgs) Handles btnUnload4.Click
+        If Screenshot4.BackgroundImage IsNot Nothing Then
+            Screenshot4.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot4.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+    End Sub
+
+    Private Sub btnSave4_Click(sender As Object, e As EventArgs) Handles btnSave4.Click
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+        If Screenshot4.BackgroundImage IsNot Nothing Then
+            Screenshot4.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.4.png", Imaging.ImageFormat.Png)
+        End If
+    End Sub
+
+    Private Sub btnLoad5_Click(sender As Object, e As EventArgs) Handles btnLoad5.Click
+        Call Screenshot5_Click(Me, e)
+    End Sub
+
+    Private Sub btnUnload5_Click(sender As Object, e As EventArgs) Handles btnUnload5.Click
+        If Screenshot5.BackgroundImage IsNot Nothing Then
+            Screenshot5.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot5.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+    End Sub
+
+    Private Sub btnSave5_Click(sender As Object, e As EventArgs) Handles btnSave5.Click
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+        If Screenshot5.BackgroundImage IsNot Nothing Then
+            Screenshot5.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.5.png", Imaging.ImageFormat.Png)
+        End If
+    End Sub
+
+    Private Sub btnLoad6_Click(sender As Object, e As EventArgs) Handles btnLoad6.Click
+        Call Screenshot6_Click(Me, e)
+    End Sub
+
+    Private Sub btnUnload6_Click(sender As Object, e As EventArgs) Handles btnUnload6.Click
+        If Screenshot6.BackgroundImage IsNot Nothing Then
+            Screenshot6.BackgroundImage.Dispose()  'Unload from Memory
+            Screenshot6.BackgroundImage = Nothing  'Set to Blank/Nothing
+        End If
+    End Sub
+
+    Private Sub btnSave6_Click(sender As Object, e As EventArgs) Handles btnSave6.Click
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+        If Screenshot6.BackgroundImage IsNot Nothing Then
+            Screenshot6.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.6.png", Imaging.ImageFormat.Png)
+        End If
+    End Sub
 End Class

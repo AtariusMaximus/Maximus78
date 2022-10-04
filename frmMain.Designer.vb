@@ -66,6 +66,8 @@ Partial Class frmMain
         Me.TabControlRoms = New System.Windows.Forms.TabControl()
         Me.tabNTSC = New System.Windows.Forms.TabPage()
         Me.lstNTSCRetail = New System.Windows.Forms.ListBox()
+        Me.contextNTSC = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.contextNTSCRetail = New System.Windows.Forms.ToolStripMenuItem()
         Me.tabPAL = New System.Windows.Forms.TabPage()
         Me.lstPALRetail = New System.Windows.Forms.ListBox()
         Me.tabHomebrews = New System.Windows.Forms.TabPage()
@@ -80,6 +82,8 @@ Partial Class frmMain
         Me.lstUtilities = New System.Windows.Forms.ListBox()
         Me.tabFavorites = New System.Windows.Forms.TabPage()
         Me.lstFavorites = New System.Windows.Forms.ListBox()
+        Me.contextFavorites = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.RemoveFromFavoritesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtNTSCRetailPath = New System.Windows.Forms.TextBox()
         Me.btnSaveROMPaths = New System.Windows.Forms.Button()
@@ -209,14 +213,38 @@ Partial Class frmMain
         Me.btnLoad = New System.Windows.Forms.Button()
         Me.btnSaveHTML = New System.Windows.Forms.Button()
         Me.txtHTMLEditor = New System.Windows.Forms.TextBox()
+        Me.tabScreenshots = New System.Windows.Forms.TabPage()
+        Me.btnSave6 = New System.Windows.Forms.Button()
+        Me.btnLoad6 = New System.Windows.Forms.Button()
+        Me.btnUnload6 = New System.Windows.Forms.Button()
+        Me.btnSave5 = New System.Windows.Forms.Button()
+        Me.btnLoad5 = New System.Windows.Forms.Button()
+        Me.btnUnload5 = New System.Windows.Forms.Button()
+        Me.btnSave4 = New System.Windows.Forms.Button()
+        Me.btnLoad4 = New System.Windows.Forms.Button()
+        Me.btnUnload4 = New System.Windows.Forms.Button()
+        Me.btnSave3 = New System.Windows.Forms.Button()
+        Me.btnLoad3 = New System.Windows.Forms.Button()
+        Me.btnUnload3 = New System.Windows.Forms.Button()
+        Me.btnSave2 = New System.Windows.Forms.Button()
+        Me.btnLoad2 = New System.Windows.Forms.Button()
+        Me.btnUnload2 = New System.Windows.Forms.Button()
+        Me.btnSave1 = New System.Windows.Forms.Button()
+        Me.btnLoad1 = New System.Windows.Forms.Button()
+        Me.btnUnload1 = New System.Windows.Forms.Button()
+        Me.Screenshot6 = New System.Windows.Forms.PictureBox()
+        Me.Screenshot5 = New System.Windows.Forms.PictureBox()
+        Me.Screenshot4 = New System.Windows.Forms.PictureBox()
+        Me.Screenshot3 = New System.Windows.Forms.PictureBox()
+        Me.Screenshot2 = New System.Windows.Forms.PictureBox()
+        Me.Screenshot1 = New System.Windows.Forms.PictureBox()
         Me.pctBoxArt = New System.Windows.Forms.PictureBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabBoxArt = New System.Windows.Forms.TabPage()
         Me.tabDirectoryPaths = New System.Windows.Forms.TabPage()
-        Me.contextNTSC = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.contextNTSCRetail = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControlRoms.SuspendLayout()
         Me.tabNTSC.SuspendLayout()
+        Me.contextNTSC.SuspendLayout()
         Me.tabPAL.SuspendLayout()
         Me.tabHomebrews.SuspendLayout()
         Me.tabHacks.SuspendLayout()
@@ -224,6 +252,7 @@ Partial Class frmMain
         Me.tabProtos.SuspendLayout()
         Me.tabUtilities.SuspendLayout()
         Me.tabFavorites.SuspendLayout()
+        Me.contextFavorites.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -231,11 +260,17 @@ Partial Class frmMain
         Me.TabEditor.SuspendLayout()
         Me.tabManuals.SuspendLayout()
         Me.tabHTMLEditor.SuspendLayout()
+        Me.tabScreenshots.SuspendLayout()
+        CType(Me.Screenshot6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Screenshot5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Screenshot4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Screenshot3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Screenshot2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Screenshot1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pctBoxArt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.tabBoxArt.SuspendLayout()
         Me.tabDirectoryPaths.SuspendLayout()
-        Me.contextNTSC.SuspendLayout()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -350,10 +385,9 @@ Partial Class frmMain
         Me.TabControlRoms.Controls.Add(Me.tabUtilities)
         Me.TabControlRoms.Controls.Add(Me.tabFavorites)
         Me.TabControlRoms.Location = New System.Drawing.Point(12, 24)
-        Me.TabControlRoms.MaximumSize = New System.Drawing.Size(427, 632)
         Me.TabControlRoms.Name = "TabControlRoms"
         Me.TabControlRoms.SelectedIndex = 0
-        Me.TabControlRoms.Size = New System.Drawing.Size(427, 632)
+        Me.TabControlRoms.Size = New System.Drawing.Size(442, 660)
         Me.TabControlRoms.TabIndex = 54
         '
         'tabNTSC
@@ -362,7 +396,7 @@ Partial Class frmMain
         Me.tabNTSC.Location = New System.Drawing.Point(4, 22)
         Me.tabNTSC.Name = "tabNTSC"
         Me.tabNTSC.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabNTSC.Size = New System.Drawing.Size(419, 606)
+        Me.tabNTSC.Size = New System.Drawing.Size(434, 634)
         Me.tabNTSC.TabIndex = 0
         Me.tabNTSC.Text = "NTSC Retail"
         Me.tabNTSC.UseVisualStyleBackColor = True
@@ -371,14 +405,28 @@ Partial Class frmMain
         '
         Me.lstNTSCRetail.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstNTSCRetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstNTSCRetail.ContextMenuStrip = Me.contextNTSC
         Me.lstNTSCRetail.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstNTSCRetail.FormattingEnabled = True
         Me.lstNTSCRetail.ItemHeight = 14
         Me.lstNTSCRetail.Location = New System.Drawing.Point(3, 3)
         Me.lstNTSCRetail.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstNTSCRetail.Name = "lstNTSCRetail"
-        Me.lstNTSCRetail.Size = New System.Drawing.Size(427, 632)
+        Me.lstNTSCRetail.Size = New System.Drawing.Size(427, 618)
         Me.lstNTSCRetail.TabIndex = 29
+        '
+        'contextNTSC
+        '
+        Me.contextNTSC.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.contextNTSCRetail})
+        Me.contextNTSC.Name = "contextNTSC"
+        Me.contextNTSC.Size = New System.Drawing.Size(161, 26)
+        Me.contextNTSC.Text = "Add to Favorites"
+        '
+        'contextNTSCRetail
+        '
+        Me.contextNTSCRetail.Name = "contextNTSCRetail"
+        Me.contextNTSCRetail.Size = New System.Drawing.Size(160, 22)
+        Me.contextNTSCRetail.Text = "Add to Favorites"
         '
         'tabPAL
         '
@@ -386,7 +434,7 @@ Partial Class frmMain
         Me.tabPAL.Location = New System.Drawing.Point(4, 22)
         Me.tabPAL.Name = "tabPAL"
         Me.tabPAL.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabPAL.Size = New System.Drawing.Size(419, 606)
+        Me.tabPAL.Size = New System.Drawing.Size(434, 634)
         Me.tabPAL.TabIndex = 1
         Me.tabPAL.Text = "PAL Retail"
         Me.tabPAL.UseVisualStyleBackColor = True
@@ -395,13 +443,14 @@ Partial Class frmMain
         '
         Me.lstPALRetail.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstPALRetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstPALRetail.ContextMenuStrip = Me.contextNTSC
         Me.lstPALRetail.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstPALRetail.FormattingEnabled = True
         Me.lstPALRetail.ItemHeight = 14
         Me.lstPALRetail.Location = New System.Drawing.Point(3, 2)
         Me.lstPALRetail.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstPALRetail.Name = "lstPALRetail"
-        Me.lstPALRetail.Size = New System.Drawing.Size(427, 632)
+        Me.lstPALRetail.Size = New System.Drawing.Size(427, 618)
         Me.lstPALRetail.TabIndex = 30
         '
         'tabHomebrews
@@ -409,22 +458,23 @@ Partial Class frmMain
         Me.tabHomebrews.Controls.Add(Me.lstHomebrews)
         Me.tabHomebrews.Location = New System.Drawing.Point(4, 22)
         Me.tabHomebrews.Name = "tabHomebrews"
-        Me.tabHomebrews.Size = New System.Drawing.Size(419, 606)
+        Me.tabHomebrews.Size = New System.Drawing.Size(434, 634)
         Me.tabHomebrews.TabIndex = 2
-        Me.tabHomebrews.Text = "Homebew"
+        Me.tabHomebrews.Text = "Homebrews"
         Me.tabHomebrews.UseVisualStyleBackColor = True
         '
         'lstHomebrews
         '
         Me.lstHomebrews.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstHomebrews.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstHomebrews.ContextMenuStrip = Me.contextNTSC
         Me.lstHomebrews.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstHomebrews.FormattingEnabled = True
         Me.lstHomebrews.ItemHeight = 14
         Me.lstHomebrews.Location = New System.Drawing.Point(3, 2)
         Me.lstHomebrews.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstHomebrews.Name = "lstHomebrews"
-        Me.lstHomebrews.Size = New System.Drawing.Size(427, 632)
+        Me.lstHomebrews.Size = New System.Drawing.Size(427, 618)
         Me.lstHomebrews.TabIndex = 31
         '
         'tabHacks
@@ -432,7 +482,7 @@ Partial Class frmMain
         Me.tabHacks.Controls.Add(Me.lstHacks)
         Me.tabHacks.Location = New System.Drawing.Point(4, 22)
         Me.tabHacks.Name = "tabHacks"
-        Me.tabHacks.Size = New System.Drawing.Size(419, 606)
+        Me.tabHacks.Size = New System.Drawing.Size(434, 634)
         Me.tabHacks.TabIndex = 3
         Me.tabHacks.Text = "Hacks"
         Me.tabHacks.UseVisualStyleBackColor = True
@@ -441,13 +491,14 @@ Partial Class frmMain
         '
         Me.lstHacks.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstHacks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstHacks.ContextMenuStrip = Me.contextNTSC
         Me.lstHacks.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstHacks.FormattingEnabled = True
         Me.lstHacks.ItemHeight = 14
         Me.lstHacks.Location = New System.Drawing.Point(3, 2)
         Me.lstHacks.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstHacks.Name = "lstHacks"
-        Me.lstHacks.Size = New System.Drawing.Size(427, 632)
+        Me.lstHacks.Size = New System.Drawing.Size(427, 618)
         Me.lstHacks.TabIndex = 32
         '
         'tabDemos
@@ -455,7 +506,7 @@ Partial Class frmMain
         Me.tabDemos.Controls.Add(Me.lstDemos)
         Me.tabDemos.Location = New System.Drawing.Point(4, 22)
         Me.tabDemos.Name = "tabDemos"
-        Me.tabDemos.Size = New System.Drawing.Size(419, 606)
+        Me.tabDemos.Size = New System.Drawing.Size(434, 634)
         Me.tabDemos.TabIndex = 4
         Me.tabDemos.Text = "Demos"
         Me.tabDemos.UseVisualStyleBackColor = True
@@ -464,13 +515,14 @@ Partial Class frmMain
         '
         Me.lstDemos.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstDemos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstDemos.ContextMenuStrip = Me.contextNTSC
         Me.lstDemos.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstDemos.FormattingEnabled = True
         Me.lstDemos.ItemHeight = 14
         Me.lstDemos.Location = New System.Drawing.Point(3, 2)
         Me.lstDemos.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstDemos.Name = "lstDemos"
-        Me.lstDemos.Size = New System.Drawing.Size(427, 632)
+        Me.lstDemos.Size = New System.Drawing.Size(427, 618)
         Me.lstDemos.TabIndex = 32
         '
         'tabProtos
@@ -478,7 +530,7 @@ Partial Class frmMain
         Me.tabProtos.Controls.Add(Me.lstProtos)
         Me.tabProtos.Location = New System.Drawing.Point(4, 22)
         Me.tabProtos.Name = "tabProtos"
-        Me.tabProtos.Size = New System.Drawing.Size(419, 606)
+        Me.tabProtos.Size = New System.Drawing.Size(434, 634)
         Me.tabProtos.TabIndex = 5
         Me.tabProtos.Text = "Protos"
         Me.tabProtos.UseVisualStyleBackColor = True
@@ -487,13 +539,14 @@ Partial Class frmMain
         '
         Me.lstProtos.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstProtos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstProtos.ContextMenuStrip = Me.contextNTSC
         Me.lstProtos.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstProtos.FormattingEnabled = True
         Me.lstProtos.ItemHeight = 14
         Me.lstProtos.Location = New System.Drawing.Point(3, 2)
         Me.lstProtos.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstProtos.Name = "lstProtos"
-        Me.lstProtos.Size = New System.Drawing.Size(427, 632)
+        Me.lstProtos.Size = New System.Drawing.Size(427, 618)
         Me.lstProtos.TabIndex = 33
         '
         'tabUtilities
@@ -501,7 +554,7 @@ Partial Class frmMain
         Me.tabUtilities.Controls.Add(Me.lstUtilities)
         Me.tabUtilities.Location = New System.Drawing.Point(4, 22)
         Me.tabUtilities.Name = "tabUtilities"
-        Me.tabUtilities.Size = New System.Drawing.Size(419, 606)
+        Me.tabUtilities.Size = New System.Drawing.Size(434, 634)
         Me.tabUtilities.TabIndex = 6
         Me.tabUtilities.Text = "Utilities"
         Me.tabUtilities.UseVisualStyleBackColor = True
@@ -510,13 +563,14 @@ Partial Class frmMain
         '
         Me.lstUtilities.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstUtilities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstUtilities.ContextMenuStrip = Me.contextNTSC
         Me.lstUtilities.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstUtilities.FormattingEnabled = True
         Me.lstUtilities.ItemHeight = 14
         Me.lstUtilities.Location = New System.Drawing.Point(3, 2)
         Me.lstUtilities.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstUtilities.Name = "lstUtilities"
-        Me.lstUtilities.Size = New System.Drawing.Size(427, 632)
+        Me.lstUtilities.Size = New System.Drawing.Size(427, 618)
         Me.lstUtilities.TabIndex = 33
         '
         'tabFavorites
@@ -524,7 +578,7 @@ Partial Class frmMain
         Me.tabFavorites.Controls.Add(Me.lstFavorites)
         Me.tabFavorites.Location = New System.Drawing.Point(4, 22)
         Me.tabFavorites.Name = "tabFavorites"
-        Me.tabFavorites.Size = New System.Drawing.Size(419, 606)
+        Me.tabFavorites.Size = New System.Drawing.Size(434, 634)
         Me.tabFavorites.TabIndex = 7
         Me.tabFavorites.Text = "Favorites"
         Me.tabFavorites.UseVisualStyleBackColor = True
@@ -533,14 +587,27 @@ Partial Class frmMain
         '
         Me.lstFavorites.BackColor = System.Drawing.Color.WhiteSmoke
         Me.lstFavorites.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lstFavorites.ContextMenuStrip = Me.contextFavorites
         Me.lstFavorites.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lstFavorites.FormattingEnabled = True
         Me.lstFavorites.ItemHeight = 14
         Me.lstFavorites.Location = New System.Drawing.Point(3, 2)
         Me.lstFavorites.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstFavorites.Name = "lstFavorites"
-        Me.lstFavorites.Size = New System.Drawing.Size(427, 632)
+        Me.lstFavorites.Size = New System.Drawing.Size(427, 618)
         Me.lstFavorites.TabIndex = 34
+        '
+        'contextFavorites
+        '
+        Me.contextFavorites.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemoveFromFavoritesToolStripMenuItem})
+        Me.contextFavorites.Name = "contextFavorites"
+        Me.contextFavorites.Size = New System.Drawing.Size(197, 26)
+        '
+        'RemoveFromFavoritesToolStripMenuItem
+        '
+        Me.RemoveFromFavoritesToolStripMenuItem.Name = "RemoveFromFavoritesToolStripMenuItem"
+        Me.RemoveFromFavoritesToolStripMenuItem.Size = New System.Drawing.Size(196, 22)
+        Me.RemoveFromFavoritesToolStripMenuItem.Text = "Remove From Favorites"
         '
         'GroupBox2
         '
@@ -1446,7 +1513,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 20)
-        Me.ToolStripStatusLabel1.Text = " v0.99.23b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.24b  "
         '
         'stripPalette
         '
@@ -1529,11 +1596,12 @@ Partial Class frmMain
         '
         Me.TabEditor.Controls.Add(Me.tabManuals)
         Me.TabEditor.Controls.Add(Me.tabHTMLEditor)
+        Me.TabEditor.Controls.Add(Me.tabScreenshots)
         Me.TabEditor.Location = New System.Drawing.Point(846, 24)
         Me.TabEditor.Multiline = True
         Me.TabEditor.Name = "TabEditor"
         Me.TabEditor.SelectedIndex = 0
-        Me.TabEditor.Size = New System.Drawing.Size(512, 660)
+        Me.TabEditor.Size = New System.Drawing.Size(500, 660)
         Me.TabEditor.TabIndex = 58
         '
         'tabManuals
@@ -1558,7 +1626,7 @@ Partial Class frmMain
         Me.tabHTMLEditor.Padding = New System.Windows.Forms.Padding(3)
         Me.tabHTMLEditor.Size = New System.Drawing.Size(504, 634)
         Me.tabHTMLEditor.TabIndex = 1
-        Me.tabHTMLEditor.Text = "Game Information HTML Editor      "
+        Me.tabHTMLEditor.Text = "Game Information HTML Editor"
         Me.tabHTMLEditor.UseVisualStyleBackColor = True
         '
         'txtEditorFile
@@ -1596,6 +1664,262 @@ Partial Class frmMain
         Me.txtHTMLEditor.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtHTMLEditor.Size = New System.Drawing.Size(498, 594)
         Me.txtHTMLEditor.TabIndex = 2
+        '
+        'tabScreenshots
+        '
+        Me.tabScreenshots.Controls.Add(Me.btnSave6)
+        Me.tabScreenshots.Controls.Add(Me.btnLoad6)
+        Me.tabScreenshots.Controls.Add(Me.btnUnload6)
+        Me.tabScreenshots.Controls.Add(Me.btnSave5)
+        Me.tabScreenshots.Controls.Add(Me.btnLoad5)
+        Me.tabScreenshots.Controls.Add(Me.btnUnload5)
+        Me.tabScreenshots.Controls.Add(Me.btnSave4)
+        Me.tabScreenshots.Controls.Add(Me.btnLoad4)
+        Me.tabScreenshots.Controls.Add(Me.btnUnload4)
+        Me.tabScreenshots.Controls.Add(Me.btnSave3)
+        Me.tabScreenshots.Controls.Add(Me.btnLoad3)
+        Me.tabScreenshots.Controls.Add(Me.btnUnload3)
+        Me.tabScreenshots.Controls.Add(Me.btnSave2)
+        Me.tabScreenshots.Controls.Add(Me.btnLoad2)
+        Me.tabScreenshots.Controls.Add(Me.btnUnload2)
+        Me.tabScreenshots.Controls.Add(Me.btnSave1)
+        Me.tabScreenshots.Controls.Add(Me.btnLoad1)
+        Me.tabScreenshots.Controls.Add(Me.btnUnload1)
+        Me.tabScreenshots.Controls.Add(Me.Screenshot6)
+        Me.tabScreenshots.Controls.Add(Me.Screenshot5)
+        Me.tabScreenshots.Controls.Add(Me.Screenshot4)
+        Me.tabScreenshots.Controls.Add(Me.Screenshot3)
+        Me.tabScreenshots.Controls.Add(Me.Screenshot2)
+        Me.tabScreenshots.Controls.Add(Me.Screenshot1)
+        Me.tabScreenshots.Location = New System.Drawing.Point(4, 22)
+        Me.tabScreenshots.Name = "tabScreenshots"
+        Me.tabScreenshots.Size = New System.Drawing.Size(492, 634)
+        Me.tabScreenshots.TabIndex = 2
+        Me.tabScreenshots.Text = "Screenshots"
+        Me.tabScreenshots.UseVisualStyleBackColor = True
+        '
+        'btnSave6
+        '
+        Me.btnSave6.Location = New System.Drawing.Point(413, 599)
+        Me.btnSave6.Name = "btnSave6"
+        Me.btnSave6.Size = New System.Drawing.Size(69, 23)
+        Me.btnSave6.TabIndex = 25
+        Me.btnSave6.Text = "Save"
+        Me.btnSave6.UseVisualStyleBackColor = True
+        '
+        'btnLoad6
+        '
+        Me.btnLoad6.Location = New System.Drawing.Point(258, 599)
+        Me.btnLoad6.Name = "btnLoad6"
+        Me.btnLoad6.Size = New System.Drawing.Size(72, 23)
+        Me.btnLoad6.TabIndex = 24
+        Me.btnLoad6.Text = "Load"
+        Me.btnLoad6.UseVisualStyleBackColor = True
+        '
+        'btnUnload6
+        '
+        Me.btnUnload6.Location = New System.Drawing.Point(336, 599)
+        Me.btnUnload6.Name = "btnUnload6"
+        Me.btnUnload6.Size = New System.Drawing.Size(69, 23)
+        Me.btnUnload6.TabIndex = 23
+        Me.btnUnload6.Text = "Unload"
+        Me.btnUnload6.UseVisualStyleBackColor = True
+        '
+        'btnSave5
+        '
+        Me.btnSave5.Location = New System.Drawing.Point(167, 600)
+        Me.btnSave5.Name = "btnSave5"
+        Me.btnSave5.Size = New System.Drawing.Size(69, 23)
+        Me.btnSave5.TabIndex = 22
+        Me.btnSave5.Text = "Save"
+        Me.btnSave5.UseVisualStyleBackColor = True
+        '
+        'btnLoad5
+        '
+        Me.btnLoad5.Location = New System.Drawing.Point(12, 600)
+        Me.btnLoad5.Name = "btnLoad5"
+        Me.btnLoad5.Size = New System.Drawing.Size(72, 23)
+        Me.btnLoad5.TabIndex = 21
+        Me.btnLoad5.Text = "Load"
+        Me.btnLoad5.UseVisualStyleBackColor = True
+        '
+        'btnUnload5
+        '
+        Me.btnUnload5.Location = New System.Drawing.Point(90, 600)
+        Me.btnUnload5.Name = "btnUnload5"
+        Me.btnUnload5.Size = New System.Drawing.Size(69, 23)
+        Me.btnUnload5.TabIndex = 20
+        Me.btnUnload5.Text = "Unload"
+        Me.btnUnload5.UseVisualStyleBackColor = True
+        '
+        'btnSave4
+        '
+        Me.btnSave4.Location = New System.Drawing.Point(413, 392)
+        Me.btnSave4.Name = "btnSave4"
+        Me.btnSave4.Size = New System.Drawing.Size(69, 23)
+        Me.btnSave4.TabIndex = 19
+        Me.btnSave4.Text = "Save"
+        Me.btnSave4.UseVisualStyleBackColor = True
+        '
+        'btnLoad4
+        '
+        Me.btnLoad4.Location = New System.Drawing.Point(258, 392)
+        Me.btnLoad4.Name = "btnLoad4"
+        Me.btnLoad4.Size = New System.Drawing.Size(72, 23)
+        Me.btnLoad4.TabIndex = 18
+        Me.btnLoad4.Text = "Load"
+        Me.btnLoad4.UseVisualStyleBackColor = True
+        '
+        'btnUnload4
+        '
+        Me.btnUnload4.Location = New System.Drawing.Point(336, 392)
+        Me.btnUnload4.Name = "btnUnload4"
+        Me.btnUnload4.Size = New System.Drawing.Size(69, 23)
+        Me.btnUnload4.TabIndex = 17
+        Me.btnUnload4.Text = "Unload"
+        Me.btnUnload4.UseVisualStyleBackColor = True
+        '
+        'btnSave3
+        '
+        Me.btnSave3.Location = New System.Drawing.Point(167, 393)
+        Me.btnSave3.Name = "btnSave3"
+        Me.btnSave3.Size = New System.Drawing.Size(69, 23)
+        Me.btnSave3.TabIndex = 16
+        Me.btnSave3.Text = "Save"
+        Me.btnSave3.UseVisualStyleBackColor = True
+        '
+        'btnLoad3
+        '
+        Me.btnLoad3.Location = New System.Drawing.Point(12, 393)
+        Me.btnLoad3.Name = "btnLoad3"
+        Me.btnLoad3.Size = New System.Drawing.Size(72, 23)
+        Me.btnLoad3.TabIndex = 15
+        Me.btnLoad3.Text = "Load"
+        Me.btnLoad3.UseVisualStyleBackColor = True
+        '
+        'btnUnload3
+        '
+        Me.btnUnload3.Location = New System.Drawing.Point(90, 393)
+        Me.btnUnload3.Name = "btnUnload3"
+        Me.btnUnload3.Size = New System.Drawing.Size(69, 23)
+        Me.btnUnload3.TabIndex = 14
+        Me.btnUnload3.Text = "Unload"
+        Me.btnUnload3.UseVisualStyleBackColor = True
+        '
+        'btnSave2
+        '
+        Me.btnSave2.Location = New System.Drawing.Point(413, 186)
+        Me.btnSave2.Name = "btnSave2"
+        Me.btnSave2.Size = New System.Drawing.Size(69, 23)
+        Me.btnSave2.TabIndex = 13
+        Me.btnSave2.Text = "Save"
+        Me.btnSave2.UseVisualStyleBackColor = True
+        '
+        'btnLoad2
+        '
+        Me.btnLoad2.Location = New System.Drawing.Point(258, 186)
+        Me.btnLoad2.Name = "btnLoad2"
+        Me.btnLoad2.Size = New System.Drawing.Size(72, 23)
+        Me.btnLoad2.TabIndex = 12
+        Me.btnLoad2.Text = "Load"
+        Me.btnLoad2.UseVisualStyleBackColor = True
+        '
+        'btnUnload2
+        '
+        Me.btnUnload2.Location = New System.Drawing.Point(336, 186)
+        Me.btnUnload2.Name = "btnUnload2"
+        Me.btnUnload2.Size = New System.Drawing.Size(69, 23)
+        Me.btnUnload2.TabIndex = 11
+        Me.btnUnload2.Text = "Unload"
+        Me.btnUnload2.UseVisualStyleBackColor = True
+        '
+        'btnSave1
+        '
+        Me.btnSave1.Location = New System.Drawing.Point(167, 187)
+        Me.btnSave1.Name = "btnSave1"
+        Me.btnSave1.Size = New System.Drawing.Size(69, 23)
+        Me.btnSave1.TabIndex = 10
+        Me.btnSave1.Text = "Save"
+        Me.btnSave1.UseVisualStyleBackColor = True
+        '
+        'btnLoad1
+        '
+        Me.btnLoad1.Location = New System.Drawing.Point(12, 187)
+        Me.btnLoad1.Name = "btnLoad1"
+        Me.btnLoad1.Size = New System.Drawing.Size(72, 23)
+        Me.btnLoad1.TabIndex = 9
+        Me.btnLoad1.Text = "Load"
+        Me.btnLoad1.UseVisualStyleBackColor = True
+        '
+        'btnUnload1
+        '
+        Me.btnUnload1.Location = New System.Drawing.Point(90, 187)
+        Me.btnUnload1.Name = "btnUnload1"
+        Me.btnUnload1.Size = New System.Drawing.Size(69, 23)
+        Me.btnUnload1.TabIndex = 8
+        Me.btnUnload1.Text = "Unload"
+        Me.btnUnload1.UseVisualStyleBackColor = True
+        '
+        'Screenshot6
+        '
+        Me.Screenshot6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Screenshot6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Screenshot6.Location = New System.Drawing.Point(258, 429)
+        Me.Screenshot6.Name = "Screenshot6"
+        Me.Screenshot6.Size = New System.Drawing.Size(224, 168)
+        Me.Screenshot6.TabIndex = 5
+        Me.Screenshot6.TabStop = False
+        '
+        'Screenshot5
+        '
+        Me.Screenshot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Screenshot5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Screenshot5.Location = New System.Drawing.Point(12, 429)
+        Me.Screenshot5.Name = "Screenshot5"
+        Me.Screenshot5.Size = New System.Drawing.Size(224, 168)
+        Me.Screenshot5.TabIndex = 4
+        Me.Screenshot5.TabStop = False
+        '
+        'Screenshot4
+        '
+        Me.Screenshot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Screenshot4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Screenshot4.Location = New System.Drawing.Point(258, 222)
+        Me.Screenshot4.Name = "Screenshot4"
+        Me.Screenshot4.Size = New System.Drawing.Size(224, 168)
+        Me.Screenshot4.TabIndex = 3
+        Me.Screenshot4.TabStop = False
+        '
+        'Screenshot3
+        '
+        Me.Screenshot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Screenshot3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Screenshot3.Location = New System.Drawing.Point(12, 222)
+        Me.Screenshot3.Name = "Screenshot3"
+        Me.Screenshot3.Size = New System.Drawing.Size(224, 168)
+        Me.Screenshot3.TabIndex = 2
+        Me.Screenshot3.TabStop = False
+        '
+        'Screenshot2
+        '
+        Me.Screenshot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Screenshot2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Screenshot2.Location = New System.Drawing.Point(258, 16)
+        Me.Screenshot2.Name = "Screenshot2"
+        Me.Screenshot2.Size = New System.Drawing.Size(224, 168)
+        Me.Screenshot2.TabIndex = 1
+        Me.Screenshot2.TabStop = False
+        '
+        'Screenshot1
+        '
+        Me.Screenshot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Screenshot1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Screenshot1.InitialImage = Nothing
+        Me.Screenshot1.Location = New System.Drawing.Point(12, 16)
+        Me.Screenshot1.Name = "Screenshot1"
+        Me.Screenshot1.Size = New System.Drawing.Size(224, 168)
+        Me.Screenshot1.TabIndex = 0
+        Me.Screenshot1.TabStop = False
         '
         'pctBoxArt
         '
@@ -1641,19 +1965,6 @@ Partial Class frmMain
         Me.tabDirectoryPaths.Text = "Directory Paths"
         Me.tabDirectoryPaths.UseVisualStyleBackColor = True
         '
-        'contextNTSC
-        '
-        Me.contextNTSC.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.contextNTSCRetail})
-        Me.contextNTSC.Name = "contextNTSC"
-        Me.contextNTSC.Size = New System.Drawing.Size(161, 26)
-        Me.contextNTSC.Text = "Add to Favorites"
-        '
-        'contextNTSCRetail
-        '
-        Me.contextNTSCRetail.Name = "contextNTSCRetail"
-        Me.contextNTSCRetail.Size = New System.Drawing.Size(160, 22)
-        Me.contextNTSCRetail.Text = "Add to Favorites"
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1673,6 +1984,7 @@ Partial Class frmMain
         Me.Text = "Maximus78"
         Me.TabControlRoms.ResumeLayout(False)
         Me.tabNTSC.ResumeLayout(False)
+        Me.contextNTSC.ResumeLayout(False)
         Me.tabPAL.ResumeLayout(False)
         Me.tabHomebrews.ResumeLayout(False)
         Me.tabHacks.ResumeLayout(False)
@@ -1680,6 +1992,7 @@ Partial Class frmMain
         Me.tabProtos.ResumeLayout(False)
         Me.tabUtilities.ResumeLayout(False)
         Me.tabFavorites.ResumeLayout(False)
+        Me.contextFavorites.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -1692,13 +2005,19 @@ Partial Class frmMain
         Me.tabManuals.ResumeLayout(False)
         Me.tabHTMLEditor.ResumeLayout(False)
         Me.tabHTMLEditor.PerformLayout()
+        Me.tabScreenshots.ResumeLayout(False)
+        CType(Me.Screenshot6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Screenshot5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Screenshot4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Screenshot3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Screenshot2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Screenshot1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pctBoxArt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.tabBoxArt.ResumeLayout(False)
         Me.tabBoxArt.PerformLayout()
         Me.tabDirectoryPaths.ResumeLayout(False)
         Me.tabDirectoryPaths.PerformLayout()
-        Me.contextNTSC.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1865,4 +2184,31 @@ Partial Class frmMain
     Friend WithEvents mnuRemoveFavorite As ToolStripMenuItem
     Friend WithEvents contextNTSC As ContextMenuStrip
     Friend WithEvents contextNTSCRetail As ToolStripMenuItem
+    Friend WithEvents tabScreenshots As TabPage
+    Friend WithEvents Screenshot2 As PictureBox
+    Friend WithEvents Screenshot1 As PictureBox
+    Friend WithEvents Screenshot6 As PictureBox
+    Friend WithEvents Screenshot5 As PictureBox
+    Friend WithEvents Screenshot4 As PictureBox
+    Friend WithEvents Screenshot3 As PictureBox
+    Friend WithEvents contextFavorites As ContextMenuStrip
+    Friend WithEvents RemoveFromFavoritesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnUnload1 As Button
+    Friend WithEvents btnLoad1 As Button
+    Friend WithEvents btnSave1 As Button
+    Friend WithEvents btnSave2 As Button
+    Friend WithEvents btnLoad2 As Button
+    Friend WithEvents btnUnload2 As Button
+    Friend WithEvents btnSave6 As Button
+    Friend WithEvents btnLoad6 As Button
+    Friend WithEvents btnUnload6 As Button
+    Friend WithEvents btnSave5 As Button
+    Friend WithEvents btnLoad5 As Button
+    Friend WithEvents btnUnload5 As Button
+    Friend WithEvents btnSave4 As Button
+    Friend WithEvents btnLoad4 As Button
+    Friend WithEvents btnUnload4 As Button
+    Friend WithEvents btnSave3 As Button
+    Friend WithEvents btnLoad3 As Button
+    Friend WithEvents btnUnload3 As Button
 End Class
