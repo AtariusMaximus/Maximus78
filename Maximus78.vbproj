@@ -29,7 +29,7 @@
     <ProductName>Maximus78</ProductName>
     <PublisherName>Stephen Engelhardt</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>25</ApplicationRevision>
+    <ApplicationRevision>27</ApplicationRevision>
     <ApplicationVersion>0.99.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -117,6 +117,24 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmButtons.Designer.vb">
+      <DependentUpon>frmButtons.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmButtons.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMappings.Designer.vb">
+      <DependentUpon>frmMappings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMappings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDifficulty.Designer.vb">
+      <DependentUpon>frmDifficulty.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDifficulty.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSetup.Designer.vb">
       <DependentUpon>frmSetup.vb</DependentUpon>
     </Compile>
@@ -159,6 +177,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmButtons.resx">
+      <DependentUpon>frmButtons.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMappings.resx">
+      <DependentUpon>frmMappings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDifficulty.resx">
+      <DependentUpon>frmDifficulty.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSetup.resx">
       <DependentUpon>frmSetup.vb</DependentUpon>
     </EmbeddedResource>
