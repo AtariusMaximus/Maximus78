@@ -122,9 +122,6 @@ appear automatically.</p>
 box art archive may be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br />
 <br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_boxart.zip">Maximus78_BoxArt.zip</a><br>
-<br>This file is included in the Maximus78 GitHub repository 
-<a href="https://github.com/AtariusMaximus/Maximus78">https://github.com/AtariusMaximus/Maximus78</a>
-<br />
 </p>
 <hr />
 <p class="auto-style1">
