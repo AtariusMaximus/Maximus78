@@ -1,18 +1,137 @@
 ﻿Imports System.CodeDom
+Imports System.IO
 Imports System.Net
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Window
+Imports Microsoft.Win32
 
 Public Class frmMain
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'My.Computer.Registry.CurrentUser.CreateSubKey("Software")
-        'My.Computer.Registry.CurrentUser.CreateSubKey("Software\Maximus78")
+        'Test
+        'My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78", "TestValue", "Steve")
+        'MsgBox(My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78", "TestValue", RegistryValueKind.String))
+
+
+        'Create Registry folder for Maximus78 (HKCU\Software\Maxmimus78)
+        My.Computer.Registry.CurrentUser.CreateSubKey("Software")
+        My.Computer.Registry.CurrentUser.CreateSubKey("Software\Maximus78")
+
+        'Load High Score Table
+        txtScore1.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score1", RegistryValueKind.String)
+        txtScore2.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score2", RegistryValueKind.String)
+        txtScore3.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score3", RegistryValueKind.String)
+        txtScore4.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score4", RegistryValueKind.String)
+        txtScore5.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score5", RegistryValueKind.String)
+        txtScore6.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score6", RegistryValueKind.String)
+        txtScore7.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score7", RegistryValueKind.String)
+        txtScore8.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score8", RegistryValueKind.String)
+        txtScore9.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score9", RegistryValueKind.String)
+        txtScore10.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score10", RegistryValueKind.String)
+        txtScore11.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score11", RegistryValueKind.String)
+        txtScore12.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score12", RegistryValueKind.String)
+        txtScore13.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score13", RegistryValueKind.String)
+        txtScore14.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score14", RegistryValueKind.String)
+        txtScore15.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score15", RegistryValueKind.String)
+        txtScore16.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score16", RegistryValueKind.String)
+        txtScore17.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score17", RegistryValueKind.String)
+        txtScore18.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score18", RegistryValueKind.String)
+        txtScore19.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score19", RegistryValueKind.String)
+        txtScore20.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score20", RegistryValueKind.String)
+        txtScore21.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score21", RegistryValueKind.String)
+        txtScore22.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score22", RegistryValueKind.String)
+        txtScore23.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score23", RegistryValueKind.String)
+        txtScore24.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score24", RegistryValueKind.String)
+        txtScore25.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score25", RegistryValueKind.String)
+        txtScore26.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score26", RegistryValueKind.String)
+        txtScore27.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score27", RegistryValueKind.String)
+        txtPlayer1.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player1", RegistryValueKind.String)
+        txtPlayer2.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player2", RegistryValueKind.String)
+        txtPlayer3.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player3", RegistryValueKind.String)
+        txtPlayer4.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player4", RegistryValueKind.String)
+        txtPlayer5.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player5", RegistryValueKind.String)
+        txtPlayer6.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player6", RegistryValueKind.String)
+        txtPlayer7.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player7", RegistryValueKind.String)
+        txtPlayer8.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player8", RegistryValueKind.String)
+        txtPlayer9.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player9", RegistryValueKind.String)
+        txtPlayer10.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player10", RegistryValueKind.String)
+        txtPlayer11.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player11", RegistryValueKind.String)
+        txtPlayer12.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player12", RegistryValueKind.String)
+        txtPlayer13.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player13", RegistryValueKind.String)
+        txtPlayer14.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player14", RegistryValueKind.String)
+        txtPlayer15.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player15", RegistryValueKind.String)
+        txtPlayer16.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player16", RegistryValueKind.String)
+        txtPlayer17.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player17", RegistryValueKind.String)
+        txtPlayer18.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player18", RegistryValueKind.String)
+        txtPlayer19.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player19", RegistryValueKind.String)
+        txtPlayer20.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player20", RegistryValueKind.String)
+        txtPlayer21.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player21", RegistryValueKind.String)
+        txtPlayer22.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player22", RegistryValueKind.String)
+        txtPlayer23.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player23", RegistryValueKind.String)
+        txtPlayer24.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player24", RegistryValueKind.String)
+        txtPlayer25.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player25", RegistryValueKind.String)
+        txtPlayer26.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player26", RegistryValueKind.String)
+        txtPlayer27.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player27", RegistryValueKind.String)
+        txtDate1.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date1", RegistryValueKind.String)
+        txtDate2.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date2", RegistryValueKind.String)
+        txtDate3.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date3", RegistryValueKind.String)
+        txtDate4.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date4", RegistryValueKind.String)
+        txtDate5.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date5", RegistryValueKind.String)
+        txtDate6.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date6", RegistryValueKind.String)
+        txtDate7.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date7", RegistryValueKind.String)
+        txtDate8.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date8", RegistryValueKind.String)
+        txtDate9.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date9", RegistryValueKind.String)
+        txtDate10.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date10", RegistryValueKind.String)
+        txtDate11.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date11", RegistryValueKind.String)
+        txtDate12.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date12", RegistryValueKind.String)
+        txtDate13.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date13", RegistryValueKind.String)
+        txtDate14.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date14", RegistryValueKind.String)
+        txtDate15.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date15", RegistryValueKind.String)
+        txtDate16.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date16", RegistryValueKind.String)
+        txtDate17.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date17", RegistryValueKind.String)
+        txtDate18.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date18", RegistryValueKind.String)
+        txtDate19.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date19", RegistryValueKind.String)
+        txtDate20.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date20", RegistryValueKind.String)
+        txtDate21.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date21", RegistryValueKind.String)
+        txtDate22.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date22", RegistryValueKind.String)
+        txtDate23.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date23", RegistryValueKind.String)
+        txtDate24.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date24", RegistryValueKind.String)
+        txtDate25.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date25", RegistryValueKind.String)
+        txtDate26.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date26", RegistryValueKind.String)
+        txtDate27.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date27", RegistryValueKind.String)
+        txtInitials1.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials1", RegistryValueKind.String)
+        txtInitials2.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials2", RegistryValueKind.String)
+        txtInitials3.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials3", RegistryValueKind.String)
+        txtInitials4.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials4", RegistryValueKind.String)
+        txtInitials5.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials5", RegistryValueKind.String)
+        txtInitials6.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials6", RegistryValueKind.String)
+        txtInitials7.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials7", RegistryValueKind.String)
+        txtInitials8.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials8", RegistryValueKind.String)
+        txtInitials9.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials9", RegistryValueKind.String)
+        txtInitials10.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials10", RegistryValueKind.String)
+        txtInitials11.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials11", RegistryValueKind.String)
+        txtInitials12.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials12", RegistryValueKind.String)
+        txtInitials13.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials13", RegistryValueKind.String)
+        txtInitials14.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials14", RegistryValueKind.String)
+        txtInitials15.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials15", RegistryValueKind.String)
+        txtInitials16.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials16", RegistryValueKind.String)
+        txtInitials17.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials17", RegistryValueKind.String)
+        txtInitials18.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials18", RegistryValueKind.String)
+        txtInitials19.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials19", RegistryValueKind.String)
+        txtInitials20.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials20", RegistryValueKind.String)
+        txtInitials21.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials21", RegistryValueKind.String)
+        txtInitials22.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials22", RegistryValueKind.String)
+        txtInitials23.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials23", RegistryValueKind.String)
+        txtInitials24.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials24", RegistryValueKind.String)
+        txtInitials25.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials25", RegistryValueKind.String)
+        txtInitials26.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials26", RegistryValueKind.String)
+        txtInitials27.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials27", RegistryValueKind.String)
 
 
         'Get Current Registry Settings for Directory Paths
-        txtRomPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 ROM Path")
-        txtA7800path.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 A7800 Path")
-        txtBoxArtPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Art Path")
-        txtManualsPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Manuals Path")
+        txtRomPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", RegistryValueKind.String)
+        txtA7800path.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", RegistryValueKind.String)
+        txtBoxArtPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", RegistryValueKind.String)
+        txtManualsPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", RegistryValueKind.String)
 
         'Set them all to C:\ if the entries don't exist or are blank
         'Afterwards, if they are all C:\ we will launch the first time setup dialog
@@ -20,56 +139,57 @@ Public Class frmMain
         'If Box Then Art Path isn't set yet, just set it to C:\
         If txtBoxArtPath.Text = "" Then
             strBoxArtFolder = "C:\"
-            My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Art Path", "C:\")
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", "C:\", RegistryValueKind.String)
         End If
 
         'If manuals Path isn't set yet, just set it to C:\
         If txtManualsPath.Text = "" Then
             strManualsFolder = "C:\"
             txtManualsPath.Text = "C:\"
-            My.Computer.Registry.CurrentUser.SetValue("Maximus78 Manuals Path", "C:\")
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", "C:\", RegistryValueKind.String)
         End If
 
         'If A7800 Path isn't set yet, just set it to C:\
         If txtA7800path.Text = "" Then
             strA7800Folder = "C:\"
             txtA7800path.Text = "C:\"
-            My.Computer.Registry.CurrentUser.SetValue("Maximus78 A7800 Path", "C:\")
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", "C:\", RegistryValueKind.String)
         End If
 
         'If ROM Path isn't set yet, just set it to C:\
         If txtRomPath.Text = "" Then
             strFolder = "C:\"
             txtRomPath.Text = "C:\"
-            My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", "C:\")
+            My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", "C:\", RegistryValueKind.String)
         End If
 
-        'If all Paths are set to C:\, show setup dialog
-        'If txtBoxArtPath.Text = "C:\" And txtA7800path.Text = "C:\" And txtBoxArtPath.Text = "C:\" And txtManualsPath.Text = "C:\" Then
-        'frmSetup.ShowDialog()
-        'End If
-
         ' Get Subfolder Paths from Registry
-        txtNTSCRetailPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 NTSC Retail ROM Subfolder")
-        txtPALRetailPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 PAL Retail ROM Subfolder")
-        txtHomebrewPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Homebrews ROM Subfolder")
-        txtHacksPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Hacks ROM Subfolder")
-        txtDemosPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Demos ROM Subfolder")
-        txtProtosPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Prototypes ROM Subfolder")
-        txtUtilitiesPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Utilities ROM Subfolder")
+        txtNTSCRetailPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 NTSC Retail ROM Subfolder", RegistryValueKind.String)
+        txtPALRetailPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 PAL Retail ROM Subfolder", RegistryValueKind.String)
+        txtHomebrewPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Homebrews ROM Subfolder", RegistryValueKind.String)
+        txtHacksPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Hacks ROM Subfolder", RegistryValueKind.String)
+        txtDemosPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Demos ROM Subfolder", RegistryValueKind.String)
+        txtProtosPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Prototypes ROM Subfolder", RegistryValueKind.String)
+        txtUtilitiesPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", RegistryValueKind.String)
 
         'If the A7800 path is not set to C:\ and the ROM utilities path is blank, assume first time setup and show setup dialog
-        If txtA7800path.Text = "C:\" Or txtUtilitiesPath.Text = "" Then
+        'If txtA7800path.Text = "C:\" Or txtUtilitiesPath.Text = "" Then
+        'frmSetup.ShowDialog()
+        'End If
+        Dim RegCheck As String
+        RegCheck = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", RegistryValueKind.String)
+        'MsgBox(RegCheck)
+        If RegCheck = "1" Or RegCheck = "" Then
             frmSetup.ShowDialog()
         End If
 
-        strFolder = My.Computer.Registry.CurrentUser.GetValue("Maximus78 ROM Path")
-        strA7800Folder = My.Computer.Registry.CurrentUser.GetValue("Maximus78 A7800 Path")
-        strBoxArtFolder = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Art Path")
-        strManualsFolder = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Manuals Path")
+        strFolder = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", RegistryValueKind.String)
+        strA7800Folder = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", RegistryValueKind.String)
+        strBoxArtFolder = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", RegistryValueKind.String)
+        strManualsFolder = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", RegistryValueKind.String)
 
-        strStatusBar = My.Computer.Registry.CurrentUser.GetValue("Maximus78 StatusBar")
-        strWindowMode = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Display Mode")
+        strStatusBar = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 StatusBar", RegistryValueKind.String)
+        strWindowMode = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", RegistryValueKind.String)
 
         strArguments = "a7800"
         strAddArguments = "-cart"
@@ -77,102 +197,150 @@ Public Class frmMain
         PALToolStripMenuItem.Checked = False
         strFolder = txtNTSCRetailPath.Text
 
-        'WebBrowser1.Url = "c:\a7800\manuals\Blank.htm"
-
         'Check and Load Edit Menu Registry Saves
         'NTSC or PAL
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Option NTSC") = "On" Then
+        Dim BoxOptionNTSC As String
+        BoxOptionNTSC = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option NTSC", RegistryValueKind.String)
+        If BoxOptionNTSC = "On" Then
             Call NTSCToolStripMenuItem_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Option PAL") = "On" Then
+        Dim BoxOptionPAL As String
+        BoxOptionPAL = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option PAL", RegistryValueKind.String)
+        If BoxOptionPAL = "On" Then
             Call PALToolStripMenuItem_Click(Me, e)
         End If
 
         'Video Output
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option Compatibility") = "On" Then
+        Dim VideoOptionCompatibility As String
+        Dim VideoOptionBasic As String
+        Dim VideoOptionCRT As String
+        Dim VideoOptionCRTDeluxe As String
+        Dim VideoOptionSuperEagle As String
+        Dim VideoOptionHLSL As String
+        Dim VideoOptionHQ2x As String
+        Dim VideoOptionHQ4x As String
+        VideoOptionCompatibility = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", RegistryValueKind.String)
+        If VideoOptionCompatibility = "On" Then
             Call videoCompatibility_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option Basic") = "On" Then
+        VideoOptionBasic = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", RegistryValueKind.String)
+        If VideoOptionBasic = "On" Then
             Call videoBasic_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option CRT") = "On" Then
+        VideoOptionCRT = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", RegistryValueKind.String)
+        If VideoOptionCRT = "On" Then
             Call videoCRT_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option CRT Deluxe") = "On" Then
+        VideoOptionCRTDeluxe = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", RegistryValueKind.String)
+        If VideoOptionCRTDeluxe = "On" Then
             Call videoCRTDeluxe_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option Super Eagle") = "On" Then
+        VideoOptionSuperEagle = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", RegistryValueKind.String)
+        If VideoOptionSuperEagle = "On" Then
             Call videoSuperEagle_Click(Me, e)
+            VideoOptionHLSL = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", RegistryValueKind.String)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option HLSL") = "On" Then
+        VideoOptionHLSL = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", RegistryValueKind.String)
+        If VideoOptionHLSL = "On" Then
             Call videoHLSL_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option HQ2x") = "On" Then
+        VideoOptionHQ2x = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", RegistryValueKind.String)
+        If VideoOptionHQ2x = "On" Then
             Call videoHQ2x_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Video Option HQ4x") = "On" Then
+        VideoOptionHQ4x = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", RegistryValueKind.String)
+        If VideoOptionHQ4x = "On" Then
             Call videoHQ4x_Click(Me, e)
         End If
 
         'Palette Option
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Warm Palette") = "On" Then
+        Dim PaletteWarm As String
+        Dim PaletteCool As String
+        Dim PaleteHot As String
+        PaletteWarm = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Warm Palette", RegistryValueKind.String)
+        If PaletteWarm = "On" Then
             Call paletteWARM_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Cool Palette") = "On" Then
+        PaletteCool = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Cool Palette", RegistryValueKind.String)
+        If PaletteCool = "On" Then
             Call paletteCOOL_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Hot Palette") = "On" Then
+        PaleteHot = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Hot Palette", RegistryValueKind.String)
+        If PaleteHot = "On" Then
             Call paletteHOT_Click(Me, e)
         End If
 
         'Screen Stretch
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Window Option Stretch") = "On" Then
+        Dim OptionStretchOn As String
+        Dim OptionStretchOff As String
+        OptionStretchOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window Option Stretch", RegistryValueKind.String)
+        If OptionStretchOn = "On" Then
             Call stretchON_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Window Option Stretch") = "Off" Then
+        OptionStretchOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window Option Stretch", RegistryValueKind.String)
+        If OptionStretchOff = "Off" Then
             Call stretchOFF_Click(Me, e)
         End If
 
         'Full Screen
-        '                                             Maximus78 Window A7800 Full Screen
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Window A7800 Full Screen") = "On" Then
+        Dim FullScreenOn As String
+        Dim FullScreenOff As String
+        FullScreenOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window A7800 Full Screen", RegistryValueKind.String)
+        If FullScreenOn = "On" Then
             Call fullScreenON_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 WindowA7800 Full Screen") = "Off" Then
+        FullScreenOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window A7800 Full Screen", RegistryValueKind.String)
+        If FullScreenOff = "Off" Then
             Call fullscreenOFF_Click(Me, e)
         End If
 
         'Vsync Wait
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Vsync Wait") = "On" Then
+        Dim VsyncOn As String
+        Dim VsyncOff As String
+        VsyncOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Vsync Wait", RegistryValueKind.String)
+        If VsyncOn = "On" Then
             Call vsyncON_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Vsync Wait") = "Off" Then
+        VsyncOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Vsync Wait", RegistryValueKind.String)
+        If VsyncOff = "Off" Then
             Call vsyncOFF_Click(Me, e)
         End If
 
         'Triple Buffer
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option TripleBuffer") = "On" Then
+        Dim TripleBufferOn As String
+        Dim TripleBufferOff As String
+        TripleBufferOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option TripleBuffer", RegistryValueKind.String)
+        If TripleBufferOn = "On" Then
             Call triplebufferON_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option TripleBuffer") = "Off" Then
+        TripleBufferOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option TripleBuffer", RegistryValueKind.String)
+        If TripleBufferOff = "Off" Then
             Call triplebufferOFF_Click(Me, e)
         End If
 
         'XM Support 
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option XM") = "On" Then
+        Dim XMOn As String
+        Dim XMOff As String
+        XMOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option XM", RegistryValueKind.String)
+        If XMOn = "On" Then
             Call xmON_Click(Me, e)
             'If XM Support is on, we skip checking for HSC Support as they can't both be on at once.
             GoTo SkiptoHere
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option XM") = "Off" Then
+        XMOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option XM", RegistryValueKind.String)
+        If XMOff = "Off" Then
             Call xmOFF_Click(Me, e)
         End If
 
         'HSC Support
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option HSC") = "On" Then
+        Dim HSCOn As String
+        Dim HSCOff As String
+        HSCOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option HSC", RegistryValueKind.String)
+        If HSCOn = "On" Then
             Call hscON_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option HSC") = "Off" Then
+        HSCOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option HSC", RegistryValueKind.String)
+        If HSCOff = "Off" Then
             Call hscOFF_Click(Me, e)
         End If
 
@@ -180,18 +348,26 @@ Public Class frmMain
 SkiptoHere:
 
         'Developer Mode
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Developer Mode") = "On" Then
+        Dim DevOn As String
+        Dim DevOff As String
+        DevOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Developer Mode", RegistryValueKind.String)
+        If DevOn = "On" Then
             Call OnToolStripMenuItem_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Developer Mode") = "Off" Then
+        DevOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Developer Mode", RegistryValueKind.String)
+        If DevOff = "Off" Then
             Call OffToolStripMenuItem_Click(Me, e)
         End If
 
         'Debug Mode
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Debug Mode") = "On" Then
+        Dim DebugOn As String
+        Dim DebugOff As String
+        DebugOn = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Debug Mode", RegistryValueKind.String)
+        If DebugOn = "On" Then
             Call debugON_Click(Me, e)
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Maximus78 Option Debug Mode") = "Off" Then
+        DebugOff = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Debug Mode", RegistryValueKind.String)
+        If DebugOff = "Off" Then
             Call debugOFF_Click(Me, e)
         End If
 
@@ -239,13 +415,15 @@ SkiptoHere:
         If strWindowMode = "" Then
             Me.Width = 1366
             Me.Height = 748
-            lstNTSCRetail.Height = 660
-            lstPALRetail.Height = 660
-            lstHomebrews.Height = 660
-            lstHacks.Height = 660
-            lstDemos.Height = 660
-            lstProtos.Height = 660
-            lstUtilities.Height = 660
+            lstNTSCRetail.Height = 632
+            lstPALRetail.Height = 632
+            lstHomebrews.Height = 632
+            lstHacks.Height = 632
+            lstDemos.Height = 632
+            lstProtos.Height = 632
+            lstUtilities.Height = 632
+            lstFavorites.Height = 632
+            TabControlRoms.Height = 660
             displayFULL.Checked = True
             displayMED.Checked = False
             displaySMALL.Checked = False
@@ -253,13 +431,15 @@ SkiptoHere:
         If strWindowMode = "Full" Then
             Me.Width = 1366
             Me.Height = 748
-            lstNTSCRetail.Height = 660
-            lstPALRetail.Height = 660
-            lstHomebrews.Height = 660
-            lstHacks.Height = 660
-            lstDemos.Height = 660
-            lstProtos.Height = 660
-            lstUtilities.Height = 660
+            lstNTSCRetail.Height = 632
+            lstPALRetail.Height = 632
+            lstHomebrews.Height = 632
+            lstHacks.Height = 632
+            lstDemos.Height = 632
+            lstProtos.Height = 632
+            lstUtilities.Height = 632
+            lstFavorites.Height = 632
+            TabControlRoms.Height = 660
             displayFULL.Checked = True
             displayMED.Checked = False
             displaySMALL.Checked = False
@@ -267,13 +447,15 @@ SkiptoHere:
         If strWindowMode = "Med" Then
             Me.Width = 863
             Me.Height = 732
-            lstNTSCRetail.Height = 660
-            lstPALRetail.Height = 660
-            lstHomebrews.Height = 660
-            lstHacks.Height = 660
-            lstDemos.Height = 660
-            lstProtos.Height = 660
-            lstUtilities.Height = 660
+            lstNTSCRetail.Height = 632
+            lstPALRetail.Height = 632
+            lstHomebrews.Height = 632
+            lstHacks.Height = 632
+            lstDemos.Height = 632
+            lstProtos.Height = 632
+            lstUtilities.Height = 632
+            lstFavorites.Height = 632
+            TabControlRoms.Height = 660
             displayFULL.Checked = False
             displayMED.Checked = True
             displaySMALL.Checked = False
@@ -288,15 +470,8 @@ SkiptoHere:
             lstDemos.Height = 260
             lstProtos.Height = 260
             lstUtilities.Height = 260
+            lstFavorites.Height = 260
             TabControlRoms.Height = 284
-            'Turn off status bar if you choose the smallest window
-            'statusTVType.Visible = False
-            'statusPalette.Visible = False
-            'statusXM.Visible = False
-            'statusHSC.Visible = False
-            'statusDev.Visible = False
-            'statusDebug.Visible = False
-            'statusVideo.Visible = False
             statusON.Checked = False
             statusOFF.Checked = True
             displayFULL.Checked = False
@@ -375,16 +550,6 @@ SkiptoHere:
             'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
         End Try
 
-        'For Testing
-
-        'Try
-        'Dim a78filesUtilities = txtUtilitiesPath.Text
-        'For Each fileUtilities As String In System.IO.Directory.GetFiles(a78filesUtilities, "*.a78")
-        'Ch'eckedListBox1.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileUtilities))
-        'Next
-        'Catch ex As Exception
-        'MsgBox("ROM Path has Not been Set", 64, "Maximus78 Notification")
-        'End Try
 
         txtRootROMPath.Text = strFolder
         'txtNTSCRetailPath.Text = strFolder + "\Retail_v3_0\NTSC"
@@ -405,19 +570,86 @@ SkiptoHere:
         Catch ex As Exception
         End Try
 
+        'Load blank Box Art File
         Try
             pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         Catch ex As Exception
         End Try
 
-        'Load Favorites into list
+        'Load the Favorites save file if it exists
         lstFavorites.Items.Clear()
-        lstFavorites.Items.AddRange(IO.File.ReadAllLines(strA7800Folder + "\Maximus78_Favorites.sav"))
+        If System.IO.File.Exists(strA7800Folder + "\Maximus78_Favorites.sav") Then
+            lstFavorites.Items.AddRange(IO.File.ReadAllLines(strA7800Folder + "\Maximus78_Favorites.sav"))
+        End If
 
+        'A7800 Command Windw is set to blank when you first start
         txtPath.Text = ""
+
+        '-------------------Recent File Test--------------------
+
+
 
     End Sub
 
+    Private Sub LoadRecentFiles()
+        Dim recentFiles = My.Settings.RecentFiles
+
+        'A StringCollection setting will be Nothing by default, unless you edit it in the Settings designer.
+        If recentFiles Is Nothing Then
+            My.Settings.RecentFiles = New System.Collections.Specialized.StringCollection()
+            recentFiles = My.Settings.RecentFiles
+        End If
+
+        'Get rid of any existing menu items.
+        RecentToolStripMenuItem.DropDownItems.Clear()
+
+        'Add a menu item for each recent file.
+        If recentFiles.Count > 0 Then
+            RecentToolStripMenuItem.DropDownItems.AddRange(recentFiles.Cast(Of String)().
+                 Select(Function(strFileName) New ToolStripMenuItem(strFileName, Nothing, AddressOf RecentFileMenuItems_Click)).ToArray())
+        End If
+    End Sub
+
+    Private Sub UpdateRecentFiles(strFileName As String)
+        Dim recentFiles = My.Settings.RecentFiles
+
+        'If the specified file is already in the list, remove it from its old position.
+
+        If recentFiles.Contains(strFileName) Then
+            recentFiles.Remove(strFileName)
+        End If
+
+
+        'Add the new file at the top of the list.
+        recentFiles.Insert(0, strFileName)
+        'AddHandler MenuItem.Click, AddressOf MenuItem_Click
+
+
+
+        'Trim the list if it is too long.
+        While recentFiles.Count > MAX_RECENT_FILES
+            recentFiles.RemoveAt(MAX_RECENT_FILES)
+        End While
+
+        LoadRecentFiles()
+    End Sub
+
+    Private Sub RecentFileMenuItems_Click(sender As Object, e As EventArgs)
+        Dim menuItem = DirectCast(sender, ToolStripMenuItem)
+        Dim strFileName = menuItem.Text
+
+
+        'Open the file here.
+
+        Dim ProcessProperties2 As New ProcessStartInfo
+        ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
+        ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
+        ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
+        Dim myProcess As Process = Process.Start(ProcessProperties2)
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+
+    End Sub
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs)
         'frmSettings.Show()
     End Sub
@@ -1198,7 +1430,7 @@ SkiptoHere:
 
         'Save Game Folder to INI file
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", strFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", strFolder)
 
 
     End Sub
@@ -1256,7 +1488,7 @@ SkiptoHere:
 
         'Save Game Folder to INI file
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", strFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", strFolder)
 
 
     End Sub
@@ -1283,7 +1515,7 @@ SkiptoHere:
         MsgBox(strBoxArtFolder, 64, "A7800 Box Art Path Selected")
         txtBoxArtPath.Text = strBoxArtFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Art Path", strBoxArtFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", strBoxArtFolder)
     End Sub
 
     Private Sub SetA7800EmulatorPathToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles SetA7800EmulatorPathToolStripMenuItem.Click
@@ -1307,7 +1539,7 @@ SkiptoHere:
         End Using
         MsgBox(strA7800Folder, 64, "A7800 Emulator Directory Path Selected")
         txtA7800path.Text = strA7800Folder
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 A7800 Path", strA7800Folder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", strA7800Folder)
     End Sub
 
     Private Sub SetManualsScreenshotPathToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles SetManualsScreenshotPathToolStripMenuItem.Click
@@ -1332,7 +1564,7 @@ SkiptoHere:
         MsgBox(strManualsFolder, 64, "A7800 Manuals Path Selected")
         txtManualsPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Manuals Path", strManualsFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", strManualsFolder)
     End Sub
     Private Sub StartSelectedGameToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles StartSelectedGameToolStripMenuItem.Click
 
@@ -1362,15 +1594,26 @@ SkiptoHere:
             GoTo RunIsDone
         End If
 
+        'MsgBox(strFileName)
+        If strFileName = ".a78" Then
+            GoTo RunIsDone
+        End If
+
         Dim ProcessProperties2 As New ProcessStartInfo
         ProcessProperties2.WorkingDirectory = strA7800Folder + "\"
         ProcessProperties2.FileName = strA7800Folder + "\" + "a7800.exe"
-        ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        ProcessProperties2.Arguments = " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
         ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
         Dim myProcess As Process = Process.Start(ProcessProperties2)
-        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
+        txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        UpdateRecentFiles(strFolder + "\" + strFileName)
 RunIsDone:
+
+
+        'Using sw As New IO.StreamWriter((strA7800Folder + "c:\Maximus78_Recent_Files.sav"), True)
+        'sw.WriteLine(strFileName)
+        'End Using
+
 
     End Sub
 
@@ -1380,8 +1623,8 @@ RunIsDone:
     Private Sub xmON_Click(sender As Object, e As EventArgs) Handles xmON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option XM", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option HSC", "Off")
 
         'Update Status Bar
         stripXM.Text = "XM Support: On  "
@@ -1398,7 +1641,7 @@ RunIsDone:
     Private Sub xmOFF_Click(sender As Object, e As EventArgs) Handles xmOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option XM", "Off")
 
         'Update Status Bar
         stripXM.Text = "XM Support: Off  "
@@ -1412,8 +1655,8 @@ RunIsDone:
     Private Sub hscON_Click(sender As Object, e As EventArgs) Handles hscON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option HSC", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option XM", "Off")
 
         'Update Status Bar
         stripXM.Text = "XM Support: Off  "
@@ -1430,7 +1673,7 @@ RunIsDone:
     Private Sub hscOFF_Click(sender As Object, e As EventArgs) Handles hscOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option HSC", "Off")
 
         'Update Status Bar
         stripHSC.Text = "HSC Support: Off  "
@@ -1441,33 +1684,6 @@ RunIsDone:
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + lstNTSCRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
     End Sub
 
-    Private Sub Atari7800ProSystemOwnersManualToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles Atari7800ProSystemOwnersManualToolStripMenuItem.Click
-        strWindowMode = "Full"
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Display Mode", strWindowMode)
-
-        Me.Width = 1366
-        Me.Height = 732
-        lstNTSCRetail.Height = 660
-
-        displayFULL.Checked = True
-        displayMED.Checked = False
-        displaySMALL.Checked = False
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\7800_Owners_Manual.htm"))
-    End Sub
-
-    Private Sub A7800UsersGuideToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles A7800UsersGuideToolStripMenuItem.Click
-        strWindowMode = "Full"
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Display Mode", strWindowMode)
-
-        Me.Width = 1366
-        Me.Height = 732
-        lstNTSCRetail.Height = 660
-
-        displayFULL.Checked = True
-        displayMED.Checked = False
-        displaySMALL.Checked = False
-        WebBrowser1.Navigate(New Uri(strManualsFolder + "\A7800_Manual.htm"))
-    End Sub
 
     Private Sub EditA7800ConfigurationFileToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditA7800ConfigurationFileToolStripMenuItem.Click
         frmA7800Config.Show()
@@ -1476,8 +1692,8 @@ RunIsDone:
     Private Sub NTSCToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NTSCToolStripMenuItem.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option NTSC", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option PAL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option NTSC", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option PAL", "Off")
 
         'dev mode & debug mode off
         'Call OffToolStripMenuItem_Click(Me, e)
@@ -1531,8 +1747,8 @@ RunIsDone:
     Private Sub PALToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PALToolStripMenuItem.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option PAL", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option NTSC", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option PAL", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option NTSC", "Off")
 
         'dev mode & debug mode off
         'Call OffToolStripMenuItem_Click(Me, e)
@@ -1586,9 +1802,9 @@ RunIsDone:
     Private Sub paletteWARM_Click(sender As Object, e As EventArgs) Handles paletteWARM.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Warm Palette", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Cool Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Hot Palette", "Off")
 
         'Set WARM Palette
 
@@ -1646,9 +1862,9 @@ RunIsDone:
 
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Warm Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Cool Palette", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Hot Palette", "Off")
 
         'Set COOL Palette
 
@@ -1705,9 +1921,9 @@ RunIsDone:
 
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Warm Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Cool Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Hot Palette", "On")
 
         'Set HOT Palette
 
@@ -1763,7 +1979,7 @@ RunIsDone:
     Private Sub OnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles devON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Developer Mode", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1819,7 +2035,7 @@ RunIsDone:
     Private Sub OffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles devOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Developer Mode", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1874,7 +2090,7 @@ RunIsDone:
     Private Sub debugON_Click(sender As Object, e As EventArgs) Handles debugON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Debug Mode", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1910,7 +2126,7 @@ RunIsDone:
     Private Sub debugOFF_Click(sender As Object, e As EventArgs) Handles debugOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Debug Mode", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -1982,6 +2198,7 @@ RunIsDone:
 
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + strFolder + "\" + strFileName + """ " + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
         'MsgBox(txtPath.Text)
+        UpdateRecentFiles(strFolder + "\" + strFileName)
 SkipLaunching:
 
     End Sub
@@ -1993,7 +2210,7 @@ SkipLaunching:
     Private Sub statusON_Click_1(sender As Object, e As EventArgs) Handles statusON.Click
 
         strStatusBar = "On"
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 StatusBar", strStatusBar)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 StatusBar", strStatusBar)
 
         StatusStrip1.Visible = True
 
@@ -2013,7 +2230,7 @@ SkipLaunching:
     Private Sub statusOFF_Click(sender As Object, e As EventArgs) Handles statusOFF.Click
 
         strStatusBar = "Off"
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 StatusBar", strStatusBar)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 StatusBar", strStatusBar)
 
         StatusStrip1.Visible = False
 
@@ -2032,19 +2249,20 @@ SkipLaunching:
     Private Sub displayFULL_Click(sender As Object, e As EventArgs) Handles displayFULL.Click
 
         strWindowMode = "Full"
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Display Mode", strWindowMode)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", strWindowMode)
 
         Me.Width = 1366
         Me.Height = 748
 
-        lstNTSCRetail.Height = 660
-        lstPALRetail.Height = 660
-        lstHomebrews.Height = 660
-        lstHacks.Height = 660
-        lstDemos.Height = 660
-        lstProtos.Height = 660
-        lstUtilities.Height = 660
-        TabControlRoms.Height = 663
+        lstNTSCRetail.Height = 632
+        lstPALRetail.Height = 632
+        lstHomebrews.Height = 632
+        lstHacks.Height = 632
+        lstDemos.Height = 632
+        lstProtos.Height = 632
+        lstUtilities.Height = 632
+        lstFavorites.Height = 632
+        TabControlRoms.Height = 660
 
         displayFULL.Checked = True
         displayMED.Checked = False
@@ -2060,20 +2278,21 @@ SkipLaunching:
         statusOFF.Checked = True
 
         strWindowMode = "Med"
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Display Mode", strWindowMode)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", strWindowMode)
 
         'Me.Width = 873
         Me.Width = 863
         Me.Height = 732
 
-        lstNTSCRetail.Height = 660
-        lstPALRetail.Height = 660
-        lstHomebrews.Height = 660
-        lstHacks.Height = 660
-        lstDemos.Height = 660
-        lstProtos.Height = 660
-        lstUtilities.Height = 660
-        TabControlRoms.Height = 663
+        lstNTSCRetail.Height = 632
+        lstPALRetail.Height = 632
+        lstHomebrews.Height = 632
+        lstHacks.Height = 632
+        lstDemos.Height = 632
+        lstProtos.Height = 632
+        lstUtilities.Height = 632
+        lstFavorites.Height = 632
+        TabControlRoms.Height = 660
 
         displayFULL.Checked = False
         displayMED.Checked = True
@@ -2084,7 +2303,7 @@ SkipLaunching:
 
         strWindowMode = "Small"
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Display Mode", strWindowMode)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", strWindowMode)
 
         Me.Width = 474
         Me.Height = 355
@@ -2096,6 +2315,7 @@ SkipLaunching:
         lstDemos.Height = 260
         lstProtos.Height = 260
         lstUtilities.Height = 260
+        lstFavorites.Height = 260
         TabControlRoms.Height = 284
 
         'Turn off status bar if you choose the smallest window
@@ -2112,14 +2332,14 @@ SkipLaunching:
     Private Sub videoBasic_Click(sender As Object, e As EventArgs) Handles videoBasic.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2163,14 +2383,14 @@ SkipLaunching:
     Private Sub videoCRT_Click(sender As Object, e As EventArgs) Handles videoCRT.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2212,14 +2432,14 @@ SkipLaunching:
     Private Sub videoCRTDeluxe_Click(sender As Object, e As EventArgs) Handles videoCRTDeluxe.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2261,14 +2481,14 @@ SkipLaunching:
     Private Sub videoSuperEagle_Click(sender As Object, e As EventArgs) Handles videoSuperEagle.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2310,14 +2530,14 @@ SkipLaunching:
     Private Sub videoHLSL_Click(sender As Object, e As EventArgs) Handles videoHLSL.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2359,14 +2579,14 @@ SkipLaunching:
     Private Sub videoHQ2x_Click(sender As Object, e As EventArgs) Handles videoHQ2x.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2408,14 +2628,14 @@ SkipLaunching:
     Private Sub videoHQ4x_Click(sender As Object, e As EventArgs) Handles videoHQ4x.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2457,14 +2677,14 @@ SkipLaunching:
     Private Sub videoCompatibility_Click(sender As Object, e As EventArgs) Handles videoCompatibility.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ4x", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -2504,6 +2724,8 @@ SkipLaunching:
     End Sub
 
     Private Sub lstPALRetail_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPALRetail.SelectedIndexChanged
+
+
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -3141,6 +3363,8 @@ SkipLaunching:
 
 
     Private Sub lstHomebrews_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHomebrews.SelectedIndexChanged
+
+
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -4774,6 +4998,7 @@ SkipLaunching:
     End Sub
 
     Private Sub lstHacks_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHacks.SelectedIndexChanged
+
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -10834,6 +11059,7 @@ SkipLaunching:
 
     Private Sub lstProtos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstProtos.SelectedIndexChanged
 
+
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
         WebBrowser1.Navigate(New Uri(strManualsFolder + "\blank.htm"))
@@ -11139,6 +11365,7 @@ SkipLaunching:
     End Sub
 
     Private Sub lstUtilities_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUtilities.SelectedIndexChanged
+
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -11668,6 +11895,8 @@ SkipLaunching:
         ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstNTSCRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        UpdateRecentFiles(txtNTSCRetailPath.Text + "\" + lstNTSCRetail.Text + ".a78")
+
     End Sub
 
     Private Sub lstPALRetail_DoubleClick(sender As Object, e As EventArgs) Handles lstPALRetail.DoubleClick
@@ -11678,6 +11907,7 @@ SkipLaunching:
         ProcessProperties2.WindowStyle = ProcessWindowStyle.Normal
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstPALRetail.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        UpdateRecentFiles(txtPALRetailPath.Text + "\" + lstPALRetail.Text + ".a78")
     End Sub
 
     Private Sub lstHomebrews_DoubleClick(sender As Object, e As EventArgs) Handles lstHomebrews.DoubleClick
@@ -11689,7 +11919,7 @@ SkipLaunching:
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         strFolder = txtHomebrewPath.Text
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstHomebrews.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
+        UpdateRecentFiles(txtHomebrewPath.Text + "\" + lstHomebrews.Text + ".a78")
     End Sub
 
     Private Sub lstHacks_DoubleClick(sender As Object, e As EventArgs) Handles lstHacks.DoubleClick
@@ -11701,6 +11931,7 @@ SkipLaunching:
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         strFolder = txtHacksPath.Text
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstHacks.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        UpdateRecentFiles(txtHacksPath.Text + "\" + lstHacks.Text + ".a78")
     End Sub
 
     Private Sub lstDemos_DoubleClick(sender As Object, e As EventArgs) Handles lstDemos.DoubleClick
@@ -11712,6 +11943,7 @@ SkipLaunching:
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         strFolder = txtDemosPath.Text
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstDemos.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        UpdateRecentFiles(txtDemosPath.Text + "\" + lstDemos.Text + ".a78")
     End Sub
 
     Private Sub lstProtos_DoubleClick(sender As Object, e As EventArgs) Handles lstProtos.DoubleClick
@@ -11723,6 +11955,7 @@ SkipLaunching:
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         strFolder = txtProtosPath.Text
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstProtos.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
+        UpdateRecentFiles(txtProtosPath.Text + "\" + lstProtos.Text + ".a78")
     End Sub
 
     Private Sub lstUtilities_DoubleClick(sender As Object, e As EventArgs) Handles lstUtilities.DoubleClick
@@ -11734,19 +11967,19 @@ SkipLaunching:
         Dim myProcess As Process = Process.Start(ProcessProperties2)
         strFolder = txtUtilitiesPath.Text
         txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstUtilities.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
-
+        UpdateRecentFiles(txtUtilitiesPath.Text + "\" + lstUtilities.Text + ".a78")
     End Sub
 
     Private Sub btnSaveROMPaths_Click(sender As Object, e As EventArgs) Handles btnSaveROMPaths.Click
 
         'Save all paths entered in the ROM Paths tab to the registry, overwrites all existing values.
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Prototypes ROM Subfolder", txtProtosPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Prototypes ROM Subfolder", txtProtosPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
 
 
         'Clear all ROM Lists, then refresh with new paths being saved.
@@ -11839,7 +12072,7 @@ SkipLaunching:
     Private Sub stretchON_Click(sender As Object, e As EventArgs) Handles stretchON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window Option Stretch", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -11876,7 +12109,7 @@ SkipLaunching:
     Private Sub stretchOFF_Click(sender As Object, e As EventArgs) Handles stretchOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window Option Stretch", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -11913,7 +12146,7 @@ SkipLaunching:
     Private Sub fullscreenOFF_Click(sender As Object, e As EventArgs) Handles fullscreenOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window A7800 Full Screen", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window A7800 Full Screen", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -11950,7 +12183,7 @@ SkipLaunching:
     Private Sub fullScreenON_Click(sender As Object, e As EventArgs) Handles fullScreenON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window A7800 Full Screen", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window A7800 Full Screen", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -11987,7 +12220,7 @@ SkipLaunching:
     Private Sub triplebufferON_Click(sender As Object, e As EventArgs) Handles triplebufferON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option TripleBuffer", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -12024,7 +12257,7 @@ SkipLaunching:
     Private Sub triplebufferOFF_Click(sender As Object, e As EventArgs) Handles triplebufferOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option TripleBuffer", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -12061,17 +12294,17 @@ SkipLaunching:
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         'Update A7800 Directory Paths to registry from ROM Paths Tab.
         'Changes reflected on appliction restart.
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Art Path", txtBoxArtPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Manuals Path", txtManualsPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 A7800 Path", txtA7800path.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", txtRomPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", txtBoxArtPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", txtManualsPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", txtA7800path.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", txtRomPath.Text)
     End Sub
 
-    Private Sub Atari7800ProSystemOwnersManualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Atari7800ProSystemOwnersManualToolStripMenuItem.Click
+    Private Sub Atari7800ProSystemOwnersManualToolStripMenuItem_Click(sender As Object, e As EventArgs)
         WebBrowser1.Navigate(New Uri(strManualsFolder + "\7800_Owners_Manual.htm"))
     End Sub
 
-    Private Sub A7800UsersGuideToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles A7800UsersGuideToolStripMenuItem.Click
+    Private Sub A7800UsersGuideToolStripMenuItem_Click(sender As Object, e As EventArgs)
         WebBrowser1.Navigate(New Uri(strManualsFolder + "\A7800_Manual.htm"))
     End Sub
 
@@ -12128,7 +12361,7 @@ SkipLaunching:
     Private Sub vsyncON_Click(sender As Object, e As EventArgs) Handles vsyncON.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Vsync Wait", "On")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -12165,7 +12398,7 @@ SkipLaunching:
     Private Sub vsyncOFF_Click(sender As Object, e As EventArgs) Handles vsyncOFF.Click
 
         'Save Settings to the Registry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Vsync Wait", "Off")
 
         If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
             strFileName = lstNTSCRetail.Text + ".a78"
@@ -12200,62 +12433,62 @@ SkipLaunching:
     End Sub
 
     Private Sub ResetAllOptionsToDefaultToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetAllOptionsToDefaultToolStripMenuItem.Click
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Debug Mode", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Debug Mode", "Off")
         debugON.Checked = False
         debugOFF.Checked = True
         stripDebug.Text = "Debug Mode: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Developer Mode", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Developer Mode", "Off")
         devON.Checked = False
         devOFF.Checked = True
         stripDev.Text = "Dev Mode: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option HSC", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option HSC", "Off")
         hscON.Checked = False
         hscOFF.Checked = True
         stripHSC.Text = "HSC Support: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option XM", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option XM", "Off")
         xmON.Checked = False
         xmOFF.Checked = True
         stripXM.Text = "XM Support: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option TripleBuffer", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option TripleBuffer", "Off")
         triplebufferON.Checked = False
         triplebufferOFF.Checked = True
         stripTripleBuffer.Text = "Triple Buffer: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Vsync Wait", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Vsync Wait", "Off")
         vsyncON.Checked = False
         vsyncOFF.Checked = True
         stripVsync.Text = "Vsync Wait: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Full Screen", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window Option Full Screen", "Off")
         fullScreenON.Checked = False
         fullscreenOFF.Checked = True
         stripWindow.Text = "Window Mode: Windowed  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Window Option Stretch", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Window Option Stretch", "Off")
         stretchON.Checked = False
         stretchOFF.Checked = True
         stripStretch.Text = "Screen Stretch: Off  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Warm Palette", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Cool Palette", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Option Hot Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Warm Palette", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Cool Palette", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Option Hot Palette", "Off")
         paletteWARM.Checked = True
         paletteCOOL.Checked = False
         paletteHOT.Checked = False
         stripPalette.Text = "Palette: Warm  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Compatibility", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Basic", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option CRT Deluxe", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option Super Eagle", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HLSL", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Compatibility", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Basic", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option CRT Deluxe", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option Super Eagle", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HLSL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Video Option HQ2x", "Off")
         videoBasic.Checked = True
         videoCRT.Checked = False
         videoCRTDeluxe.Checked = False
@@ -12266,8 +12499,8 @@ SkipLaunching:
         videoCompatibility.Checked = False
         stripVideo.Text = "Video Output: Basic  "
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option NTSC", "On")
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Option PAL", "Off")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option NTSC", "On")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Option PAL", "Off")
         NTSCToolStripMenuItem.Checked = True
         PALToolStripMenuItem.Checked = False
         stripTVType.Text = "TV Type: NTSC  "
@@ -12420,6 +12653,7 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
 
         If System.IO.File.Exists(txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78") Then
@@ -12431,6 +12665,7 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtPALRetailPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
 
         If System.IO.File.Exists(txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78") Then
@@ -12442,6 +12677,7 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtHomebrewPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
 
         If System.IO.File.Exists(txtHacksPath.Text + "\" + lstFavorites.Text + ".a78") Then
@@ -12453,6 +12689,7 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtHacksPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtHacksPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
 
         If System.IO.File.Exists(txtDemosPath.Text + "\" + lstFavorites.Text + ".a78") Then
@@ -12464,6 +12701,7 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtDemosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtDemosPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
 
         If System.IO.File.Exists(txtProtosPath.Text + "\" + lstFavorites.Text + ".a78") Then
@@ -12475,6 +12713,7 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtProtosPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtProtosPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
 
         If System.IO.File.Exists(txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78") Then
@@ -12486,17 +12725,12 @@ SkipLaunching:
             Dim myProcess As Process = Process.Start(ProcessProperties2)
             txtPath.Text = strA7800Folder + "\" + "a7800.exe" + " " + strArguments + " " + strAddArguments + " """ + txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78""" + " " + strDebug + " " + strVideo + strTripleBuffer + strVsync + strA7800WindowMode + strStretch
             'MsgBox(txtNTSCRetailPath.Text + "\" + lstFavorites.Text + ".a78")
+            UpdateRecentFiles(txtUtilitiesPath.Text + "\" + lstFavorites.Text + ".a78")
         End If
-
-
-
-
-
-
 
     End Sub
 
-    Private Sub munAddFavorite_Click(sender As Object, e As EventArgs) Handles munAddFavorite.Click
+    Private Sub munAddFavorite_Click(sender As Object, e As EventArgs) Handles mnuAddFavorite.Click
         Try
             If TabControlRoms.SelectedTab Is tabNTSC Then
                 lstFavorites.Items.Add(lstNTSCRetail.SelectedItem)
@@ -12549,6 +12783,7 @@ SkipLaunching:
         'Write Listbox to a file to load later
 
         IO.File.WriteAllLines(strA7800Folder + "\Maximus78_Favorites.sav", lstFavorites.Items.Cast(Of String).ToArray())
+
     End Sub
 
     Private Sub mnuRemoveFavorite_Click(sender As Object, e As EventArgs) Handles mnuRemoveFavorite.Click
@@ -12567,17 +12802,45 @@ SkipLaunching:
     End Sub
 
     Private Sub PictureBox1_DoubleClick(sender As Object, e As EventArgs) Handles Screenshot1.Click
-
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
         If Screenshot1.BackgroundImage IsNot Nothing Then
-            Screenshot1.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot1.BackgroundImage = Nothing  'Set to Blank/Nothing
+            Try
+                Screenshot1.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot1.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.1.png")
+            Catch ex As Exception
+                MsgBox("Error, Please Try Again")
+            End Try
         End If
 
         Using dlg As New OpenFileDialog With {.AddExtension = True,
                                               .AutoUpgradeEnabled = True,
                                               .CheckFileExists = False,
                                               .CheckPathExists = True,
-                                              .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                              .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
                                               .FilterIndex = 1,
                                               .InitialDirectory = strManualsFolder,
                                               .SupportMultiDottedExtensions = True,
@@ -12595,17 +12858,45 @@ SkipLaunching:
     End Sub
 
     Private Sub Screenshot2_Click(sender As Object, e As EventArgs) Handles Screenshot2.Click
-
-        If Screenshot2.BackgroundImage IsNot Nothing Then
-            Screenshot2.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot2.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot2.BackgroundImage IsNot Nothing Then
+                Screenshot2.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot2.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.2.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
 
         Using dlg As New OpenFileDialog With {.AddExtension = True,
                                       .AutoUpgradeEnabled = True,
                                       .CheckFileExists = False,
                                       .CheckPathExists = True,
-                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
                                       .FilterIndex = 1,
                                       .InitialDirectory = strManualsFolder,
                                       .SupportMultiDottedExtensions = True,
@@ -12622,17 +12913,44 @@ SkipLaunching:
     End Sub
 
     Private Sub Screenshot3_Click(sender As Object, e As EventArgs) Handles Screenshot3.Click
-
-        If Screenshot3.BackgroundImage IsNot Nothing Then
-            Screenshot3.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot3.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
-
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot3.BackgroundImage IsNot Nothing Then
+                Screenshot3.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot3.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.3.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
         Using dlg As New OpenFileDialog With {.AddExtension = True,
                                       .AutoUpgradeEnabled = True,
                                       .CheckFileExists = False,
                                       .CheckPathExists = True,
-                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
                                       .FilterIndex = 1,
                                       .InitialDirectory = strManualsFolder,
                                       .SupportMultiDottedExtensions = True,
@@ -12649,17 +12967,45 @@ SkipLaunching:
     End Sub
 
     Private Sub Screenshot4_Click(sender As Object, e As EventArgs) Handles Screenshot4.Click
-
-        If Screenshot4.BackgroundImage IsNot Nothing Then
-            Screenshot4.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot4.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot4.BackgroundImage IsNot Nothing Then
+                Screenshot4.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot4.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.4.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
 
         Using dlg As New OpenFileDialog With {.AddExtension = True,
                                       .AutoUpgradeEnabled = True,
                                       .CheckFileExists = False,
                                       .CheckPathExists = True,
-                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
                                       .FilterIndex = 1,
                                       .InitialDirectory = strManualsFolder,
                                       .SupportMultiDottedExtensions = True,
@@ -12676,17 +13022,45 @@ SkipLaunching:
     End Sub
 
     Private Sub Screenshot5_Click(sender As Object, e As EventArgs) Handles Screenshot5.Click
-
-        If Screenshot5.BackgroundImage IsNot Nothing Then
-            Screenshot5.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot5.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot5.BackgroundImage IsNot Nothing Then
+                Screenshot5.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot5.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.5.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
 
         Using dlg As New OpenFileDialog With {.AddExtension = True,
                                       .AutoUpgradeEnabled = True,
                                       .CheckFileExists = False,
                                       .CheckPathExists = True,
-                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
                                       .FilterIndex = 1,
                                       .InitialDirectory = strManualsFolder,
                                       .SupportMultiDottedExtensions = True,
@@ -12703,17 +13077,44 @@ SkipLaunching:
     End Sub
 
     Private Sub Screenshot6_Click(sender As Object, e As EventArgs) Handles Screenshot6.Click
-
-        If Screenshot6.BackgroundImage IsNot Nothing Then
-            Screenshot6.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot6.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
-
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot6.BackgroundImage IsNot Nothing Then
+                Screenshot6.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot6.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.6.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
         Using dlg As New OpenFileDialog With {.AddExtension = True,
                                       .AutoUpgradeEnabled = True,
                                       .CheckFileExists = False,
                                       .CheckPathExists = True,
-                                      .Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png",
+                                      .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
                                       .FilterIndex = 1,
                                       .InitialDirectory = strManualsFolder,
                                       .SupportMultiDottedExtensions = True,
@@ -12730,7 +13131,7 @@ SkipLaunching:
     End Sub
 
     Private Sub contextNTSC_Click(sender As Object, e As EventArgs) Handles contextNTSC.Click
-        Call munAddFavorite_Click(Me, e)
+        'Call munAddFavorite_Click(Me, e)
     End Sub
 
     Private Sub contextFavorites_Click(sender As Object, e As EventArgs) Handles contextFavorites.Click
@@ -12744,10 +13145,39 @@ SkipLaunching:
     End Sub
 
     Private Sub btnUnload1_Click(sender As Object, e As EventArgs) Handles btnUnload1.Click
-        If Screenshot1.BackgroundImage IsNot Nothing Then
-            Screenshot1.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot1.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot1.BackgroundImage IsNot Nothing Then
+                Screenshot1.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot1.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.1.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
     End Sub
 
     Private Sub btnLoad1_Click(sender As Object, e As EventArgs) Handles btnLoad1.Click
@@ -12780,9 +13210,15 @@ SkipLaunching:
             strFileName = lstFavorites.Text
         End If
 
+        If System.IO.File.Exists(strManualsFolder + "\" + strFileName + ".screenshot.1.png") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSave1
+        End If
         If Screenshot1.BackgroundImage IsNot Nothing Then
             Screenshot1.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.1.png", Imaging.ImageFormat.Png)
         End If
+SkipSave1:
+
     End Sub
 
     Private Sub btnLoad2_Click(sender As Object, e As EventArgs) Handles btnLoad2.Click
@@ -12790,10 +13226,39 @@ SkipLaunching:
     End Sub
 
     Private Sub btnUnload2_Click(sender As Object, e As EventArgs) Handles btnUnload2.Click
-        If Screenshot2.BackgroundImage IsNot Nothing Then
-            Screenshot2.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot2.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot2.BackgroundImage IsNot Nothing Then
+                Screenshot2.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot2.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.2.png")
+            End If
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
     End Sub
 
     Private Sub btnSave2_Click(sender As Object, e As EventArgs) Handles btnSave2.Click
@@ -12822,9 +13287,17 @@ SkipLaunching:
             strFileName = lstFavorites.Text
         End If
 
+        If System.IO.File.Exists(strManualsFolder + "\" + strFileName + ".screenshot.2.png") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSave2
+        End If
+
         If Screenshot2.BackgroundImage IsNot Nothing Then
             Screenshot2.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.2.png", Imaging.ImageFormat.Png)
         End If
+
+SkipSave2:
+
     End Sub
 
     Private Sub btnLoad3_Click(sender As Object, e As EventArgs) Handles btnLoad3.Click
@@ -12832,10 +13305,39 @@ SkipLaunching:
     End Sub
 
     Private Sub btnUnload3_Click(sender As Object, e As EventArgs) Handles btnUnload3.Click
-        If Screenshot3.BackgroundImage IsNot Nothing Then
-            Screenshot3.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot3.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot3.BackgroundImage IsNot Nothing Then
+                Screenshot3.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot3.BackgroundImage = Nothing  'Set to Blank/Nothing
+            End If
+            System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.3.png")
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
     End Sub
 
     Private Sub btnSave3_Click(sender As Object, e As EventArgs) Handles btnSave3.Click
@@ -12863,10 +13365,15 @@ SkipLaunching:
         If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
             strFileName = lstFavorites.Text
         End If
-
+        If System.IO.File.Exists(strManualsFolder + "\" + strFileName + ".screenshot.3.png") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSave3
+        End If
         If Screenshot3.BackgroundImage IsNot Nothing Then
             Screenshot3.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.3.png", Imaging.ImageFormat.Png)
         End If
+SkipSave3:
+
     End Sub
 
     Private Sub btnLoad4_Click(sender As Object, e As EventArgs) Handles btnLoad4.Click
@@ -12874,10 +13381,39 @@ SkipLaunching:
     End Sub
 
     Private Sub btnUnload4_Click(sender As Object, e As EventArgs) Handles btnUnload4.Click
-        If Screenshot4.BackgroundImage IsNot Nothing Then
-            Screenshot4.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot4.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot4.BackgroundImage IsNot Nothing Then
+                Screenshot4.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot4.BackgroundImage = Nothing  'Set to Blank/Nothing
+            End If
+            System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.4.png")
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
     End Sub
 
     Private Sub btnSave4_Click(sender As Object, e As EventArgs) Handles btnSave4.Click
@@ -12905,10 +13441,16 @@ SkipLaunching:
         If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
             strFileName = lstFavorites.Text
         End If
+        If System.IO.File.Exists(strManualsFolder + "\" + strFileName + ".screenshot.4.png") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSave4
+        End If
 
         If Screenshot4.BackgroundImage IsNot Nothing Then
             Screenshot4.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.4.png", Imaging.ImageFormat.Png)
         End If
+SkipSave4:
+
     End Sub
 
     Private Sub btnLoad5_Click(sender As Object, e As EventArgs) Handles btnLoad5.Click
@@ -12916,10 +13458,39 @@ SkipLaunching:
     End Sub
 
     Private Sub btnUnload5_Click(sender As Object, e As EventArgs) Handles btnUnload5.Click
-        If Screenshot5.BackgroundImage IsNot Nothing Then
-            Screenshot5.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot5.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot5.BackgroundImage IsNot Nothing Then
+                Screenshot5.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot5.BackgroundImage = Nothing  'Set to Blank/Nothing
+            End If
+            System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.5.png")
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
     End Sub
 
     Private Sub btnSave5_Click(sender As Object, e As EventArgs) Handles btnSave5.Click
@@ -12947,10 +13518,15 @@ SkipLaunching:
         If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
             strFileName = lstFavorites.Text
         End If
-
+        If System.IO.File.Exists(strManualsFolder + "\" + strFileName + ".screenshot.5.png") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSave5
+        End If
         If Screenshot5.BackgroundImage IsNot Nothing Then
             Screenshot5.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.5.png", Imaging.ImageFormat.Png)
         End If
+SkipSave5:
+
     End Sub
 
     Private Sub btnLoad6_Click(sender As Object, e As EventArgs) Handles btnLoad6.Click
@@ -12958,10 +13534,39 @@ SkipLaunching:
     End Sub
 
     Private Sub btnUnload6_Click(sender As Object, e As EventArgs) Handles btnUnload6.Click
-        If Screenshot6.BackgroundImage IsNot Nothing Then
-            Screenshot6.BackgroundImage.Dispose()  'Unload from Memory
-            Screenshot6.BackgroundImage = Nothing  'Set to Blank/Nothing
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
         End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+        Try
+            If Screenshot6.BackgroundImage IsNot Nothing Then
+                Screenshot6.BackgroundImage.Dispose()  'Unload from Memory
+                Screenshot6.BackgroundImage = Nothing  'Set to Blank/Nothing
+            End If
+            System.IO.File.Delete(strManualsFolder + "\" + strFileName + ".screenshot.6.png")
+        Catch ex As Exception
+            MsgBox("Error, Please Try Again")
+        End Try
     End Sub
 
     Private Sub btnSave6_Click(sender As Object, e As EventArgs) Handles btnSave6.Click
@@ -12989,9 +13594,797 @@ SkipLaunching:
         If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
             strFileName = lstFavorites.Text
         End If
-
+        If System.IO.File.Exists(strManualsFolder + "\" + strFileName + ".screenshot.6.png") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSave6
+        End If
         If Screenshot6.BackgroundImage IsNot Nothing Then
             Screenshot6.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".screenshot.6.png", Imaging.ImageFormat.Png)
         End If
+SkipSave6:
+
     End Sub
+
+    'Private Sub testSave_Click(sender As Object, e As EventArgs)
+    'Call PictureBox1_DoubleClick(Me, e)
+    'Call btnSave1_Click(Me, e)
+    'End Sub
+    Private Sub addImage1_Click(sender As Object, e As EventArgs) Handles addImage1.Click
+        Call PictureBox1_DoubleClick(Me, e)
+        Call btnSave1_Click(Me, e)
+    End Sub
+
+    Private Sub addImage2_Click(sender As Object, e As EventArgs) Handles addImage2.Click
+        Call Screenshot2_Click(Me, e)
+        Call btnSave2_Click(Me, e)
+    End Sub
+
+    Private Sub addImage3_Click(sender As Object, e As EventArgs) Handles addImage3.Click
+        Call Screenshot3_Click(Me, e)
+        Call btnSave3_Click(Me, e)
+    End Sub
+
+    Private Sub addImage4_Click(sender As Object, e As EventArgs) Handles addImage4.Click
+        Call Screenshot4_Click(Me, e)
+        Call btnSave4_Click(Me, e)
+    End Sub
+
+    Private Sub addImage5_Click(sender As Object, e As EventArgs) Handles addImage5.Click
+        Call Screenshot5_Click(Me, e)
+        Call btnSave5_Click(Me, e)
+    End Sub
+
+    Private Sub addImage6_Click(sender As Object, e As EventArgs) Handles addImage6.Click
+        Call Screenshot6_Click(Me, e)
+        Call btnSave6_Click(Me, e)
+    End Sub
+
+    Private Sub ClearAllFavoritesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClearAllFavoritesToolStripMenuItem.Click
+        Try
+            If TabControlRoms.SelectedTab Is tabFavorites Then
+                lstFavorites.Items.Clear()
+            End If
+        Catch ex As Exception
+        End Try
+
+        IO.File.WriteAllLines(strA7800Folder + "\Maximus78_Favorites.sav", lstFavorites.Items.Cast(Of String).ToArray())
+
+        lstFavorites.Items.Clear()
+        lstFavorites.Items.AddRange(IO.File.ReadAllLines(strA7800Folder + "\Maximus78_Favorites.sav"))
+    End Sub
+
+    Private Sub contextNTSCRetail_Click(sender As Object, e As EventArgs) Handles contextNTSCRetail.Click
+        Call munAddFavorite_Click(Me, e)
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs)
+
+        If TabControlRoms.SelectedTab.Name = "tabNTSC" Then
+            strFileName = lstNTSCRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabPAL" Then
+            strFileName = lstPALRetail.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHomebrews" Then
+            strFileName = lstHomebrews.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabHacks" Then
+            strFileName = lstHacks.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabProtos" Then
+            strFileName = lstProtos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabDemos" Then
+            strFileName = lstDemos.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabUtilities" Then
+            strFileName = lstUtilities.Text
+        End If
+        If TabControlRoms.SelectedTab.Name = "tabFavorites" Then
+            strFileName = lstFavorites.Text
+        End If
+
+
+
+
+    End Sub
+
+
+
+    Private Sub txtScore1_TextChanged(sender As Object, e As EventArgs) Handles txtScore1.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score1", txtScore1.Text)
+    End Sub
+
+    Private Sub txtScore2_TextChanged(sender As Object, e As EventArgs) Handles txtScore2.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score2", txtScore2.Text)
+    End Sub
+
+    Private Sub txtScore3_TextChanged(sender As Object, e As EventArgs) Handles txtScore3.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score3", txtScore3.Text)
+    End Sub
+
+    Private Sub txtScore4_TextChanged(sender As Object, e As EventArgs) Handles txtScore4.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score4", txtScore4.Text)
+    End Sub
+
+    Private Sub txtScore5_TextChanged(sender As Object, e As EventArgs) Handles txtScore5.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score5", txtScore5.Text)
+    End Sub
+
+    Private Sub txtScore6_TextChanged(sender As Object, e As EventArgs) Handles txtScore6.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score6", txtScore6.Text)
+    End Sub
+
+    Private Sub txtScore7_TextChanged(sender As Object, e As EventArgs) Handles txtScore7.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score7", txtScore7.Text)
+    End Sub
+
+    Private Sub txtScore8_TextChanged(sender As Object, e As EventArgs) Handles txtScore8.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score8", txtScore8.Text)
+    End Sub
+
+    Private Sub txtScore9_TextChanged(sender As Object, e As EventArgs) Handles txtScore9.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score9", txtScore9.Text)
+    End Sub
+
+    Private Sub txtScore10_TextChanged(sender As Object, e As EventArgs) Handles txtScore10.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score10", txtScore10.Text)
+    End Sub
+
+    Private Sub txtScore11_TextChanged(sender As Object, e As EventArgs) Handles txtScore11.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score11", txtScore11.Text)
+    End Sub
+
+    Private Sub txtScore12_TextChanged(sender As Object, e As EventArgs) Handles txtScore12.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score12", txtScore12.Text)
+    End Sub
+
+    Private Sub txtScore13_TextChanged(sender As Object, e As EventArgs) Handles txtScore13.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score13", txtScore13.Text)
+    End Sub
+
+    Private Sub txtScore14_TextChanged(sender As Object, e As EventArgs) Handles txtScore14.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score14", txtScore14.Text)
+    End Sub
+
+    Private Sub txtScore15_TextChanged(sender As Object, e As EventArgs) Handles txtScore15.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score15", txtScore15.Text)
+    End Sub
+
+    Private Sub txtScore16_TextChanged(sender As Object, e As EventArgs) Handles txtScore16.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score16", txtScore16.Text)
+    End Sub
+
+    Private Sub txtScore17_TextChanged(sender As Object, e As EventArgs) Handles txtScore17.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score17", txtScore17.Text)
+    End Sub
+
+    Private Sub txtScore18_TextChanged(sender As Object, e As EventArgs) Handles txtScore18.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score18", txtScore18.Text)
+    End Sub
+
+    Private Sub txtScore19_TextChanged(sender As Object, e As EventArgs) Handles txtScore19.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score19", txtScore19.Text)
+    End Sub
+
+    Private Sub txtScore20_TextChanged(sender As Object, e As EventArgs) Handles txtScore20.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score20", txtScore20.Text)
+    End Sub
+
+    Private Sub txtScore21_TextChanged(sender As Object, e As EventArgs) Handles txtScore21.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score21", txtScore21.Text)
+    End Sub
+
+    Private Sub txtScore22_TextChanged(sender As Object, e As EventArgs) Handles txtScore22.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score22", txtScore22.Text)
+    End Sub
+
+    Private Sub txtScore23_TextChanged(sender As Object, e As EventArgs) Handles txtScore23.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score23", txtScore23.Text)
+    End Sub
+
+    Private Sub txtScore24_TextChanged(sender As Object, e As EventArgs) Handles txtScore24.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score24", txtScore24.Text)
+    End Sub
+
+    Private Sub txtScore25_TextChanged(sender As Object, e As EventArgs) Handles txtScore25.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score25", txtScore25.Text)
+    End Sub
+
+    Private Sub txtScore26_TextChanged(sender As Object, e As EventArgs) Handles txtScore26.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score26", txtScore26.Text)
+    End Sub
+
+    Private Sub txtScore27_TextChanged(sender As Object, e As EventArgs) Handles txtScore27.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score27", txtScore27.Text)
+    End Sub
+
+    Private Sub txtPlayer1_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer1.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player1", txtPlayer1.Text)
+    End Sub
+
+    Private Sub txtPlayer2_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer2.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player2", txtPlayer2.Text)
+    End Sub
+
+    Private Sub txtPlayer3_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer3.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player3", txtPlayer3.Text)
+    End Sub
+
+    Private Sub txtPlayer4_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer4.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player4", txtPlayer4.Text)
+    End Sub
+
+    Private Sub txtPlayer5_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer5.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player5", txtPlayer5.Text)
+    End Sub
+
+    Private Sub txtPlayer6_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer6.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player6", txtPlayer6.Text)
+    End Sub
+
+    Private Sub txtPlayer7_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer7.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player7", txtPlayer7.Text)
+    End Sub
+
+    Private Sub txtPlayer8_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer8.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player8", txtPlayer8.Text)
+    End Sub
+
+    Private Sub txtPlayer9_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer9.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player9", txtPlayer9.Text)
+    End Sub
+
+    Private Sub txtPlayer10_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer10.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player10", txtPlayer10.Text)
+    End Sub
+
+    Private Sub txtPlayer11_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer11.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player11", txtPlayer11.Text)
+    End Sub
+
+    Private Sub txtPlayer12_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer12.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player12", txtPlayer12.Text)
+    End Sub
+
+    Private Sub txtPlayer13_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer13.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player13", txtPlayer13.Text)
+    End Sub
+
+    Private Sub txtPlayer14_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer14.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player14", txtPlayer14.Text)
+    End Sub
+
+    Private Sub txtPlayer15_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer15.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player15", txtPlayer15.Text)
+    End Sub
+
+    Private Sub txtPlayer16_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer16.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player16", txtPlayer16.Text)
+    End Sub
+
+    Private Sub txtPlayer17_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer17.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player17", txtPlayer17.Text)
+    End Sub
+
+    Private Sub txtPlayer18_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer18.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player18", txtPlayer18.Text)
+    End Sub
+
+    Private Sub txtPlayer19_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer19.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player19", txtPlayer19.Text)
+    End Sub
+
+    Private Sub txtPlayer20_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer20.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player20", txtPlayer20.Text)
+    End Sub
+
+    Private Sub txtPlayer21_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer21.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player21", txtPlayer21.Text)
+    End Sub
+
+    Private Sub txtPlayer22_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer22.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player22", txtPlayer22.Text)
+    End Sub
+
+    Private Sub txtPlayer23_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer23.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player23", txtPlayer23.Text)
+    End Sub
+
+    Private Sub txtPlayer24_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer24.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player24", txtPlayer24.Text)
+    End Sub
+
+    Private Sub txtPlayer25_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer25.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player25", txtPlayer25.Text)
+    End Sub
+
+    Private Sub txtPlayer26_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer26.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player26", txtPlayer26.Text)
+    End Sub
+
+    Private Sub txtPlayer27_TextChanged(sender As Object, e As EventArgs) Handles txtPlayer27.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Player27", txtPlayer27.Text)
+    End Sub
+
+    Private Sub txtDate1_TextChanged(sender As Object, e As EventArgs) Handles txtDate1.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date1", txtDate1.Text)
+    End Sub
+
+    Private Sub txtDate2_TextChanged(sender As Object, e As EventArgs) Handles txtDate2.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date2", txtDate2.Text)
+    End Sub
+
+    Private Sub txtDate3_TextChanged(sender As Object, e As EventArgs) Handles txtDate3.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date3", txtDate3.Text)
+    End Sub
+
+    Private Sub txtDate4_TextChanged(sender As Object, e As EventArgs) Handles txtDate4.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date4", txtDate4.Text)
+    End Sub
+
+    Private Sub txtDate5_TextChanged(sender As Object, e As EventArgs) Handles txtDate5.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date5", txtDate5.Text)
+    End Sub
+
+    Private Sub txtDate6_TextChanged(sender As Object, e As EventArgs) Handles txtDate6.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date6", txtDate6.Text)
+    End Sub
+
+    Private Sub txtDate7_TextChanged(sender As Object, e As EventArgs) Handles txtDate7.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date7", txtDate7.Text)
+    End Sub
+
+    Private Sub txtDate8_TextChanged(sender As Object, e As EventArgs) Handles txtDate8.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date8", txtDate8.Text)
+    End Sub
+
+    Private Sub txtDate9_TextChanged(sender As Object, e As EventArgs) Handles txtDate9.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date9", txtDate9.Text)
+    End Sub
+
+    Private Sub txtDate10_TextChanged(sender As Object, e As EventArgs) Handles txtDate10.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date10", txtDate10.Text)
+    End Sub
+
+    Private Sub txtDate11_TextChanged(sender As Object, e As EventArgs) Handles txtDate11.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date11", txtDate11.Text)
+    End Sub
+
+    Private Sub txtDate12_TextChanged(sender As Object, e As EventArgs) Handles txtDate12.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date12", txtDate12.Text)
+    End Sub
+
+    Private Sub txtDate13_TextChanged(sender As Object, e As EventArgs) Handles txtDate13.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date13", txtDate13.Text)
+    End Sub
+
+    Private Sub txtDate14_TextChanged(sender As Object, e As EventArgs) Handles txtDate14.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date14", txtDate14.Text)
+    End Sub
+
+    Private Sub txtDate15_TextChanged(sender As Object, e As EventArgs) Handles txtDate15.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date15", txtDate15.Text)
+    End Sub
+
+    Private Sub txtDate16_TextChanged(sender As Object, e As EventArgs) Handles txtDate16.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date16", txtDate16.Text)
+    End Sub
+
+    Private Sub txtDate17_TextChanged(sender As Object, e As EventArgs) Handles txtDate17.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date17", txtDate17.Text)
+    End Sub
+
+    Private Sub txtDate18_TextChanged(sender As Object, e As EventArgs) Handles txtDate18.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date18", txtDate18.Text)
+    End Sub
+
+    Private Sub txtDate19_TextChanged(sender As Object, e As EventArgs) Handles txtDate19.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date19", txtDate19.Text)
+    End Sub
+
+    Private Sub txtDate20_TextChanged(sender As Object, e As EventArgs) Handles txtDate20.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date20", txtDate20.Text)
+    End Sub
+
+    Private Sub txtDate21_TextChanged(sender As Object, e As EventArgs) Handles txtDate21.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date21", txtDate21.Text)
+    End Sub
+
+    Private Sub txtDate22_TextChanged(sender As Object, e As EventArgs) Handles txtDate22.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date22", txtDate22.Text)
+    End Sub
+
+    Private Sub txtDate23_TextChanged(sender As Object, e As EventArgs) Handles txtDate23.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date23", txtDate23.Text)
+    End Sub
+
+    Private Sub txtDate24_TextChanged(sender As Object, e As EventArgs) Handles txtDate24.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date24", txtDate24.Text)
+    End Sub
+
+    Private Sub txtDate25_TextChanged(sender As Object, e As EventArgs) Handles txtDate25.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date25", txtDate25.Text)
+    End Sub
+
+    Private Sub txtDate26_TextChanged(sender As Object, e As EventArgs) Handles txtDate26.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date26", txtDate26.Text)
+    End Sub
+
+    Private Sub txtDate27_TextChanged(sender As Object, e As EventArgs) Handles txtDate27.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Date27", txtDate27.Text)
+    End Sub
+
+    Private Sub txtInitials1_TextChanged(sender As Object, e As EventArgs) Handles txtInitials1.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials1", txtInitials1.Text)
+    End Sub
+
+    Private Sub txtInitials2_TextChanged(sender As Object, e As EventArgs) Handles txtInitials2.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials2", txtInitials2.Text)
+    End Sub
+
+    Private Sub txtInitials3_TextChanged(sender As Object, e As EventArgs) Handles txtInitials3.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials3", txtInitials3.Text)
+    End Sub
+
+    Private Sub txtInitials4_TextChanged(sender As Object, e As EventArgs) Handles txtInitials4.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials4", txtInitials4.Text)
+    End Sub
+
+    Private Sub txtInitials5_TextChanged(sender As Object, e As EventArgs) Handles txtInitials5.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials5", txtInitials5.Text)
+    End Sub
+
+    Private Sub txtInitials6_TextChanged(sender As Object, e As EventArgs) Handles txtInitials6.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials6", txtInitials6.Text)
+    End Sub
+
+    Private Sub txtInitials7_TextChanged(sender As Object, e As EventArgs) Handles txtInitials7.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials7", txtInitials7.Text)
+    End Sub
+
+    Private Sub txtInitials8_TextChanged(sender As Object, e As EventArgs) Handles txtInitials8.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials8", txtInitials8.Text)
+    End Sub
+
+    Private Sub txtInitials9_TextChanged(sender As Object, e As EventArgs) Handles txtInitials9.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials9", txtInitials9.Text)
+    End Sub
+
+    Private Sub txtInitials10_TextChanged(sender As Object, e As EventArgs) Handles txtInitials10.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials10", txtInitials10.Text)
+    End Sub
+
+    Private Sub txtInitials11_TextChanged(sender As Object, e As EventArgs) Handles txtInitials11.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials11", txtInitials11.Text)
+    End Sub
+
+    Private Sub txtInitials12_TextChanged(sender As Object, e As EventArgs) Handles txtInitials12.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials12", txtInitials12.Text)
+    End Sub
+
+    Private Sub txtInitials13_TextChanged(sender As Object, e As EventArgs) Handles txtInitials13.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials13", txtInitials13.Text)
+    End Sub
+
+    Private Sub txtInitials14_TextChanged(sender As Object, e As EventArgs) Handles txtInitials14.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials14", txtInitials14.Text)
+    End Sub
+
+    Private Sub txtInitials15_TextChanged(sender As Object, e As EventArgs) Handles txtInitials15.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials15", txtInitials15.Text)
+    End Sub
+
+    Private Sub txtInitials16_TextChanged(sender As Object, e As EventArgs) Handles txtInitials16.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials16", txtInitials16.Text)
+    End Sub
+
+    Private Sub txtInitials17_TextChanged(sender As Object, e As EventArgs) Handles txtInitials17.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials17", txtInitials17.Text)
+    End Sub
+
+    Private Sub txtInitials18_TextChanged(sender As Object, e As EventArgs) Handles txtInitials18.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials18", txtInitials18.Text)
+    End Sub
+
+    Private Sub txtInitials19_TextChanged(sender As Object, e As EventArgs) Handles txtInitials19.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials19", txtInitials19.Text)
+    End Sub
+
+    Private Sub txtInitials20_TextChanged(sender As Object, e As EventArgs) Handles txtInitials20.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials20", txtInitials20.Text)
+    End Sub
+
+    Private Sub txtInitials21_TextChanged(sender As Object, e As EventArgs) Handles txtInitials21.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials21", txtInitials21.Text)
+    End Sub
+
+    Private Sub txtInitials22_TextChanged(sender As Object, e As EventArgs) Handles txtInitials22.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials22", txtInitials22.Text)
+    End Sub
+
+    Private Sub txtInitials23_TextChanged(sender As Object, e As EventArgs) Handles txtInitials23.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials23", txtInitials23.Text)
+    End Sub
+
+    Private Sub txtInitials24_TextChanged(sender As Object, e As EventArgs) Handles txtInitials24.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials24", txtInitials24.Text)
+    End Sub
+
+    Private Sub txtInitials25_TextChanged(sender As Object, e As EventArgs) Handles txtInitials25.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials25", txtInitials25.Text)
+    End Sub
+
+    Private Sub txtInitials26_TextChanged(sender As Object, e As EventArgs) Handles txtInitials26.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials26", txtInitials26.Text)
+    End Sub
+
+    Private Sub txtInitials27_TextChanged(sender As Object, e As EventArgs) Handles txtInitials27.TextChanged
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Initials27", txtInitials27.Text)
+    End Sub
+
+    Private Sub ResetAllHighScoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResetAllHighScoresToolStripMenuItem.Click
+        'Dim BlankValue As String
+        'BlankValue = ""
+        'My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78\High_Scores", "Score2", BlankValue)
+
+        txtScore1.Text = ""
+        txtScore2.Text = ""
+        txtScore3.Text = ""
+        txtScore4.Text = ""
+        txtScore5.Text = ""
+        txtScore6.Text = ""
+        txtScore7.Text = ""
+        txtScore8.Text = ""
+        txtScore9.Text = ""
+        txtScore10.Text = ""
+        txtScore11.Text = ""
+        txtScore12.Text = ""
+        txtScore13.Text = ""
+        txtScore14.Text = ""
+        txtScore15.Text = ""
+        txtScore16.Text = ""
+        txtScore17.Text = ""
+        txtScore18.Text = ""
+        txtScore19.Text = ""
+        txtScore20.Text = ""
+        txtScore21.Text = ""
+        txtScore22.Text = ""
+        txtScore23.Text = ""
+        txtScore24.Text = ""
+        txtScore25.Text = ""
+        txtScore26.Text = ""
+        txtScore27.Text = ""
+        txtPlayer1.Text = ""
+        txtPlayer2.Text = ""
+        txtPlayer3.Text = ""
+        txtPlayer4.Text = ""
+        txtPlayer5.Text = ""
+        txtPlayer6.Text = ""
+        txtPlayer7.Text = ""
+        txtPlayer8.Text = ""
+        txtPlayer9.Text = ""
+        txtPlayer10.Text = ""
+        txtPlayer11.Text = ""
+        txtPlayer12.Text = ""
+        txtPlayer13.Text = ""
+        txtPlayer14.Text = ""
+        txtPlayer15.Text = ""
+        txtPlayer16.Text = ""
+        txtPlayer17.Text = ""
+        txtPlayer18.Text = ""
+        txtPlayer19.Text = ""
+        txtPlayer20.Text = ""
+        txtPlayer21.Text = ""
+        txtPlayer22.Text = ""
+        txtPlayer23.Text = ""
+        txtPlayer24.Text = ""
+        txtPlayer25.Text = ""
+        txtPlayer26.Text = ""
+        txtPlayer27.Text = ""
+        txtDate1.Text = ""
+        txtDate2.Text = ""
+        txtDate3.Text = ""
+        txtDate4.Text = ""
+        txtDate5.Text = ""
+        txtDate6.Text = ""
+        txtDate7.Text = ""
+        txtDate8.Text = ""
+        txtDate9.Text = ""
+        txtDate10.Text = ""
+        txtDate11.Text = ""
+        txtDate12.Text = ""
+        txtDate13.Text = ""
+        txtDate14.Text = ""
+        txtDate15.Text = ""
+        txtDate16.Text = ""
+        txtDate17.Text = ""
+        txtDate18.Text = ""
+        txtDate19.Text = ""
+        txtDate20.Text = ""
+        txtDate21.Text = ""
+        txtDate22.Text = ""
+        txtDate23.Text = ""
+        txtDate24.Text = ""
+        txtDate25.Text = ""
+        txtDate26.Text = ""
+        txtDate27.Text = ""
+        txtInitials1.Text = ""
+        txtInitials2.Text = ""
+        txtInitials3.Text = ""
+        txtInitials4.Text = ""
+        txtInitials5.Text = ""
+        txtInitials6.Text = ""
+        txtInitials7.Text = ""
+        txtInitials8.Text = ""
+        txtInitials9.Text = ""
+        txtInitials10.Text = ""
+        txtInitials11.Text = ""
+        txtInitials12.Text = ""
+        txtInitials13.Text = ""
+        txtInitials14.Text = ""
+        txtInitials15.Text = ""
+        txtInitials16.Text = ""
+        txtInitials17.Text = ""
+        txtInitials18.Text = ""
+        txtInitials19.Text = ""
+        txtInitials20.Text = ""
+        txtInitials21.Text = ""
+        txtInitials22.Text = ""
+        txtInitials23.Text = ""
+        txtInitials24.Text = ""
+        txtInitials25.Text = ""
+        txtInitials26.Text = ""
+        txtInitials27.Text = ""
+
+
+    End Sub
+
+
+    Private Sub UpdateBoxArtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateBoxArtToolStripMenuItem.Click
+        If Screenshot1.BackgroundImage IsNot Nothing Then
+            Try
+                pctBoxArt.BackgroundImage.Dispose()  'Unload from Memory
+                pctBoxArt.BackgroundImage = Nothing  'Set to Blank/Nothing
+                System.IO.File.Copy((strBoxArtFolder + "\" + strFileName + ".jpg"), (strBoxArtFolder + "\" + strFileName + ".backup.jpg"))
+                'System.IO.File.Delete(strBoxArtFolder + "\" + strFileName + ".jpg")
+            Catch ex As Exception
+                MsgBox("Error, Please Try Again")
+            End Try
+        End If
+
+        Using dlg As New OpenFileDialog With {.AddExtension = True,
+                                              .AutoUpgradeEnabled = True,
+                                              .CheckFileExists = False,
+                                              .CheckPathExists = True,
+                                              .Filter = "PNG (*.png)|*.png|JPG (*.jpg)|*.jpg",
+                                              .FilterIndex = 1,
+                                              .InitialDirectory = strManualsFolder,
+                                              .SupportMultiDottedExtensions = True,
+                                              .Title = "Select Screenshot 1",
+                                              .ValidateNames = True}
+            If dlg.ShowDialog = DialogResult.OK Then
+                Dim strLaunchGame As String = dlg.FileName
+                If (dlg.FileName IsNot Nothing) Or (dlg.FileName <> String.Empty) Then
+                    pctBoxArt.BackgroundImage = Image.FromFile(dlg.FileName)
+                    pctBoxArt.BackgroundImageLayout = ImageLayout.Stretch
+                End If
+            End If
+        End Using
+
+        'Save
+        If System.IO.File.Exists(strBoxArtFolder + "\" + strFileName + ".jpg") Then
+            MsgBox("Screenshot File Already Exists, Unload File First")
+            GoTo SkipSaveBoxArt
+        End If
+        If Screenshot1.BackgroundImage IsNot Nothing Then
+            Screenshot1.BackgroundImage.Save(strManualsFolder + "\" + strFileName + ".jpg", Imaging.ImageFormat.Jpeg)
+        End If
+SkipSaveBoxArt:
+
+    End Sub
+
+    Private Sub mnuRecent_Click(sender As Object, e As EventArgs)
+
+
+    End Sub
+
+    Private Sub mnuDifficulty_Click(sender As Object, e As EventArgs)
+        frmDifficulty.Show()
+    End Sub
+
+    Private Sub mnuMappings_Click(sender As Object, e As EventArgs)
+        frmMappings.Show()
+    End Sub
+
+    Private Sub mnuButtons_Click(sender As Object, e As EventArgs)
+        frmButtons.Show()
+    End Sub
+
+    Private Sub TVAndVideoTipsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TVAndVideoTipsToolStripMenuItem.Click
+        strWindowMode = "Full"
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", strWindowMode)
+
+        Me.Width = 1366
+        Me.Height = 748
+
+        lstNTSCRetail.Height = 632
+        lstPALRetail.Height = 632
+        lstHomebrews.Height = 632
+        lstHacks.Height = 632
+        lstDemos.Height = 632
+        lstProtos.Height = 632
+        lstUtilities.Height = 632
+        TabControlRoms.Height = 660
+
+        displayFULL.Checked = True
+        displayMED.Checked = False
+        displaySMALL.Checked = False
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\A7800_Dev_Tips.htm"))
+    End Sub
+
+    Private Sub ButtonDefinitionsForGamesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ButtonDefinitionsForGamesToolStripMenuItem.Click
+        frmButtons.Show()
+    End Sub
+
+    Private Sub DifficultySwitchOptionsForGamesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DifficultySwitchOptionsForGamesToolStripMenuItem.Click
+        frmDifficulty.Show()
+    End Sub
+
+    Private Sub KeyboardMappingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KeyboardMappingsToolStripMenuItem.Click
+        frmMappings.Show()
+    End Sub
+
+    Private Sub Atari7800ProSystemOwnersManualToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles Atari7800ProSystemOwnersManualToolStripMenuItem1.Click
+        strWindowMode = "Full"
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", strWindowMode)
+
+        Me.Width = 1366
+        Me.Height = 748
+        lstNTSCRetail.Height = 632
+        lstPALRetail.Height = 632
+        lstHomebrews.Height = 632
+        lstHacks.Height = 632
+        lstDemos.Height = 632
+        lstProtos.Height = 632
+        lstUtilities.Height = 632
+        lstFavorites.Height = 632
+        TabControlRoms.Height = 660
+
+        displayFULL.Checked = True
+        displayMED.Checked = False
+        displaySMALL.Checked = False
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\7800_Owners_Manual.htm"))
+    End Sub
+
+    Private Sub UsersGuideToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsersGuideToolStripMenuItem.Click
+        strWindowMode = "Full"
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Display Mode", strWindowMode)
+
+        Me.Width = 1366
+        Me.Height = 748
+
+
+        lstNTSCRetail.Height = 632
+        lstPALRetail.Height = 632
+        lstHomebrews.Height = 632
+        lstHacks.Height = 632
+        lstDemos.Height = 632
+        lstProtos.Height = 632
+        lstUtilities.Height = 632
+        lstFavorites.Height = 632
+        TabControlRoms.Height = 660
+
+        displayFULL.Checked = True
+        displayMED.Checked = False
+        displaySMALL.Checked = False
+        WebBrowser1.Navigate(New Uri(strManualsFolder + "\A7800_Manual.htm"))
+    End Sub
+
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles RecentToolStripMenuItem.Click
+
+    End Sub
+
+
 End Class
+

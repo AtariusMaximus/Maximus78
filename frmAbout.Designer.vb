@@ -30,6 +30,7 @@ Partial Class frmAbout
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnClearHS = New System.Windows.Forms.Button()
         Me.btnFirstTime = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -109,6 +110,7 @@ Partial Class frmAbout
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnClearHS)
         Me.TabPage3.Controls.Add(Me.btnFirstTime)
         Me.TabPage3.Controls.Add(Me.Label1)
         Me.TabPage3.Controls.Add(Me.Button1)
@@ -118,6 +120,15 @@ Partial Class frmAbout
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Debug"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'btnClearHS
+        '
+        Me.btnClearHS.Location = New System.Drawing.Point(16, 100)
+        Me.btnClearHS.Name = "btnClearHS"
+        Me.btnClearHS.Size = New System.Drawing.Size(179, 23)
+        Me.btnClearHS.TabIndex = 3
+        Me.btnClearHS.Text = "Clear all High Scores"
+        Me.btnClearHS.UseVisualStyleBackColor = True
         '
         'btnFirstTime
         '
@@ -154,7 +165,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.24b"
+        Me.TextBox1.Text = "Maximus78 v0.99.27b"
         '
         'TextBox2
         '
@@ -174,7 +185,7 @@ Partial Class frmAbout
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(244, 13)
         Me.TextBox3.TabIndex = 4
-        Me.TextBox3.Text = "10/3/2022"
+        Me.TextBox3.Text = "10/6/2022"
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox4
@@ -241,4 +252,5 @@ Partial Class frmAbout
     Friend WithEvents Button1 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnFirstTime As Button
+    Friend WithEvents btnClearHS As Button
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class frmSetup
+﻿Imports Microsoft.Win32
+
+Public Class frmSetup
 
     Dim strFolder As String = ""
     Dim strA7800Folder As String = ""
@@ -38,7 +40,7 @@
         txtProtosPath.Text = strFolder + "\HHDP_20220627\Prototypes"
         txtUtilitiesPath.Text = strFolder + "\HHDP_20220627\Utilities"
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 ROM Path", strFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", strFolder)
 
     End Sub
 
@@ -66,7 +68,7 @@
         txtBoxArtPath.Text = strBoxArtFolder
         frmMain.txtBoxArtPath.Text = strBoxArtFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Box Art Path", strBoxArtFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", strBoxArtFolder)
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
@@ -93,7 +95,7 @@
         txtManualsPath.Text = strManualsFolder
         frmMain.txtManualsPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Manuals Path", strManualsFolder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", strManualsFolder)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -119,15 +121,24 @@
         txtA7800path.Text = strA7800Folder
         frmMain.txtA7800path.Text = strA7800Folder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 A7800 Path", strA7800Folder)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", strA7800Folder)
     End Sub
     Public Sub frmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
 
-        txtRomPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 ROM Path")
-        txtA7800path.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 A7800 Path")
-        txtBoxArtPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Box Art Path")
-        txtManualsPath.Text = My.Computer.Registry.CurrentUser.GetValue("Maximus78 Manuals Path")
+        'Create Registry folder for Maximus78 (HKCU\Software\Maxmimus78)
+        My.Computer.Registry.CurrentUser.CreateSubKey("Software")
+        My.Computer.Registry.CurrentUser.CreateSubKey("Software\Maximus78")
+
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", "Change Folder Path")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", "Change Folder Path")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", "Change Folder Path")
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", "Change Folder Path")
+
+        txtRomPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", RegistryValueKind.String)
+        txtA7800path.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", RegistryValueKind.String)
+        txtBoxArtPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", RegistryValueKind.String)
+        txtManualsPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", RegistryValueKind.String)
 
         Me.WebBrowser1.Navigate("about:blank")
         Me.WebBrowser1.Document.Write(String.Empty)
@@ -137,21 +148,18 @@
 
     Private Sub frmContinue_Click(sender As Object, e As EventArgs) Handles frmContinue.Click
 
-        'Display the blank box art file to start with on the main form.
-        Try
-            frmMain.pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        Catch ex As Exception
-        End Try
+        'Save folder paths to the Registry
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Prototypes ROM Subfolder", txtProtosPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", txtBoxArtPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", txtA7800path.Text)
 
-        'Save folder paths to the Regsitry
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Prototypes ROM Subfolder", txtProtosPath.Text)
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
-
+        frmMain.txtA7800path.Text = txtA7800path.Text
         frmMain.txtNTSCRetailPath.Text = txtNTSCRetailPath.Text
         frmMain.txtPALRetailPath.Text = txtPALRetailPath.Text
         frmMain.txtHomebrewPath.Text = txtHomebrewPath.Text
@@ -159,6 +167,7 @@
         frmMain.txtDemosPath.Text = txtDemosPath.Text
         frmMain.txtProtosPath.Text = txtProtosPath.Text
         frmMain.txtUtilitiesPath.Text = txtUtilitiesPath.Text
+        frmMain.txtBoxArtPath.Text = txtBoxArtPath.Text
 
         'Populate ROM Lists on the Main Form
         Try
@@ -217,6 +226,12 @@
         Catch ex As Exception
         End Try
 
+        'Display the blank box art file to start with on the main form.
+        Try
+            frmMain.pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
+        Catch ex As Exception
+        End Try
+
         frmMain.txtRootROMPath.Text = strFolder
 
         frmMain.Show()
@@ -252,7 +267,7 @@
         txtNTSCRetailPath.Text = strManualsFolder
         frmMain.txtNTSCRetailPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
     End Sub
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         Application.Exit()
@@ -280,7 +295,7 @@
         txtPALRetailPath.Text = strManualsFolder
         frmMain.txtPALRetailPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -306,7 +321,7 @@
         txtHomebrewPath.Text = strManualsFolder
         frmMain.txtHomebrewPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -332,7 +347,7 @@
         txtHacksPath.Text = strManualsFolder
         frmMain.txtHacksPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -358,7 +373,7 @@
         txtDemosPath.Text = strManualsFolder
         frmMain.txtDemosPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -384,7 +399,7 @@
         txtProtosPath.Text = strManualsFolder
         frmMain.txtProtosPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Protos ROM Subfolder", txtProtosPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Protos ROM Subfolder", txtProtosPath.Text)
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -410,6 +425,6 @@
         txtUtilitiesPath.Text = strManualsFolder
         frmMain.txtUtilitiesPath.Text = strManualsFolder
 
-        My.Computer.Registry.CurrentUser.SetValue("Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
+        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
     End Sub
 End Class
