@@ -165,7 +165,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.27b"
+        Me.TextBox1.Text = "Maximus78 v0.99.28b"
         '
         'TextBox2
         '

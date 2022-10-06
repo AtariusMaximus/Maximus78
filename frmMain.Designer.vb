@@ -125,7 +125,9 @@ Partial Class frmMain
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuLoadGame = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartSelectedGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator()
         Me.RecentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuAddFavorite = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRemoveFavorite = New System.Windows.Forms.ToolStripMenuItem()
@@ -376,8 +378,6 @@ Partial Class frmMain
         Me.tabDirectoryPaths = New System.Windows.Forms.TabPage()
         Me.ContextBoxArt = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.UpdateBoxArtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator()
         Me.TabControlRoms.SuspendLayout()
         Me.tabNTSC.SuspendLayout()
         Me.contextNTSC.SuspendLayout()
@@ -1159,12 +1159,23 @@ Partial Class frmMain
         Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(274, 22)
         Me.StartSelectedGameToolStripMenuItem.Text = "Launch ROM from List"
         '
+        'ToolStripSeparator15
+        '
+        Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
+        Me.ToolStripSeparator15.Size = New System.Drawing.Size(271, 6)
+        '
         'RecentToolStripMenuItem
         '
         Me.RecentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4})
         Me.RecentToolStripMenuItem.Name = "RecentToolStripMenuItem"
         Me.RecentToolStripMenuItem.Size = New System.Drawing.Size(274, 22)
         Me.RecentToolStripMenuItem.Text = "Recent"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(83, 22)
+        Me.ToolStripMenuItem4.Text = "..."
         '
         'ToolStripSeparator7
         '
@@ -1632,7 +1643,7 @@ Partial Class frmMain
         '
         Me.mnuStatus.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusON, Me.statusOFF})
         Me.mnuStatus.Name = "mnuStatus"
-        Me.mnuStatus.Size = New System.Drawing.Size(180, 22)
+        Me.mnuStatus.Size = New System.Drawing.Size(130, 22)
         Me.mnuStatus.Text = "Status Bar"
         '
         'statusON
@@ -1653,7 +1664,7 @@ Partial Class frmMain
         '
         Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.displayFULL, Me.displayMED, Me.displaySMALL})
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.WindowToolStripMenuItem.Text = "Window"
         '
         'displayFULL
@@ -1769,7 +1780,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 20)
-        Me.ToolStripStatusLabel1.Text = " v0.99.27b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.28b  "
         '
         'stripPalette
         '
@@ -3146,17 +3157,6 @@ Partial Class frmMain
         Me.UpdateBoxArtToolStripMenuItem.Name = "UpdateBoxArtToolStripMenuItem"
         Me.UpdateBoxArtToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
         Me.UpdateBoxArtToolStripMenuItem.Text = "Update Box Art"
-        '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem4.Text = "..."
-        '
-        'ToolStripSeparator15
-        '
-        Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
-        Me.ToolStripSeparator15.Size = New System.Drawing.Size(271, 6)
         '
         'frmMain
         '
