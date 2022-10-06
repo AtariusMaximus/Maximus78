@@ -29,7 +29,7 @@
     <ProductName>Maximus78</ProductName>
     <PublisherName>Stephen Engelhardt</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>27</ApplicationRevision>
+    <ApplicationRevision>28</ApplicationRevision>
     <ApplicationVersion>0.99.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -238,7 +238,6 @@
     <Content Include="Maximus78.ico" />
     <None Include="Resources\gplv3.htm" />
     <Content Include="setup.html" />
-    <Content Include="SwordIco.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
