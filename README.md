@@ -88,7 +88,6 @@ Maximus78_GameInfo.z07</a><br />
 Maximus78_GameInfo.z08</a><br />
 <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_GameInfo.z09">Maximus78_GameInfo.z09</a><br />
 <br /
-
 <br>The files includes all of the screenshots and manuals for Maximus78. The manuals archive will be periodically updated as it does not contain screenshots and/or manuals for every game in Trebor's ROM pack.<br>
 <br>Note that the Game information file includes images of many of the 
 instruction manuals for retail and homebrew releases, and all are displayed with 
