@@ -1,5 +1,5 @@
 # Maximus78
-Maximus78 Front End for the A7800 Emulator
+Maximus78 Front End for the Atari 7800 Emulator, A7800.
 <body>
 
 <p class="auto-style1"><strong>Welcome to Maximus78!</strong><br />
