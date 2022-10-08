@@ -29,7 +29,7 @@
     <ProductName>Maximus78</ProductName>
     <PublisherName>Stephen Engelhardt</PublisherName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>0.99.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -117,6 +117,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmUsersGuide.Designer.vb">
+      <DependentUpon>frmUsersGuide.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsersGuide.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmButtons.Designer.vb">
       <DependentUpon>frmButtons.vb</DependentUpon>
     </Compile>
@@ -177,6 +183,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmUsersGuide.resx">
+      <DependentUpon>frmUsersGuide.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmButtons.resx">
       <DependentUpon>frmButtons.vb</DependentUpon>
     </EmbeddedResource>
@@ -236,8 +245,55 @@
   <ItemGroup>
     <Content Include="gplv3.htm" />
     <Content Include="Maximus78.ico" />
+    <None Include="Resources\#A7800.rtf" />
+    <None Include="Resources\#A7800ConfigEditor.rtf" />
+    <None Include="Resources\#A7800Dev.rtf" />
+    <None Include="Resources\#A7800Hardware.rtf" />
+    <None Include="Resources\#BoxArt.rtf" />
+    <None Include="Resources\#BoxArtCMD.rtf" />
+    <None Include="Resources\#DebugMode.rtf" />
+    <None Include="Resources\#Defaults.rtf" />
+    <None Include="Resources\#DevMode.rtf" />
+    <None Include="Resources\#DirPaths.rtf" />
+    <None Include="Resources\#Favorites.rtf" />
+    <None Include="Resources\#FirstTime.rtf" />
+    <None Include="Resources\#GameInfo.rtf" />
+    <None Include="Resources\#GameInfoEditor.rtf" />
+    <None Include="Resources\#GameInfoWindow.rtf" />
+    <None Include="Resources\#GettingHelp.rtf" />
+    <None Include="Resources\#GettingStarted.rtf" />
+    <None Include="Resources\#HighScores.rtf" />
+    <None Include="Resources\#HSC.rtf" />
+    <None Include="Resources\#Launching.rtf" />
+    <None Include="Resources\#LaunchingExternal.rtf" />
+    <None Include="Resources\#License.rtf" />
+    <None Include="Resources\#Loading.rtf" />
+    <None Include="Resources\#Optional.rtf" />
+    <None Include="Resources\#Other.rtf" />
+    <None Include="Resources\#Palette.rtf" />
+    <None Include="Resources\#Requirements.rtf" />
+    <None Include="Resources\#ROMs.rtf" />
+    <None Include="Resources\#Root.rtf" />
+    <None Include="Resources\#Saving.rtf" />
+    <None Include="Resources\#Screenshots.rtf" />
+    <None Include="Resources\#ScreenStretch.rtf" />
+    <None Include="Resources\#Setup.rtf" />
+    <None Include="Resources\#ThankYou.rtf" />
+    <None Include="Resources\#TripleBuffer.rtf" />
+    <None Include="Resources\#TVType.rtf" />
+    <None Include="Resources\#Unloading.rtf" />
+    <None Include="Resources\#UsingMaximus78.rtf" />
+    <None Include="Resources\#UsingROMs.rtf" />
+    <None Include="Resources\#UsingTVVideo.rtf" />
+    <None Include="Resources\#VideoOutput.rtf" />
+    <None Include="Resources\#VsyncWait.rtf" />
+    <None Include="Resources\#WhatIs.rtf" />
+    <None Include="Resources\#WindowMode.rtf" />
+    <None Include="Resources\#XM.rtf" />
     <None Include="Resources\gplv3.htm" />
+    <Content Include="Resources\Maximus78 User%27s Guide.htm" />
     <Content Include="setup.html" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

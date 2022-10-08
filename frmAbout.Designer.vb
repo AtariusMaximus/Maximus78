@@ -30,6 +30,7 @@ Partial Class frmAbout
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.btnClearHS = New System.Windows.Forms.Button()
         Me.btnFirstTime = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -110,6 +111,7 @@ Partial Class frmAbout
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.RichTextBox1)
         Me.TabPage3.Controls.Add(Me.btnClearHS)
         Me.TabPage3.Controls.Add(Me.btnFirstTime)
         Me.TabPage3.Controls.Add(Me.Label1)
@@ -121,9 +123,17 @@ Partial Class frmAbout
         Me.TabPage3.Text = "Debug"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(119, 232)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(8, 8)
+        Me.RichTextBox1.TabIndex = 4
+        Me.RichTextBox1.Text = ""
+        '
         'btnClearHS
         '
-        Me.btnClearHS.Location = New System.Drawing.Point(16, 100)
+        Me.btnClearHS.Location = New System.Drawing.Point(13, 100)
         Me.btnClearHS.Name = "btnClearHS"
         Me.btnClearHS.Size = New System.Drawing.Size(179, 23)
         Me.btnClearHS.TabIndex = 3
@@ -144,9 +154,9 @@ Partial Class frmAbout
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(13, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(389, 13)
+        Me.Label1.Size = New System.Drawing.Size(381, 13)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Warning:  Making changes on this screen will change your configuration settings."
+        Me.Label1.Text = "Warning:  Some changes on this screen will change your configuration settings."
         '
         'Button1
         '
@@ -165,7 +175,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.28b"
+        Me.TextBox1.Text = "Maximus78 v0.99.30b"
         '
         'TextBox2
         '
@@ -185,7 +195,7 @@ Partial Class frmAbout
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(244, 13)
         Me.TextBox3.TabIndex = 4
-        Me.TextBox3.Text = "10/6/2022"
+        Me.TextBox3.Text = "10/8/2022"
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox4
@@ -253,4 +263,5 @@ Partial Class frmAbout
     Friend WithEvents Label1 As Label
     Friend WithEvents btnFirstTime As Button
     Friend WithEvents btnClearHS As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class
