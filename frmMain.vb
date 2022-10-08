@@ -14385,6 +14385,11 @@ SkipSaveBoxArt:
 
     End Sub
 
+    Private Sub usersguideToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles usersguideToolStripMenuItem3.Click
+        frmUserGuide.Show()
 
+
+
+    End Sub
 End Class
 

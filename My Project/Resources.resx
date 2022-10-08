@@ -124,4 +124,139 @@
   <data name="setup" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\setup.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="_A7800" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#A7800.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_A7800ConfigEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#A7800ConfigEditor.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_A7800Dev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#A7800Dev.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_A7800Hardware" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#A7800Hardware.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_BoxArt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#BoxArt.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_BoxArtCMD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#BoxArtCMD.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_DebugMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#DebugMode.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Defaults" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Defaults.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_DevMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#DevMode.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_DirPaths" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#DirPaths.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Favorites" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Favorites.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_FirstTime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#FirstTime.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_GameInfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#GameInfo.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_GameInfoEditor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#GameInfoEditor.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_GameInfoWindow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#GameInfoWindow.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_GettingHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#GettingHelp.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_GettingStarted" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#GettingStarted.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_HighScores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#HighScores.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_HSC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#HSC.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Launching" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Launching.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_LaunchingExternal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#LaunchingExternal.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_License" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#License.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Loading.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Optional" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Optional.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Other" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Other.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Palette" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Palette.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Requirements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Requirements.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_ROMs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#ROMs.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Root" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Root.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_Saving" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Saving.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Screenshots" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Screenshots.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_ScreenStretch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#ScreenStretch.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Setup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Setup.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_ThankYou" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#ThankYou.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_TripleBuffer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#TripleBuffer.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_TVType" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#TVType.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_Unloading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#Unloading.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_UsingMaximus78" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#UsingMaximus78.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_UsingROMs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#UsingROMs.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_UsingTVVideo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#UsingTVVideo.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_VideoOutput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#VideoOutput.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_VsyncWait" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#VsyncWait.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_WhatIs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#WhatIs.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_WindowMode" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#WindowMode.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_XM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\#XM.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

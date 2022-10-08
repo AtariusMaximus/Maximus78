@@ -203,6 +203,7 @@ Partial Class frmMain
         Me.displaySMALL = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.usersguideToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.A7800EmulatorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KeyboardMappingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -1689,7 +1690,7 @@ Partial Class frmMain
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ToolStripSeparator6, Me.A7800EmulatorToolStripMenuItem, Me.Atari7800ToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.usersguideToolStripMenuItem3, Me.ToolStripSeparator6, Me.A7800EmulatorToolStripMenuItem, Me.Atari7800ToolStripMenuItem})
         Me.HelpToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 21)
@@ -1700,6 +1701,12 @@ Partial Class frmMain
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(269, 22)
         Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'usersguideToolStripMenuItem3
+        '
+        Me.usersguideToolStripMenuItem3.Name = "usersguideToolStripMenuItem3"
+        Me.usersguideToolStripMenuItem3.Size = New System.Drawing.Size(269, 22)
+        Me.usersguideToolStripMenuItem3.Text = "Maximus78 User's Guide"
         '
         'ToolStripSeparator6
         '
@@ -1780,7 +1787,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 20)
-        Me.ToolStripStatusLabel1.Text = " v0.99.28b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.30b  "
         '
         'stripPalette
         '
@@ -3544,4 +3551,5 @@ Partial Class frmMain
     Friend WithEvents RecentToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator15 As ToolStripSeparator
+    Friend WithEvents usersguideToolStripMenuItem3 As ToolStripMenuItem
 End Class

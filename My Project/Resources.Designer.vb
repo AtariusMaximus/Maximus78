@@ -61,6 +61,456 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _A7800() As String
+            Get
+                Return ResourceManager.GetString("_A7800", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _A7800ConfigEditor() As String
+            Get
+                Return ResourceManager.GetString("_A7800ConfigEditor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff0\deff0\stshfdbch0\stshfloch31506\stshfhich31506\stshfbi31506\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f31500\fbi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _A7800Dev() As String
+            Get
+                Return ResourceManager.GetString("_A7800Dev", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _A7800Hardware() As String
+            Get
+                Return ResourceManager.GetString("_A7800Hardware", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _BoxArt() As String
+            Get
+                Return ResourceManager.GetString("_BoxArt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _BoxArtCMD() As String
+            Get
+                Return ResourceManager.GetString("_BoxArtCMD", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _DebugMode() As String
+            Get
+                Return ResourceManager.GetString("_DebugMode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Defaults() As String
+            Get
+                Return ResourceManager.GetString("_Defaults", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _DevMode() As String
+            Get
+                Return ResourceManager.GetString("_DevMode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _DirPaths() As String
+            Get
+                Return ResourceManager.GetString("_DirPaths", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Favorites() As String
+            Get
+                Return ResourceManager.GetString("_Favorites", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff0\deff0\stshfdbch0\stshfloch31506\stshfhich31506\stshfbi31506\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\flomajor\f31500\fbi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _FirstTime() As String
+            Get
+                Return ResourceManager.GetString("_FirstTime", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _GameInfo() As String
+            Get
+                Return ResourceManager.GetString("_GameInfo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _GameInfoEditor() As String
+            Get
+                Return ResourceManager.GetString("_GameInfoEditor", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _GameInfoWindow() As String
+            Get
+                Return ResourceManager.GetString("_GameInfoWindow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _GettingHelp() As String
+            Get
+                Return ResourceManager.GetString("_GettingHelp", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f38\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri Light;}{\f39\f [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _GettingStarted() As String
+            Get
+                Return ResourceManager.GetString("_GettingStarted", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _HighScores() As String
+            Get
+                Return ResourceManager.GetString("_HighScores", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _HSC() As String
+            Get
+                Return ResourceManager.GetString("_HSC", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Launching() As String
+            Get
+                Return ResourceManager.GetString("_Launching", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _LaunchingExternal() As String
+            Get
+                Return ResourceManager.GetString("_LaunchingExternal", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f38\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri Light;}{\f39\f [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _License() As String
+            Get
+                Return ResourceManager.GetString("_License", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Loading() As String
+            Get
+                Return ResourceManager.GetString("_Loading", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Optional() As String
+            Get
+                Return ResourceManager.GetString("_Optional", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Other() As String
+            Get
+                Return ResourceManager.GetString("_Other", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Palette() As String
+            Get
+                Return ResourceManager.GetString("_Palette", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f38\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri Light;}{\f39\f [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Requirements() As String
+            Get
+                Return ResourceManager.GetString("_Requirements", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _ROMs() As String
+            Get
+                Return ResourceManager.GetString("_ROMs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff0\deff0\stshfdbch0\stshfloch31506\stshfhich31506\stshfbi31506\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+        '''{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times N [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Root() As String
+            Get
+                Return ResourceManager.GetString("_Root", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Saving() As String
+            Get
+                Return ResourceManager.GetString("_Saving", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Screenshots() As String
+            Get
+                Return ResourceManager.GetString("_Screenshots", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _ScreenStretch() As String
+            Get
+                Return ResourceManager.GetString("_ScreenStretch", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f38\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri Light;}{\f39\f [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Setup() As String
+            Get
+                Return ResourceManager.GetString("_Setup", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _ThankYou() As String
+            Get
+                Return ResourceManager.GetString("_ThankYou", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _TripleBuffer() As String
+            Get
+                Return ResourceManager.GetString("_TripleBuffer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _TVType() As String
+            Get
+                Return ResourceManager.GetString("_TVType", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _Unloading() As String
+            Get
+                Return ResourceManager.GetString("_Unloading", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff0\deff0\stshfdbch0\stshfloch31506\stshfhich31506\stshfbi31506\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\flomajor\f31500\fbi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _UsingMaximus78() As String
+            Get
+                Return ResourceManager.GetString("_UsingMaximus78", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _UsingROMs() As String
+            Get
+                Return ResourceManager.GetString("_UsingROMs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _UsingTVVideo() As String
+            Get
+                Return ResourceManager.GetString("_UsingTVVideo", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _VideoOutput() As String
+            Get
+                Return ResourceManager.GetString("_VideoOutput", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _VsyncWait() As String
+            Get
+                Return ResourceManager.GetString("_VsyncWait", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+        '''{\f38\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0302020204030204}Calibri Light;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calib [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _WhatIs() As String
+            Get
+                Return ResourceManager.GetString("_WhatIs", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _WindowMode() As String
+            Get
+                Return ResourceManager.GetString("_WindowMode", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31506\stshfloch31506\stshfhich31506\stshfbi31507\deflang1033\deflangfe1033\themelang1033\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 00000000000000000000}Times New Roman;}{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+        '''{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f39\fbidi \fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}Calibri;}{\flomajor\f3 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property _XM() As String
+            Get
+                Return ResourceManager.GetString("_XM", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
         '''&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
         '''
@@ -84,12 +534,12 @@ Namespace My.Resources
         '''&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
         '''
         '''&lt;head&gt;
-        '''&lt;meta content=&quot;en-us&quot; http-equiv=&quot;Content-Language&quot; /&gt;
-        '''&lt;meta content=&quot;text/html; charset=utf-8&quot; http-equiv=&quot;Content-Type&quot; /&gt;
-        '''&lt;title&gt;Setting up Maximus78 and A7800&lt;/title&gt;
-        '''&lt;style type=&quot;text/css&quot;&gt;
-        '''.auto-style1 {
-        '''	font-family: &quot;Lucida Sans&quot;, &quot;Lucida Sans Regular&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Geneva, Verdana, sans-serif [rest of string was truncated]&quot;;.
+        '''    &lt;meta content=&quot;en-us&quot; http-equiv=&quot;Content-Language&quot; /&gt;
+        '''    &lt;meta content=&quot;text/html; charset=utf-8&quot; http-equiv=&quot;Content-Type&quot; /&gt;
+        '''    &lt;title&gt;Setting up Maximus78 and A7800&lt;/title&gt;
+        '''    &lt;style type=&quot;text/css&quot;&gt;
+        '''        .auto-style1 {
+        '''            font-family: &quot;Lucida Sans&quot;, &quot;Lucida Sans Regular&quot;, &quot;Lucida Grande&quot;, &quot;Lucida Sans Un [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property setup() As String
             Get

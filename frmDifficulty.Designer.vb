@@ -34,7 +34,7 @@ Partial Class frmDifficulty
         '
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 1)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(1325, 524)
         Me.PictureBox1.TabIndex = 0
@@ -44,7 +44,7 @@ Partial Class frmDifficulty
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(482, 539)
+        Me.Label1.Location = New System.Drawing.Point(482, 548)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(540, 13)
         Me.Label1.TabIndex = 3
@@ -53,7 +53,7 @@ Partial Class frmDifficulty
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1179, 534)
+        Me.Button1.Location = New System.Drawing.Point(1181, 543)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(149, 23)
         Me.Button1.TabIndex = 4
@@ -63,7 +63,7 @@ Partial Class frmDifficulty
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 539)
+        Me.Label2.Location = New System.Drawing.Point(12, 548)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(354, 13)
         Me.Label2.TabIndex = 5
@@ -73,7 +73,8 @@ Partial Class frmDifficulty
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1328, 563)
+        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ClientSize = New System.Drawing.Size(1344, 572)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
