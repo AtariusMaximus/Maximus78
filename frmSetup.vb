@@ -34,11 +34,11 @@ Public Class frmSetup
         frmMain.txtRomPath.Text = strFolder
         txtNTSCRetailPath.Text = strFolder + "\Retail_v3_0\NTSC"
         txtPALRetailPath.Text = strFolder + "\Retail_v3_0\PAL"
-        txtHomebrewPath.Text = strFolder + "\HHDP_20220627\Homebrews"
-        txtHacksPath.Text = strFolder + "\HHDP_20220627\Hacks"
-        txtDemosPath.Text = strFolder + "\HHDP_20220627\Demos"
-        txtProtosPath.Text = strFolder + "\HHDP_20220627\Prototypes"
-        txtUtilitiesPath.Text = strFolder + "\HHDP_20220627\Utilities"
+        txtHomebrewPath.Text = strFolder + "\HHDP_20230101\Homebrews"
+        txtHacksPath.Text = strFolder + "\HHDP_20230101\Hacks"
+        txtDemosPath.Text = strFolder + "\HHDP_20230101\Demos"
+        txtProtosPath.Text = strFolder + "\HHDP_20230101\Prototypes"
+        txtUtilitiesPath.Text = strFolder + "\HHDP_20230101\Utilities"
 
         My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", strFolder)
 
@@ -426,5 +426,9 @@ Public Class frmSetup
         frmMain.txtUtilitiesPath.Text = strManualsFolder
 
         My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
+    End Sub
+
+    Private Sub txtRomPath_TextChanged(sender As Object, e As EventArgs) Handles txtRomPath.TextChanged
+
     End Sub
 End Class

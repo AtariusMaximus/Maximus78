@@ -297,7 +297,7 @@ Partial Class frmSetup
         Me.Label2.Size = New System.Drawing.Size(657, 13)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "After selecting the Root Path to the Game ROMs, the subfolders fill in with the d" &
-    "efaults for v4.10. Adjust as necessary before you continue."
+    "efaults for v4.11. Adjust as necessary before you continue."
         '
         'Button9
         '
