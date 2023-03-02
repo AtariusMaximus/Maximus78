@@ -551,11 +551,12 @@ Partial Class frmMain
         Me.lstNTSCRetail.Location = New System.Drawing.Point(3, 3)
         Me.lstNTSCRetail.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstNTSCRetail.Name = "lstNTSCRetail"
-        Me.lstNTSCRetail.Size = New System.Drawing.Size(427, 618)
+        Me.lstNTSCRetail.Size = New System.Drawing.Size(427, 604)
         Me.lstNTSCRetail.TabIndex = 29
         '
         'contextNTSC
         '
+        Me.contextNTSC.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.contextNTSC.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.contextNTSCRetail, Me.ToolStripSeparator4, Me.AddScreenshotsToolStripMenuItem})
         Me.contextNTSC.Name = "contextNTSC"
         Me.contextNTSC.Size = New System.Drawing.Size(163, 54)
@@ -582,37 +583,37 @@ Partial Class frmMain
         'addImage1
         '
         Me.addImage1.Name = "addImage1"
-        Me.addImage1.Size = New System.Drawing.Size(115, 22)
+        Me.addImage1.Size = New System.Drawing.Size(116, 22)
         Me.addImage1.Text = "Image 1"
         '
         'addImage2
         '
         Me.addImage2.Name = "addImage2"
-        Me.addImage2.Size = New System.Drawing.Size(115, 22)
+        Me.addImage2.Size = New System.Drawing.Size(116, 22)
         Me.addImage2.Text = "Image 2"
         '
         'addImage3
         '
         Me.addImage3.Name = "addImage3"
-        Me.addImage3.Size = New System.Drawing.Size(115, 22)
+        Me.addImage3.Size = New System.Drawing.Size(116, 22)
         Me.addImage3.Text = "Image 3"
         '
         'addImage4
         '
         Me.addImage4.Name = "addImage4"
-        Me.addImage4.Size = New System.Drawing.Size(115, 22)
+        Me.addImage4.Size = New System.Drawing.Size(116, 22)
         Me.addImage4.Text = "Image 4"
         '
         'addImage5
         '
         Me.addImage5.Name = "addImage5"
-        Me.addImage5.Size = New System.Drawing.Size(115, 22)
+        Me.addImage5.Size = New System.Drawing.Size(116, 22)
         Me.addImage5.Text = "Image 5"
         '
         'addImage6
         '
         Me.addImage6.Name = "addImage6"
-        Me.addImage6.Size = New System.Drawing.Size(115, 22)
+        Me.addImage6.Size = New System.Drawing.Size(116, 22)
         Me.addImage6.Text = "Image 6"
         '
         'tabPAL
@@ -637,7 +638,7 @@ Partial Class frmMain
         Me.lstPALRetail.Location = New System.Drawing.Point(3, 2)
         Me.lstPALRetail.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstPALRetail.Name = "lstPALRetail"
-        Me.lstPALRetail.Size = New System.Drawing.Size(427, 618)
+        Me.lstPALRetail.Size = New System.Drawing.Size(427, 604)
         Me.lstPALRetail.TabIndex = 30
         '
         'tabHomebrews
@@ -661,7 +662,7 @@ Partial Class frmMain
         Me.lstHomebrews.Location = New System.Drawing.Point(3, 2)
         Me.lstHomebrews.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstHomebrews.Name = "lstHomebrews"
-        Me.lstHomebrews.Size = New System.Drawing.Size(427, 618)
+        Me.lstHomebrews.Size = New System.Drawing.Size(427, 604)
         Me.lstHomebrews.TabIndex = 31
         '
         'tabHacks
@@ -685,7 +686,7 @@ Partial Class frmMain
         Me.lstHacks.Location = New System.Drawing.Point(3, 2)
         Me.lstHacks.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstHacks.Name = "lstHacks"
-        Me.lstHacks.Size = New System.Drawing.Size(427, 618)
+        Me.lstHacks.Size = New System.Drawing.Size(427, 604)
         Me.lstHacks.TabIndex = 32
         '
         'tabDemos
@@ -709,7 +710,7 @@ Partial Class frmMain
         Me.lstDemos.Location = New System.Drawing.Point(3, 2)
         Me.lstDemos.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstDemos.Name = "lstDemos"
-        Me.lstDemos.Size = New System.Drawing.Size(427, 618)
+        Me.lstDemos.Size = New System.Drawing.Size(427, 604)
         Me.lstDemos.TabIndex = 32
         '
         'tabProtos
@@ -733,7 +734,7 @@ Partial Class frmMain
         Me.lstProtos.Location = New System.Drawing.Point(3, 2)
         Me.lstProtos.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstProtos.Name = "lstProtos"
-        Me.lstProtos.Size = New System.Drawing.Size(427, 618)
+        Me.lstProtos.Size = New System.Drawing.Size(427, 604)
         Me.lstProtos.TabIndex = 33
         '
         'tabUtilities
@@ -757,7 +758,7 @@ Partial Class frmMain
         Me.lstUtilities.Location = New System.Drawing.Point(3, 2)
         Me.lstUtilities.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstUtilities.Name = "lstUtilities"
-        Me.lstUtilities.Size = New System.Drawing.Size(427, 618)
+        Me.lstUtilities.Size = New System.Drawing.Size(427, 604)
         Me.lstUtilities.TabIndex = 33
         '
         'tabFavorites
@@ -781,30 +782,31 @@ Partial Class frmMain
         Me.lstFavorites.Location = New System.Drawing.Point(3, 2)
         Me.lstFavorites.MaximumSize = New System.Drawing.Size(427, 632)
         Me.lstFavorites.Name = "lstFavorites"
-        Me.lstFavorites.Size = New System.Drawing.Size(427, 618)
+        Me.lstFavorites.Size = New System.Drawing.Size(427, 604)
         Me.lstFavorites.TabIndex = 34
         '
         'contextFavorites
         '
+        Me.contextFavorites.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.contextFavorites.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemoveFromFavoritesToolStripMenuItem, Me.ToolStripSeparator3, Me.ClearAllFavoritesToolStripMenuItem})
         Me.contextFavorites.Name = "contextFavorites"
-        Me.contextFavorites.Size = New System.Drawing.Size(223, 54)
+        Me.contextFavorites.Size = New System.Drawing.Size(226, 54)
         '
         'RemoveFromFavoritesToolStripMenuItem
         '
         Me.RemoveFromFavoritesToolStripMenuItem.Name = "RemoveFromFavoritesToolStripMenuItem"
-        Me.RemoveFromFavoritesToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.RemoveFromFavoritesToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.RemoveFromFavoritesToolStripMenuItem.Text = "Remove Item From Favorites"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(219, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(222, 6)
         '
         'ClearAllFavoritesToolStripMenuItem
         '
         Me.ClearAllFavoritesToolStripMenuItem.Name = "ClearAllFavoritesToolStripMenuItem"
-        Me.ClearAllFavoritesToolStripMenuItem.Size = New System.Drawing.Size(222, 22)
+        Me.ClearAllFavoritesToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.ClearAllFavoritesToolStripMenuItem.Text = "Clear All Favorites"
         '
         'GroupBox2
@@ -1036,7 +1038,7 @@ Partial Class frmMain
         Me.statusTVType.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.statusTVType.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusTVType.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.statusTVType.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusTVType.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusTVType.Name = "statusTVType"
         Me.statusTVType.ReadOnly = True
         Me.statusTVType.Size = New System.Drawing.Size(97, 20)
@@ -1049,7 +1051,7 @@ Partial Class frmMain
         Me.statusPalette.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusPalette.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.statusPalette.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.statusPalette.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusPalette.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusPalette.Name = "statusPalette"
         Me.statusPalette.ReadOnly = True
         Me.statusPalette.Size = New System.Drawing.Size(105, 20)
@@ -1061,7 +1063,7 @@ Partial Class frmMain
         Me.statusXMhw.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.statusXMhw.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusXMhw.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.statusXMhw.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusXMhw.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusXMhw.Name = "statusXMhw"
         Me.statusXMhw.ReadOnly = True
         Me.statusXMhw.Size = New System.Drawing.Size(58, 20)
@@ -1073,7 +1075,7 @@ Partial Class frmMain
         Me.statusHSC.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.statusHSC.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusHSC.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.statusHSC.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusHSC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusHSC.Name = "statusHSC"
         Me.statusHSC.ReadOnly = True
         Me.statusHSC.Size = New System.Drawing.Size(68, 20)
@@ -1086,7 +1088,7 @@ Partial Class frmMain
         Me.statusDebug.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusDebug.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.statusDebug.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.statusDebug.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusDebug.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusDebug.Name = "statusDebug"
         Me.statusDebug.ReadOnly = True
         Me.statusDebug.Size = New System.Drawing.Size(115, 20)
@@ -1099,7 +1101,7 @@ Partial Class frmMain
         Me.statusXM.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusXM.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.statusXM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.statusXM.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusXM.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusXM.Name = "statusXM"
         Me.statusXM.ReadOnly = True
         Me.statusXM.Size = New System.Drawing.Size(98, 20)
@@ -1112,7 +1114,7 @@ Partial Class frmMain
         Me.statusVideo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.statusVideo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.statusVideo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.statusVideo.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.statusVideo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.statusVideo.Name = "statusVideo"
         Me.statusVideo.ReadOnly = True
         Me.statusVideo.Size = New System.Drawing.Size(122, 20)
@@ -1129,10 +1131,12 @@ Partial Class frmMain
         '
         Me.MenuStrip1.AutoSize = False
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI Variable Text", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.EditToolStripMenuItem, Me.ToolStripMenuItem1, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.MenuStrip1.Size = New System.Drawing.Size(1358, 25)
         Me.MenuStrip1.TabIndex = 56
@@ -1141,35 +1145,35 @@ Partial Class frmMain
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuLoadGame, Me.StartSelectedGameToolStripMenuItem, Me.ToolStripSeparator15, Me.RecentToolStripMenuItem, Me.ToolStripSeparator7, Me.mnuAddFavorite, Me.mnuRemoveFavorite, Me.ToolStripSeparator2, Me.ExitToolStripMenuItem1})
-        Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FileToolStripMenuItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 21)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(39, 21)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'mnuLoadGame
         '
         Me.mnuLoadGame.Name = "mnuLoadGame"
         Me.mnuLoadGame.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.L), System.Windows.Forms.Keys)
-        Me.mnuLoadGame.Size = New System.Drawing.Size(274, 22)
+        Me.mnuLoadGame.Size = New System.Drawing.Size(273, 22)
         Me.mnuLoadGame.Text = "Launch External ROM"
         '
         'StartSelectedGameToolStripMenuItem
         '
         Me.StartSelectedGameToolStripMenuItem.Name = "StartSelectedGameToolStripMenuItem"
         Me.StartSelectedGameToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.R), System.Windows.Forms.Keys)
-        Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(274, 22)
+        Me.StartSelectedGameToolStripMenuItem.Size = New System.Drawing.Size(273, 22)
         Me.StartSelectedGameToolStripMenuItem.Text = "Launch ROM from List"
         '
         'ToolStripSeparator15
         '
         Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
-        Me.ToolStripSeparator15.Size = New System.Drawing.Size(271, 6)
+        Me.ToolStripSeparator15.Size = New System.Drawing.Size(270, 6)
         '
         'RecentToolStripMenuItem
         '
         Me.RecentToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem4})
         Me.RecentToolStripMenuItem.Name = "RecentToolStripMenuItem"
-        Me.RecentToolStripMenuItem.Size = New System.Drawing.Size(274, 22)
+        Me.RecentToolStripMenuItem.Size = New System.Drawing.Size(273, 22)
         Me.RecentToolStripMenuItem.Text = "Recent"
         '
         'ToolStripMenuItem4
@@ -1181,38 +1185,38 @@ Partial Class frmMain
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(271, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(270, 6)
         '
         'mnuAddFavorite
         '
         Me.mnuAddFavorite.Name = "mnuAddFavorite"
         Me.mnuAddFavorite.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.mnuAddFavorite.Size = New System.Drawing.Size(274, 22)
+        Me.mnuAddFavorite.Size = New System.Drawing.Size(273, 22)
         Me.mnuAddFavorite.Text = "Add ROM to Favorites"
         '
         'mnuRemoveFavorite
         '
         Me.mnuRemoveFavorite.Name = "mnuRemoveFavorite"
         Me.mnuRemoveFavorite.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.mnuRemoveFavorite.Size = New System.Drawing.Size(274, 22)
+        Me.mnuRemoveFavorite.Size = New System.Drawing.Size(273, 22)
         Me.mnuRemoveFavorite.Text = "Remove ROM from Favorites"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(271, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(270, 6)
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(274, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(273, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'EditToolStripMenuItem
         '
         Me.EditToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.SetGameROMPathToolStripMenuItem, Me.SetGameBoxArtPathToolStripMenuItem, Me.SetManualsScreenshotPathToolStripMenuItem, Me.SetA7800EmulatorPathToolStripMenuItem, Me.ToolStripSeparator9, Me.ToolStripTextBox2, Me.SetTVTypeToolStripMenuItem, Me.ToolStripMenuItem2, Me.SetPaletteToolStripMenuItem, Me.setStretchMenuItem3, Me.menuWindowMode, Me.setVSYNCMenuItem3, Me.setTripleBufferMenuItem3, Me.ToolStripSeparator11, Me.ToolStripTextBox3, Me.SetXMSupportToolStripMenuItem, Me.SetHSCSupportToolStripMenuItem, Me.ToolStripSeparator12, Me.ToolStripTextBox6, Me.setDeveloperMenuItem1, Me.SetDebugToolStripMenuItem, Me.ToolStripSeparator13, Me.ToolStripTextBox10, Me.EditA7800ConfigurationFileToolStripMenuItem, Me.ToolStripSeparator1, Me.ResetAllOptionsToDefaultToolStripMenuItem, Me.ToolStripSeparator5, Me.ResetAllHighScoresToolStripMenuItem})
-        Me.EditToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditToolStripMenuItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.Size = New System.Drawing.Size(40, 21)
         Me.EditToolStripMenuItem.Text = "Edit"
@@ -1221,11 +1225,11 @@ Partial Class frmMain
         '
         Me.ToolStripTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ToolStripTextBox1.Enabled = False
-        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripTextBox1.ForeColor = System.Drawing.SystemColors.InfoText
         Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
         Me.ToolStripTextBox1.ReadOnly = True
-        Me.ToolStripTextBox1.Size = New System.Drawing.Size(252, 16)
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(252, 14)
         Me.ToolStripTextBox1.Text = "Select Directory Paths"
         '
         'SetGameROMPathToolStripMenuItem
@@ -1265,11 +1269,11 @@ Partial Class frmMain
         '
         Me.ToolStripTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ToolStripTextBox2.Enabled = False
-        Me.ToolStripTextBox2.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripTextBox2.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.ToolStripTextBox2.Name = "ToolStripTextBox2"
         Me.ToolStripTextBox2.ReadOnly = True
-        Me.ToolStripTextBox2.Size = New System.Drawing.Size(252, 16)
+        Me.ToolStripTextBox2.Size = New System.Drawing.Size(252, 14)
         Me.ToolStripTextBox2.Text = "Select TV and Video Options"
         '
         'SetTVTypeToolStripMenuItem
@@ -1285,14 +1289,14 @@ Partial Class frmMain
         Me.NTSCToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.NTSCToolStripMenuItem.Name = "NTSCToolStripMenuItem"
         Me.NTSCToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NTSCToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.NTSCToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NTSCToolStripMenuItem.Text = "NTSC"
         '
         'PALToolStripMenuItem
         '
         Me.PALToolStripMenuItem.Name = "PALToolStripMenuItem"
         Me.PALToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PALToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.PALToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PALToolStripMenuItem.Text = "PAL"
         '
         'ToolStripMenuItem2
@@ -1305,56 +1309,56 @@ Partial Class frmMain
         'videoCompatibility
         '
         Me.videoCompatibility.Name = "videoCompatibility"
-        Me.videoCompatibility.Size = New System.Drawing.Size(237, 22)
+        Me.videoCompatibility.Size = New System.Drawing.Size(233, 22)
         Me.videoCompatibility.Text = "Direct 3D Compatibility Mode"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-        Me.ToolStripSeparator10.Size = New System.Drawing.Size(234, 6)
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(230, 6)
         '
         'videoBasic
         '
         Me.videoBasic.Checked = True
         Me.videoBasic.CheckState = System.Windows.Forms.CheckState.Checked
         Me.videoBasic.Name = "videoBasic"
-        Me.videoBasic.Size = New System.Drawing.Size(237, 22)
+        Me.videoBasic.Size = New System.Drawing.Size(233, 22)
         Me.videoBasic.Text = "Basic"
         '
         'videoCRT
         '
         Me.videoCRT.Name = "videoCRT"
-        Me.videoCRT.Size = New System.Drawing.Size(237, 22)
+        Me.videoCRT.Size = New System.Drawing.Size(233, 22)
         Me.videoCRT.Text = "CRT"
         '
         'videoCRTDeluxe
         '
         Me.videoCRTDeluxe.Name = "videoCRTDeluxe"
-        Me.videoCRTDeluxe.Size = New System.Drawing.Size(237, 22)
+        Me.videoCRTDeluxe.Size = New System.Drawing.Size(233, 22)
         Me.videoCRTDeluxe.Text = "CRT Deluxe"
         '
         'videoSuperEagle
         '
         Me.videoSuperEagle.Name = "videoSuperEagle"
-        Me.videoSuperEagle.Size = New System.Drawing.Size(237, 22)
+        Me.videoSuperEagle.Size = New System.Drawing.Size(233, 22)
         Me.videoSuperEagle.Text = "Super Eagle"
         '
         'videoHLSL
         '
         Me.videoHLSL.Name = "videoHLSL"
-        Me.videoHLSL.Size = New System.Drawing.Size(237, 22)
+        Me.videoHLSL.Size = New System.Drawing.Size(233, 22)
         Me.videoHLSL.Text = "HLSL"
         '
         'videoHQ2x
         '
         Me.videoHQ2x.Name = "videoHQ2x"
-        Me.videoHQ2x.Size = New System.Drawing.Size(237, 22)
+        Me.videoHQ2x.Size = New System.Drawing.Size(233, 22)
         Me.videoHQ2x.Text = "HQ2x"
         '
         'videoHQ4x
         '
         Me.videoHQ4x.Name = "videoHQ4x"
-        Me.videoHQ4x.Size = New System.Drawing.Size(237, 22)
+        Me.videoHQ4x.Size = New System.Drawing.Size(233, 22)
         Me.videoHQ4x.Text = "HQ4x"
         '
         'SetPaletteToolStripMenuItem
@@ -1370,21 +1374,21 @@ Partial Class frmMain
         Me.paletteWARM.CheckState = System.Windows.Forms.CheckState.Checked
         Me.paletteWARM.Name = "paletteWARM"
         Me.paletteWARM.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F5), System.Windows.Forms.Keys)
-        Me.paletteWARM.Size = New System.Drawing.Size(192, 22)
+        Me.paletteWARM.Size = New System.Drawing.Size(189, 22)
         Me.paletteWARM.Text = "Warm Palette"
         '
         'paletteCOOL
         '
         Me.paletteCOOL.Name = "paletteCOOL"
         Me.paletteCOOL.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F6), System.Windows.Forms.Keys)
-        Me.paletteCOOL.Size = New System.Drawing.Size(192, 22)
+        Me.paletteCOOL.Size = New System.Drawing.Size(189, 22)
         Me.paletteCOOL.Text = "Cool Palette"
         '
         'paletteHOT
         '
         Me.paletteHOT.Name = "paletteHOT"
         Me.paletteHOT.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F7), System.Windows.Forms.Keys)
-        Me.paletteHOT.Size = New System.Drawing.Size(192, 22)
+        Me.paletteHOT.Size = New System.Drawing.Size(189, 22)
         Me.paletteHOT.Text = "Hot Palette"
         '
         'setStretchMenuItem3
@@ -1397,7 +1401,7 @@ Partial Class frmMain
         'stretchON
         '
         Me.stretchON.Name = "stretchON"
-        Me.stretchON.Size = New System.Drawing.Size(91, 22)
+        Me.stretchON.Size = New System.Drawing.Size(90, 22)
         Me.stretchON.Text = "On"
         '
         'stretchOFF
@@ -1405,7 +1409,7 @@ Partial Class frmMain
         Me.stretchOFF.Checked = True
         Me.stretchOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.stretchOFF.Name = "stretchOFF"
-        Me.stretchOFF.Size = New System.Drawing.Size(91, 22)
+        Me.stretchOFF.Size = New System.Drawing.Size(90, 22)
         Me.stretchOFF.Text = "Off"
         '
         'menuWindowMode
@@ -1420,13 +1424,13 @@ Partial Class frmMain
         Me.fullscreenOFF.Checked = True
         Me.fullscreenOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.fullscreenOFF.Name = "fullscreenOFF"
-        Me.fullscreenOFF.Size = New System.Drawing.Size(133, 22)
+        Me.fullscreenOFF.Size = New System.Drawing.Size(136, 22)
         Me.fullscreenOFF.Text = "Windowed"
         '
         'fullScreenON
         '
         Me.fullScreenON.Name = "fullScreenON"
-        Me.fullScreenON.Size = New System.Drawing.Size(133, 22)
+        Me.fullScreenON.Size = New System.Drawing.Size(136, 22)
         Me.fullScreenON.Text = "Full Screen"
         '
         'setVSYNCMenuItem3
@@ -1439,7 +1443,7 @@ Partial Class frmMain
         'vsyncON
         '
         Me.vsyncON.Name = "vsyncON"
-        Me.vsyncON.Size = New System.Drawing.Size(91, 22)
+        Me.vsyncON.Size = New System.Drawing.Size(90, 22)
         Me.vsyncON.Text = "On"
         '
         'vsyncOFF
@@ -1447,7 +1451,7 @@ Partial Class frmMain
         Me.vsyncOFF.Checked = True
         Me.vsyncOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.vsyncOFF.Name = "vsyncOFF"
-        Me.vsyncOFF.Size = New System.Drawing.Size(91, 22)
+        Me.vsyncOFF.Size = New System.Drawing.Size(90, 22)
         Me.vsyncOFF.Text = "Off"
         '
         'setTripleBufferMenuItem3
@@ -1460,7 +1464,7 @@ Partial Class frmMain
         'triplebufferON
         '
         Me.triplebufferON.Name = "triplebufferON"
-        Me.triplebufferON.Size = New System.Drawing.Size(91, 22)
+        Me.triplebufferON.Size = New System.Drawing.Size(90, 22)
         Me.triplebufferON.Text = "On"
         '
         'triplebufferOFF
@@ -1468,7 +1472,7 @@ Partial Class frmMain
         Me.triplebufferOFF.Checked = True
         Me.triplebufferOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.triplebufferOFF.Name = "triplebufferOFF"
-        Me.triplebufferOFF.Size = New System.Drawing.Size(91, 22)
+        Me.triplebufferOFF.Size = New System.Drawing.Size(90, 22)
         Me.triplebufferOFF.Text = "Off"
         '
         'ToolStripSeparator11
@@ -1480,11 +1484,11 @@ Partial Class frmMain
         '
         Me.ToolStripTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ToolStripTextBox3.Enabled = False
-        Me.ToolStripTextBox3.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripTextBox3.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.ToolStripTextBox3.Name = "ToolStripTextBox3"
         Me.ToolStripTextBox3.ReadOnly = True
-        Me.ToolStripTextBox3.Size = New System.Drawing.Size(252, 16)
+        Me.ToolStripTextBox3.Size = New System.Drawing.Size(252, 14)
         Me.ToolStripTextBox3.Text = "Select Add-On Hardware"
         '
         'SetXMSupportToolStripMenuItem
@@ -1497,7 +1501,7 @@ Partial Class frmMain
         'xmON
         '
         Me.xmON.Name = "xmON"
-        Me.xmON.Size = New System.Drawing.Size(91, 22)
+        Me.xmON.Size = New System.Drawing.Size(90, 22)
         Me.xmON.Text = "On"
         '
         'xmOFF
@@ -1505,7 +1509,7 @@ Partial Class frmMain
         Me.xmOFF.Checked = True
         Me.xmOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.xmOFF.Name = "xmOFF"
-        Me.xmOFF.Size = New System.Drawing.Size(91, 22)
+        Me.xmOFF.Size = New System.Drawing.Size(90, 22)
         Me.xmOFF.Text = "Off"
         '
         'SetHSCSupportToolStripMenuItem
@@ -1518,7 +1522,7 @@ Partial Class frmMain
         'hscON
         '
         Me.hscON.Name = "hscON"
-        Me.hscON.Size = New System.Drawing.Size(91, 22)
+        Me.hscON.Size = New System.Drawing.Size(90, 22)
         Me.hscON.Text = "On"
         '
         'hscOFF
@@ -1526,7 +1530,7 @@ Partial Class frmMain
         Me.hscOFF.Checked = True
         Me.hscOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.hscOFF.Name = "hscOFF"
-        Me.hscOFF.Size = New System.Drawing.Size(91, 22)
+        Me.hscOFF.Size = New System.Drawing.Size(90, 22)
         Me.hscOFF.Text = "Off"
         '
         'ToolStripSeparator12
@@ -1538,11 +1542,11 @@ Partial Class frmMain
         '
         Me.ToolStripTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ToolStripTextBox6.Enabled = False
-        Me.ToolStripTextBox6.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripTextBox6.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.ToolStripTextBox6.Name = "ToolStripTextBox6"
         Me.ToolStripTextBox6.ReadOnly = True
-        Me.ToolStripTextBox6.Size = New System.Drawing.Size(252, 16)
+        Me.ToolStripTextBox6.Size = New System.Drawing.Size(252, 14)
         Me.ToolStripTextBox6.Text = "Select Developer Options"
         '
         'setDeveloperMenuItem1
@@ -1555,7 +1559,7 @@ Partial Class frmMain
         'devON
         '
         Me.devON.Name = "devON"
-        Me.devON.Size = New System.Drawing.Size(91, 22)
+        Me.devON.Size = New System.Drawing.Size(90, 22)
         Me.devON.Text = "On"
         '
         'devOFF
@@ -1563,7 +1567,7 @@ Partial Class frmMain
         Me.devOFF.Checked = True
         Me.devOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.devOFF.Name = "devOFF"
-        Me.devOFF.Size = New System.Drawing.Size(91, 22)
+        Me.devOFF.Size = New System.Drawing.Size(90, 22)
         Me.devOFF.Text = "Off"
         '
         'SetDebugToolStripMenuItem
@@ -1576,7 +1580,7 @@ Partial Class frmMain
         'debugON
         '
         Me.debugON.Name = "debugON"
-        Me.debugON.Size = New System.Drawing.Size(91, 22)
+        Me.debugON.Size = New System.Drawing.Size(90, 22)
         Me.debugON.Text = "On"
         '
         'debugOFF
@@ -1584,7 +1588,7 @@ Partial Class frmMain
         Me.debugOFF.Checked = True
         Me.debugOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.debugOFF.Name = "debugOFF"
-        Me.debugOFF.Size = New System.Drawing.Size(91, 22)
+        Me.debugOFF.Size = New System.Drawing.Size(90, 22)
         Me.debugOFF.Text = "Off"
         '
         'ToolStripSeparator13
@@ -1596,11 +1600,11 @@ Partial Class frmMain
         '
         Me.ToolStripTextBox10.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ToolStripTextBox10.Enabled = False
-        Me.ToolStripTextBox10.Font = New System.Drawing.Font("Segoe UI Variable Text", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripTextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripTextBox10.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.ToolStripTextBox10.Name = "ToolStripTextBox10"
         Me.ToolStripTextBox10.ReadOnly = True
-        Me.ToolStripTextBox10.Size = New System.Drawing.Size(252, 16)
+        Me.ToolStripTextBox10.Size = New System.Drawing.Size(252, 14)
         Me.ToolStripTextBox10.Text = "Select A7800 Emulator Options"
         '
         'EditA7800ConfigurationFileToolStripMenuItem
@@ -1635,7 +1639,7 @@ Partial Class frmMain
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuStatus, Me.WindowToolStripMenuItem})
-        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(45, 21)
         Me.ToolStripMenuItem1.Text = "View"
@@ -1644,28 +1648,28 @@ Partial Class frmMain
         '
         Me.mnuStatus.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusON, Me.statusOFF})
         Me.mnuStatus.Name = "mnuStatus"
-        Me.mnuStatus.Size = New System.Drawing.Size(130, 22)
+        Me.mnuStatus.Size = New System.Drawing.Size(180, 22)
         Me.mnuStatus.Text = "Status Bar"
         '
         'statusON
         '
+        Me.statusON.Checked = True
+        Me.statusON.CheckState = System.Windows.Forms.CheckState.Checked
         Me.statusON.Name = "statusON"
-        Me.statusON.Size = New System.Drawing.Size(91, 22)
+        Me.statusON.Size = New System.Drawing.Size(180, 22)
         Me.statusON.Text = "On"
         '
         'statusOFF
         '
-        Me.statusOFF.Checked = True
-        Me.statusOFF.CheckState = System.Windows.Forms.CheckState.Checked
         Me.statusOFF.Name = "statusOFF"
-        Me.statusOFF.Size = New System.Drawing.Size(91, 22)
+        Me.statusOFF.Size = New System.Drawing.Size(180, 22)
         Me.statusOFF.Text = "Off"
         '
         'WindowToolStripMenuItem
         '
         Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.displayFULL, Me.displayMED, Me.displaySMALL})
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.WindowToolStripMenuItem.Text = "Window"
         '
         'displayFULL
@@ -1673,112 +1677,113 @@ Partial Class frmMain
         Me.displayFULL.Checked = True
         Me.displayFULL.CheckState = System.Windows.Forms.CheckState.Checked
         Me.displayFULL.Name = "displayFULL"
-        Me.displayFULL.Size = New System.Drawing.Size(273, 22)
+        Me.displayFULL.Size = New System.Drawing.Size(274, 22)
         Me.displayFULL.Text = "Full: Display All"
         '
         'displayMED
         '
         Me.displayMED.Name = "displayMED"
-        Me.displayMED.Size = New System.Drawing.Size(273, 22)
+        Me.displayMED.Size = New System.Drawing.Size(274, 22)
         Me.displayMED.Text = "Medium: Game List and Box Art Only"
         '
         'displaySMALL
         '
         Me.displaySMALL.Name = "displaySMALL"
-        Me.displaySMALL.Size = New System.Drawing.Size(273, 22)
+        Me.displaySMALL.Size = New System.Drawing.Size(274, 22)
         Me.displaySMALL.Text = "Small: Game List Only"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.usersguideToolStripMenuItem3, Me.ToolStripSeparator6, Me.A7800EmulatorToolStripMenuItem, Me.Atari7800ToolStripMenuItem})
-        Me.HelpToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Variable Display Semib", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpToolStripMenuItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 21)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(45, 21)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(269, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'usersguideToolStripMenuItem3
         '
         Me.usersguideToolStripMenuItem3.Name = "usersguideToolStripMenuItem3"
-        Me.usersguideToolStripMenuItem3.Size = New System.Drawing.Size(269, 22)
+        Me.usersguideToolStripMenuItem3.Size = New System.Drawing.Size(270, 22)
         Me.usersguideToolStripMenuItem3.Text = "Maximus78 User's Guide"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(266, 6)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(267, 6)
         '
         'A7800EmulatorToolStripMenuItem
         '
         Me.A7800EmulatorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.KeyboardMappingsToolStripMenuItem, Me.TVAndVideoTipsToolStripMenuItem, Me.ToolStripSeparator8, Me.UsersGuideToolStripMenuItem})
         Me.A7800EmulatorToolStripMenuItem.Name = "A7800EmulatorToolStripMenuItem"
-        Me.A7800EmulatorToolStripMenuItem.Size = New System.Drawing.Size(269, 22)
+        Me.A7800EmulatorToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
         Me.A7800EmulatorToolStripMenuItem.Text = "A7800 Emulator Info"
         '
         'KeyboardMappingsToolStripMenuItem
         '
         Me.KeyboardMappingsToolStripMenuItem.Name = "KeyboardMappingsToolStripMenuItem"
-        Me.KeyboardMappingsToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.KeyboardMappingsToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.KeyboardMappingsToolStripMenuItem.Text = "Default Keyboard Mappings"
         '
         'TVAndVideoTipsToolStripMenuItem
         '
         Me.TVAndVideoTipsToolStripMenuItem.Name = "TVAndVideoTipsToolStripMenuItem"
-        Me.TVAndVideoTipsToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.TVAndVideoTipsToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.TVAndVideoTipsToolStripMenuItem.Text = "TV, Video and Developer Info"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(227, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(228, 6)
         '
         'UsersGuideToolStripMenuItem
         '
         Me.UsersGuideToolStripMenuItem.Name = "UsersGuideToolStripMenuItem"
-        Me.UsersGuideToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.UsersGuideToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
         Me.UsersGuideToolStripMenuItem.Text = "A7800 User's Guide"
         '
         'Atari7800ToolStripMenuItem
         '
         Me.Atari7800ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ButtonDefinitionsForGamesToolStripMenuItem, Me.DifficultySwitchOptionsForGamesToolStripMenuItem, Me.ToolStripSeparator14, Me.Atari7800ProSystemOwnersManualToolStripMenuItem1})
         Me.Atari7800ToolStripMenuItem.Name = "Atari7800ToolStripMenuItem"
-        Me.Atari7800ToolStripMenuItem.Size = New System.Drawing.Size(269, 22)
+        Me.Atari7800ToolStripMenuItem.Size = New System.Drawing.Size(270, 22)
         Me.Atari7800ToolStripMenuItem.Text = "Atari 7800 Hardware and Game Info"
         '
         'ButtonDefinitionsForGamesToolStripMenuItem
         '
         Me.ButtonDefinitionsForGamesToolStripMenuItem.Name = "ButtonDefinitionsForGamesToolStripMenuItem"
-        Me.ButtonDefinitionsForGamesToolStripMenuItem.Size = New System.Drawing.Size(298, 22)
+        Me.ButtonDefinitionsForGamesToolStripMenuItem.Size = New System.Drawing.Size(294, 22)
         Me.ButtonDefinitionsForGamesToolStripMenuItem.Text = "Button Definitions for 7800 Games"
         '
         'DifficultySwitchOptionsForGamesToolStripMenuItem
         '
         Me.DifficultySwitchOptionsForGamesToolStripMenuItem.Name = "DifficultySwitchOptionsForGamesToolStripMenuItem"
-        Me.DifficultySwitchOptionsForGamesToolStripMenuItem.Size = New System.Drawing.Size(298, 22)
+        Me.DifficultySwitchOptionsForGamesToolStripMenuItem.Size = New System.Drawing.Size(294, 22)
         Me.DifficultySwitchOptionsForGamesToolStripMenuItem.Text = "Difficulty Switch Options for 7800 Games"
         '
         'ToolStripSeparator14
         '
         Me.ToolStripSeparator14.Name = "ToolStripSeparator14"
-        Me.ToolStripSeparator14.Size = New System.Drawing.Size(295, 6)
+        Me.ToolStripSeparator14.Size = New System.Drawing.Size(291, 6)
         '
         'Atari7800ProSystemOwnersManualToolStripMenuItem1
         '
         Me.Atari7800ProSystemOwnersManualToolStripMenuItem1.Name = "Atari7800ProSystemOwnersManualToolStripMenuItem1"
-        Me.Atari7800ProSystemOwnersManualToolStripMenuItem1.Size = New System.Drawing.Size(298, 22)
+        Me.Atari7800ProSystemOwnersManualToolStripMenuItem1.Size = New System.Drawing.Size(294, 22)
         Me.Atari7800ProSystemOwnersManualToolStripMenuItem1.Text = "Atari 7800 ProSystem Owner's Manual"
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.stripPalette, Me.stripTVType, Me.stripVideo, Me.stripStretch, Me.stripWindow, Me.stripVsync, Me.stripTripleBuffer, Me.stripXM, Me.stripHSC, Me.stripDev, Me.stripDebug})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 700)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 701)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1358, 25)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1358, 24)
         Me.StatusStrip1.TabIndex = 57
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -1786,84 +1791,84 @@ Partial Class frmMain
         '
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 20)
-        Me.ToolStripStatusLabel1.Text = " v0.99.30b  "
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 19)
+        Me.ToolStripStatusLabel1.Text = " v0.99.31b  "
         '
         'stripPalette
         '
         Me.stripPalette.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripPalette.Name = "stripPalette"
-        Me.stripPalette.Size = New System.Drawing.Size(90, 20)
+        Me.stripPalette.Size = New System.Drawing.Size(91, 19)
         Me.stripPalette.Text = "Palette: Warm  "
         '
         'stripTVType
         '
         Me.stripTVType.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripTVType.Name = "stripTVType"
-        Me.stripTVType.Size = New System.Drawing.Size(91, 20)
+        Me.stripTVType.Size = New System.Drawing.Size(92, 19)
         Me.stripTVType.Text = "TV Type: NTSC  "
         '
         'stripVideo
         '
         Me.stripVideo.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripVideo.Name = "stripVideo"
-        Me.stripVideo.Size = New System.Drawing.Size(121, 20)
+        Me.stripVideo.Size = New System.Drawing.Size(121, 19)
         Me.stripVideo.Text = "Video Output: Basic  "
         '
         'stripStretch
         '
         Me.stripStretch.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripStretch.Name = "stripStretch"
-        Me.stripStretch.Size = New System.Drawing.Size(115, 20)
+        Me.stripStretch.Size = New System.Drawing.Size(115, 19)
         Me.stripStretch.Text = "Screen Stretch: Off  "
         '
         'stripWindow
         '
         Me.stripWindow.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripWindow.Name = "stripWindow"
-        Me.stripWindow.Size = New System.Drawing.Size(158, 20)
+        Me.stripWindow.Size = New System.Drawing.Size(158, 19)
         Me.stripWindow.Text = "Window Mode: Windowed  "
         '
         'stripVsync
         '
         Me.stripVsync.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripVsync.Name = "stripVsync"
-        Me.stripVsync.Size = New System.Drawing.Size(98, 20)
+        Me.stripVsync.Size = New System.Drawing.Size(98, 19)
         Me.stripVsync.Text = "Vsync Wait: Off  "
         '
         'stripTripleBuffer
         '
         Me.stripTripleBuffer.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripTripleBuffer.Name = "stripTripleBuffer"
-        Me.stripTripleBuffer.Size = New System.Drawing.Size(103, 20)
+        Me.stripTripleBuffer.Size = New System.Drawing.Size(103, 19)
         Me.stripTripleBuffer.Text = "Triple Buffer: Off  "
         '
         'stripXM
         '
         Me.stripXM.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripXM.Name = "stripXM"
-        Me.stripXM.Size = New System.Drawing.Size(103, 20)
+        Me.stripXM.Size = New System.Drawing.Size(103, 19)
         Me.stripXM.Text = "XM Support: Off  "
         '
         'stripHSC
         '
         Me.stripHSC.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripHSC.Name = "stripHSC"
-        Me.stripHSC.Size = New System.Drawing.Size(107, 20)
+        Me.stripHSC.Size = New System.Drawing.Size(108, 19)
         Me.stripHSC.Text = "HSC Support: Off  "
         '
         'stripDev
         '
         Me.stripDev.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripDev.Name = "stripDev"
-        Me.stripDev.Size = New System.Drawing.Size(94, 20)
+        Me.stripDev.Size = New System.Drawing.Size(94, 19)
         Me.stripDev.Text = "Dev Mode: Off  "
         '
         'stripDebug
         '
         Me.stripDebug.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left
         Me.stripDebug.Name = "stripDebug"
-        Me.stripDebug.Size = New System.Drawing.Size(109, 20)
+        Me.stripDebug.Size = New System.Drawing.Size(109, 19)
         Me.stripDebug.Text = "Debug Mode: Off  "
         '
         'TabEditor
@@ -3155,6 +3160,7 @@ Partial Class frmMain
         '
         'ContextBoxArt
         '
+        Me.ContextBoxArt.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextBoxArt.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateBoxArtToolStripMenuItem})
         Me.ContextBoxArt.Name = "ContextBoxArt"
         Me.ContextBoxArt.Size = New System.Drawing.Size(155, 26)
