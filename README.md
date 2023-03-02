@@ -14,11 +14,6 @@ files, and
 screenshots.&nbsp; These steps outline the basic requirements to get started, 
 please see the official documentation for more specific information on using and 
 configuring Maximus78.</p>
-<p class="auto-style1"> You can check for the latest released version  
-here:<br />
-<a href="https://github.com/AtariusMaximus/Maximus78">
-https://github.com/AtariusMaximus/Maximus78</a><br />
-<br />
 1. <strong>Download the A7800 Windows Package<br />
 </strong><br />
 Maximus78 requires the A7800 Emulator.&nbsp; Download the latest version from 
