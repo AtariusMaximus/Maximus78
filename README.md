@@ -1,5 +1,5 @@
 # Maximus78
-Maximus78 Front End for the Atari 7800 Emulator, A7800.  For detailed information please reference the User's Guide, which can be downloaded <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78%20User's%20Guide.pdf">
+Maximus78 is a Windows based Front End for the Atari 7800 Emulator, A7800.  For detailed information please reference the User's Guide, which can be downloaded <a href="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78%20User's%20Guide.pdf">
 here.</a><br />
 
 <img><img src="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_screenshot1.png">
