@@ -2725,7 +2725,13 @@ SkipLaunching:
 
     Private Sub lstPALRetail_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstPALRetail.SelectedIndexChanged
 
-
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -3364,6 +3370,13 @@ SkipLaunching:
 
     Private Sub lstHomebrews_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHomebrews.SelectedIndexChanged
 
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
 
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
@@ -4999,6 +5012,13 @@ SkipLaunching:
 
     Private Sub lstHacks_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstHacks.SelectedIndexChanged
 
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -7741,6 +7761,16 @@ SkipLaunching:
     End Sub
 
     Private Sub lstDemos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstDemos.SelectedIndexChanged
+
+
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
+
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -11059,6 +11089,13 @@ SkipLaunching:
 
     Private Sub lstProtos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstProtos.SelectedIndexChanged
 
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -11366,6 +11403,13 @@ SkipLaunching:
 
     Private Sub lstUtilities_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstUtilities.SelectedIndexChanged
 
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -12543,6 +12587,14 @@ SkipLaunching:
     End Sub
 
     Private Sub lstFavorites_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstFavorites.SelectedIndexChanged
+
+        'Clear Screenshot Images
+        Screenshot1.BackgroundImage = Nothing
+        Screenshot2.BackgroundImage = Nothing
+        Screenshot3.BackgroundImage = Nothing
+        Screenshot4.BackgroundImage = Nothing
+        Screenshot5.BackgroundImage = Nothing
+        Screenshot6.BackgroundImage = Nothing
 
         'Set Defaults for Box Art and HTML page, it will be replaced if files are found later.
         pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
@@ -14393,6 +14445,10 @@ SkipSaveBoxArt:
     End Sub
 
     Private Sub ToolStripStatusLabel1_Click(sender As Object, e As EventArgs) Handles ToolStripStatusLabel1.Click
+
+    End Sub
+
+    Private Sub tabScreenshots_Click(sender As Object, e As EventArgs) Handles tabScreenshots.Click
 
     End Sub
 End Class

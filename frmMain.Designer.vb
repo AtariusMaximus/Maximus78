@@ -1289,14 +1289,14 @@ Partial Class frmMain
         Me.NTSCToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.NTSCToolStripMenuItem.Name = "NTSCToolStripMenuItem"
         Me.NTSCToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NTSCToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NTSCToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.NTSCToolStripMenuItem.Text = "NTSC"
         '
         'PALToolStripMenuItem
         '
         Me.PALToolStripMenuItem.Name = "PALToolStripMenuItem"
         Me.PALToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PALToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PALToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.PALToolStripMenuItem.Text = "PAL"
         '
         'ToolStripMenuItem2
@@ -1648,7 +1648,7 @@ Partial Class frmMain
         '
         Me.mnuStatus.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.statusON, Me.statusOFF})
         Me.mnuStatus.Name = "mnuStatus"
-        Me.mnuStatus.Size = New System.Drawing.Size(180, 22)
+        Me.mnuStatus.Size = New System.Drawing.Size(130, 22)
         Me.mnuStatus.Text = "Status Bar"
         '
         'statusON
@@ -1656,20 +1656,20 @@ Partial Class frmMain
         Me.statusON.Checked = True
         Me.statusON.CheckState = System.Windows.Forms.CheckState.Checked
         Me.statusON.Name = "statusON"
-        Me.statusON.Size = New System.Drawing.Size(180, 22)
+        Me.statusON.Size = New System.Drawing.Size(90, 22)
         Me.statusON.Text = "On"
         '
         'statusOFF
         '
         Me.statusOFF.Name = "statusOFF"
-        Me.statusOFF.Size = New System.Drawing.Size(180, 22)
+        Me.statusOFF.Size = New System.Drawing.Size(90, 22)
         Me.statusOFF.Text = "Off"
         '
         'WindowToolStripMenuItem
         '
         Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.displayFULL, Me.displayMED, Me.displaySMALL})
         Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WindowToolStripMenuItem.Size = New System.Drawing.Size(130, 22)
         Me.WindowToolStripMenuItem.Text = "Window"
         '
         'displayFULL
@@ -1792,7 +1792,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 19)
-        Me.ToolStripStatusLabel1.Text = " v0.99.31b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.32b  "
         '
         'stripPalette
         '
