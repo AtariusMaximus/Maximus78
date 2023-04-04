@@ -50,7 +50,7 @@ includes a comprehensive compilation of Atari 7800 Homebrews, Hacks, Demos,
 Prototypes, and all retail releases in both NTSC and PAL formats.&nbsp; You can 
 safely overwrite the contents of the ROMs folder with this file if you have an 
 older version of Trebor&#39;s ROM pack.
-It's important to note that all of the screenshots, manuals, and box art are tied to the exact file names in Trebor's ROM Pack, it's important that you do not rename an of the ROM files for Maximus78 to function properly.</p>
+It's important to note that all of the screenshots, manuals, and box art are tied to the exact file names in Trebor's ROM Pack, it's important that you do not rename any of the ROM files for Maximus78 to function properly.</p>
 <p class="auto-style1">Unzip it anywhere you&#39;d like, but I&#39;d suggest the 
 roms folder in your A7800 Directory.<br />
 <a href="http://7800.8bitdev.org/index.php/Trebors_7800_ROM_PROPack">
@@ -60,8 +60,7 @@ http://7800.8bitdev.org/index.php/Trebors_7800_ROM_PROPack</a><br>
 <br />
 </strong><br />
 You can unzip this archive anywhere, however I would suggest creating a "gameinfo" subfolder in your main A7800 Directory.&nbsp; 
-This archive is available at the same location as the official release page for 
-Maximus78 on GitHub.&nbsp;
+&nbsp;
 You&#39;ll need to download all of the files, they are a split archive due to the 
 25MB file limit on GitHub.<br />
 </p>
