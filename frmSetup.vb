@@ -32,13 +32,13 @@ Public Class frmSetup
 
         txtRomPath.Text = strFolder
         frmMain.txtRomPath.Text = strFolder
-        txtNTSCRetailPath.Text = strFolder + "\Retail_v3_0\NTSC"
-        txtPALRetailPath.Text = strFolder + "\Retail_v3_0\PAL"
-        txtHomebrewPath.Text = strFolder + "\HHDP_20230101\Homebrews"
-        txtHacksPath.Text = strFolder + "\HHDP_20230101\Hacks"
-        txtDemosPath.Text = strFolder + "\HHDP_20230101\Demos"
-        txtProtosPath.Text = strFolder + "\HHDP_20230101\Prototypes"
-        txtUtilitiesPath.Text = strFolder + "\HHDP_20230101\Utilities"
+        txtNTSCRetailPath.Text = strFolder + "\Retail_v4_0\NTSC"
+        txtPALRetailPath.Text = strFolder + "\Retail_v4_0\PAL"
+        txtHomebrewPath.Text = strFolder + "\HHDP_20230423\Homebrews"
+        txtHacksPath.Text = strFolder + "\HHDP_20230423\Hacks"
+        txtDemosPath.Text = strFolder + "\HHDP_20230423\Demos"
+        txtProtosPath.Text = strFolder + "\HHDP_20230423\Prototypes"
+        txtUtilitiesPath.Text = strFolder + "\HHDP_20230423\Utilities"
 
         My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", strFolder)
 

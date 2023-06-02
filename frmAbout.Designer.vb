@@ -40,12 +40,15 @@ Partial Class frmAbout
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -62,6 +65,7 @@ Partial Class frmAbout
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Location = New System.Drawing.Point(254, 13)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -175,7 +179,7 @@ Partial Class frmAbout
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(212, 16)
         Me.TextBox1.TabIndex = 2
-        Me.TextBox1.Text = "Maximus78 v0.99.32b"
+        Me.TextBox1.Text = "Maximus78 v0.99.33b"
         '
         'TextBox2
         '
@@ -195,7 +199,7 @@ Partial Class frmAbout
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(244, 13)
         Me.TextBox3.TabIndex = 4
-        Me.TextBox3.Text = "4/4/2023"
+        Me.TextBox3.Text = "6/2/2023"
         Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox4
@@ -218,6 +222,28 @@ Partial Class frmAbout
         Me.PictureBox2.Size = New System.Drawing.Size(143, 74)
         Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.TextBox5)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(526, 399)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Change Log"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox5.Location = New System.Drawing.Point(6, 6)
+        Me.TextBox5.Multiline = True
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox5.Size = New System.Drawing.Size(514, 387)
+        Me.TextBox5.TabIndex = 0
+        Me.TextBox5.Text = resources.GetString("TextBox5.Text")
         '
         'frmAbout
         '
@@ -242,6 +268,8 @@ Partial Class frmAbout
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,4 +292,6 @@ Partial Class frmAbout
     Friend WithEvents btnFirstTime As Button
     Friend WithEvents btnClearHS As Button
     Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TextBox5 As TextBox
 End Class

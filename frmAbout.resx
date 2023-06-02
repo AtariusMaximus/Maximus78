@@ -127,7 +127,7 @@
         dCzhPuFQ0rIlPzCV56TiNcVWZsX8uad6Yf2CPRlXusw2xhgnQhQNgxWWyJCjS1ZbFJeY7IdL+Ft9f1Rc
         hriWMMUxwjIWuu9H/cHvbt1Ub08+qT4MlU+e99YOVVvwtel5n4ee93UE5Y9wYRf8ywcw+C76ZkEL7UPj
         OpxdFjRjG843oOUhqzu6L5XLDKRS8Hoi3zQNTddQO5vv7Wef4ztISFcTV7C7Bx1pyZ4r8e7q4t7+POP3
-        R/gbzwpyzNLkTnkAAAAJcEhZcwAADsIAAA7CARUoSoAAAAAHdElNRQfmCQwACBCeYRWaAABA6UlEQVR4
+        R/gbzwpyzNLkTnkAAAAJcEhZcwAADsAAAA7AAWrWiQkAAAAHdElNRQfmCQwACBCeYRWaAABA6UlEQVR4
         Xu19Z3sUx9bt/Qn3vOdwjgMGy0ZkjLBIBpNMso2wCQaJaIywyVEkg4giCYsoTBIGDNgGCYmMSAYDwsZR
         wu/nc36A7x/g27mretfsqeme7umZ6enpHtV+1lNPTefatVbtquow/+e/2rRp89q0rrRp8960rrRp8960
         rrRp8960rrRp8960rrRp8960rrRp8960rrRp8960rrRp8960rrRp8960rrRp8960rrRp8960rrRp8960
@@ -408,10 +408,48 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="TextBox5.Text" xml:space="preserve">
+    <value>Maximus78 0.99.33b 
+
+-This release updates the initial setup screen to support the default paths for Trebor's ROM ProPack version 5.12.
+
+Maximus78 0.99.32b 
+
+-This release contains a bug fix for displaying user-saved screenshots on the screenshots tab.
+It the prior release, only the "NTSC Retail" ROM list was properly configured to reset the screenshots tab and clear then load any saved screenshots when changing to a different ROM in the list. This release fixes that issue for all of the other ROM list tabs.
+
+Maximus78 0.99.31b
+
+-Updated to support default paths for the latest version of Trebor's 7800 ROM ProPack v4.11. When setting up for the first time, the correct subfolder paths for this new version will be populated automatically.
+-Menu Text formatting was changed to fix issue with menus incorrectly being displayed in a bold typeface.
+
+Maximus78 0.99.30b
+
+-The Maximus78 User's Guide was integrated into the application and is accessible via the Help Menu.
+
+Maximus78 v0.99.28b
+
+-ROM Lists split into a tabbed list of categories based on Trebor’s ROM ProPack
+-Favorites List added. To add a favorite, right click on a ROM name and choose “Add to Favorites”, or select the option from the File Menu. Favorites are saved in a file named “Maximus78_favorites.sav” in the root of your defined A7800 installation folder.
+-Box Art archive has not changed, however you now may add your own Box Art by adding an image file with the PNG or JPG extension to the boxart subfolder, and it will automatically be recognized as long as the name of the image file is the exact same as the ROM file name.
+-In-app Documentation was updated, including an image of default keyboard mappings, in-game options for difficulty switches and button assignments.
+-High Score tab was added. Up to 27 High scores can be recorded and are saved in real-time so they will be persistent.
+-Game Information Editor was included, which will automatically show the associated HTM file that corresponds to the selected game. If a file does not exist, you can create a new file that will automatically save with the correct name in the GameInfo subdirectory. This in-game window in the application shows game instruction manuals and screenshots by default, but anything can be added to it.
+-A new screenshots tab was added. Adding and removing to it does not affect your existing image files, a new file is created in the GameInfo subdirectory with the correct name so the image will be displayed persistently.
+-Many new A7800 options were added to the Edit Menu, and all are persistent when the application is shut down and restarted.
+-A recently added launched game list was added to the File menu. For the current session of Maximus78 it will show the 10 most recently launched games.
+-A new window mode option was added to the View Menu. You can choose a full, medium, or small display.
+-A status bar was added to the bottom of the window that displays the status of the currently selected A7800 Options. The status bar can be enabled or disabled from the View Menu. It will automatically turn off if a medium or small display window is chosen.
+
+Maximus78 v0.99.12
+
+-This is the initial release of the Windows Setup package for Maximus78. It includes native code for x86 and ARM, requires .NET Framework v4.8, and will run on Windows 10 and Windows 11. 
+</value>
+  </data>
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIgAAABECAYAAABakH2dAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1QAADdUBPdZY8QAAAAd0SU1FB+IIFxAWA/NRc9MAABmPSURBVHhe7Z0HvG1HVcZfKpBACgkJEAhI6CSA
+        0wAADdMBvdUcagAAAAd0SU1FB+IIFxAWA/NRc9MAABmPSURBVHhe7Z0HvG1HVcZfKpBACgkJEAhI6CSA
         dBAIRKq0gPSAgkiXUEKVqpSA0jtIVZqIPEINLbwQioiABVAgqBSFABoURJBE/f7rrm9n9pw5++xT7n33
         Xd76ve/NnjVlz5k9Zc2aNXO37aatRx9N1yT/+YVDhCOEXxF+U3io8BDhLsJlhQMy+mpIGe6mTU76RjcS
         nii8U/gn4f8KnJOw/y+FO2e61ZAyuoTwJOEZWxTPFJ6Sbit8M+LpwkuFbwk/EdwA/kZ4vHA54SLCoYmL
