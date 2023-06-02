@@ -552,8 +552,8 @@ SkiptoHere:
 
 
         txtRootROMPath.Text = strFolder
-        'txtNTSCRetailPath.Text = strFolder + "\Retail_v3_0\NTSC"
-        'txtPALRetailPath.Text = strFolder + "\Retail_v3_0\PAL"
+        'txtNTSCRetailPath.Text = strFolder + "\Retail_v4_0\NTSC"
+        'txtPALRetailPath.Text = strFolder + "\Retail_v4_0\PAL"
         'txtHomebrewPath.Text = strFolder + "\HHDP_20220627\Homebrews"
         'txtHacksPath.Text = strFolder + "\HHDP_20220627\Hacks"
         'txtDemosPath.Text = strFolder + "\HHDP_20220627\Demos"

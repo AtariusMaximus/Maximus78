@@ -1792,7 +1792,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 19)
-        Me.ToolStripStatusLabel1.Text = " v0.99.32b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.33b  "
         '
         'stripPalette
         '
