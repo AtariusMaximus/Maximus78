@@ -1,434 +1,170 @@
-﻿Imports Microsoft.Win32
+﻿Imports System.IO
 
+''' <summary>
+''' First-time setup (also available later from Edit > Folder Setup &amp; Auto-Detect). Every folder is
+''' detected automatically where possible and can then be edited or browsed before clicking Continue.
+''' Returns DialogResult.OK when the folders were saved.
+''' </summary>
 Public Class frmSetup
 
-    Dim strFolder As String = ""
-    Dim strA7800Folder As String = ""
-    Dim strBoxArtFolder As String = ""
-    Dim strManualsFolder As String = ""
-    Dim strArguments As String = ""
-    Dim strAddArguments As String = ""
-    Dim strDebug As String = ""
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnGameROMpath.Click
+    Private _firstRun As Boolean
+    Private _categoryBoxes As Dictionary(Of RomCategory, TextBox)
 
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                                              .AutoUpgradeEnabled = True,
-                                              .CreatePrompt = False,
-                                              .OverwritePrompt = False,
-                                              .CheckFileExists = False,
-                                              .CheckPathExists = True,
-                                              .FileName = "Choose ROM Folder",
-                                              .Filter = "All files (*.*)|*.*",
-                                              .FilterIndex = 1,
-                                              .InitialDirectory = "C:\",
-                                              .SupportMultiDottedExtensions = True,
-                                              .Title = "Select Atari 7800 ROM Folder",
-                                              .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strFolder = System.IO.Path.GetDirectoryName(strFilename)
+    Private Shared ReadOnly CategoryRegistryNames As New Dictionary(Of RomCategory, String) From {
+        {RomCategory.NTSCRetail, "Maximus78 NTSC Retail ROM Subfolder"},
+        {RomCategory.PALRetail, "Maximus78 PAL Retail ROM Subfolder"},
+        {RomCategory.Homebrews, "Maximus78 Homebrews ROM Subfolder"},
+        {RomCategory.Hacks, "Maximus78 Hacks ROM Subfolder"},
+        {RomCategory.Demos, "Maximus78 Demos ROM Subfolder"},
+        {RomCategory.Prototypes, "Maximus78 Prototypes ROM Subfolder"},
+        {RomCategory.Utilities, "Maximus78 Utilities ROM Subfolder"}
+    }
+
+    Private Sub frmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CenterToScreen()
+        _firstRun = IsUnsetPath(GetSetting("Maximus78 A7800 Path"))
+        _categoryBoxes = New Dictionary(Of RomCategory, TextBox) From {
+            {RomCategory.NTSCRetail, txtNTSCRetailPath},
+            {RomCategory.PALRetail, txtPALRetailPath},
+            {RomCategory.Homebrews, txtHomebrewPath},
+            {RomCategory.Hacks, txtHacksPath},
+            {RomCategory.Demos, txtDemosPath},
+            {RomCategory.Prototypes, txtProtosPath},
+            {RomCategory.Utilities, txtUtilitiesPath}
+        }
+
+        Try
+            WebBrowser1.DocumentText = My.Resources.setup
+        Catch
+        End Try
+
+        Label2.Text = "Folders are detected automatically. Review them, type a different path or click [.] to browse, then click Continue."
+        Dim btnAutoDetect As New Button With {
+            .Text = "Auto-Detect Folders",
+            .Size = New Size(170, frmContinue.Height),
+            .Location = New Point(frmContinue.Left - 180, frmContinue.Top)}
+        AddHandler btnAutoDetect.Click, Sub() AutoDetect(overwrite:=True)
+        frmContinue.Parent.Controls.Add(btnAutoDetect)
+
+        If _firstRun Then
+            AutoDetect(overwrite:=True)
+        Else
+            Text = "Maximus78 Folder Setup"
+            TextBox4.Text = "  Review the folders Maximus78 uses. Auto-Detect fills in anything it can find; you can edit every path before clicking Continue."
+            Button10.Text = "Cancel"
+            txtA7800path.Text = StoredPath("Maximus78 A7800 Path")
+            txtRomPath.Text = StoredPath("Maximus78 ROM Path")
+            txtBoxArtPath.Text = StoredPath("Maximus78 Box Art Path")
+            txtManualsPath.Text = StoredPath("Maximus78 Manuals Path")
+            For Each kv In _categoryBoxes
+                kv.Value.Text = StoredPath(CategoryRegistryNames(kv.Key))
+            Next
+            TabControl1.SelectedTab = TabPage2
+        End If
+    End Sub
+
+    Private Shared Function StoredPath(name As String) As String
+        Dim v = GetSetting(name)
+        Return If(IsUnsetPath(v), "", v.Trim())
+    End Function
+
+    ''' <summary>
+    ''' Fills in the folders: A7800 (where a7800.exe is), then its roms, boxart and gameinfo sub-folders, then the
+    ''' ROM pack category folders below the ROM folder. With overwrite off, only empty boxes are filled.
+    ''' </summary>
+    Private Sub AutoDetect(overwrite As Boolean)
+        Cursor = Cursors.WaitCursor
+        Try
+            Dim a7800 = txtA7800path.Text.Trim()
+            If a7800 = "" OrElse Not File.Exists(Path.Combine(a7800, "a7800.exe")) Then
+                Dim found = DetectA7800Folder()
+                If found <> "" Then a7800 = found
             End If
-        End Using
+            Fill(txtA7800path, a7800, overwrite)
+            Fill(txtRomPath, DetectRomRoot(a7800), overwrite AndAlso Not Directory.Exists(txtRomPath.Text.Trim()))
+            Fill(txtBoxArtPath, DetectBoxArtFolder(a7800), overwrite AndAlso Not Directory.Exists(txtBoxArtPath.Text.Trim()))
+            Fill(txtManualsPath, DetectGameInfoFolder(a7800), overwrite AndAlso Not Directory.Exists(txtManualsPath.Text.Trim()))
+            DetectCategories(overwrite)
+        Finally
+            Cursor = Cursors.Default
+        End Try
+    End Sub
 
-        txtRomPath.Text = strFolder
-        frmMain.txtRomPath.Text = strFolder
-        txtNTSCRetailPath.Text = strFolder + "\Retail_v4_0\NTSC"
-        txtPALRetailPath.Text = strFolder + "\Retail_v4_0\PAL"
-        txtHomebrewPath.Text = strFolder + "\HHDP_20230423\Homebrews"
-        txtHacksPath.Text = strFolder + "\HHDP_20230423\Hacks"
-        txtDemosPath.Text = strFolder + "\HHDP_20230423\Demos"
-        txtProtosPath.Text = strFolder + "\HHDP_20230423\Prototypes"
-        txtUtilitiesPath.Text = strFolder + "\HHDP_20230423\Utilities"
+    Private Sub DetectCategories(overwrite As Boolean)
+        Dim found = DetectCategoryFolders(txtRomPath.Text.Trim())
+        For Each kv In _categoryBoxes
+            Dim p As String = Nothing
+            If found.TryGetValue(kv.Key, p) Then Fill(kv.Value, p, overwrite)
+        Next
+    End Sub
 
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", strFolder)
+    Private Shared Sub Fill(box As TextBox, value As String, overwrite As Boolean)
+        If String.IsNullOrEmpty(value) Then Return
+        If overwrite OrElse box.Text.Trim() = "" Then box.Text = value
+    End Sub
 
+    Private Sub Browse(box As TextBox, title As String)
+        Dim folder = BrowseForFolder(title, If(box.Text.Trim() <> "", box.Text.Trim(), txtRomPath.Text.Trim()))
+        If folder IsNot Nothing Then box.Text = folder
+    End Sub
+
+    Private Sub btnA7800_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Browse(txtA7800path, "Select the A7800 emulator folder (contains a7800.exe)")
+        ' Fill in anything still blank from the new A7800 folder.
+        AutoDetect(overwrite:=False)
+    End Sub
+
+    Private Sub btnGameROMpath_Click(sender As Object, e As EventArgs) Handles btnGameROMpath.Click
+        Dim before = txtRomPath.Text
+        Browse(txtRomPath, "Select the ROM folder (where Trebor's 7800 ROM PROPack is unzipped)")
+        If txtRomPath.Text <> before Then DetectCategories(overwrite:=True)
     End Sub
 
     Private Sub btnBoxArtPath_Click(sender As Object, e As EventArgs) Handles btnBoxArtPath.Click
-
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                                            .AutoUpgradeEnabled = True,
-                                            .CreatePrompt = False,
-                                            .OverwritePrompt = False,
-                                            .CheckFileExists = False,
-                                            .CheckPathExists = True,
-                                            .FileName = "Choose Box Art Directory",
-                                            .Filter = "All files (*.*)|*.*",
-                                            .FilterIndex = 1,
-                                            .InitialDirectory = "C:\",
-                                            .SupportMultiDottedExtensions = True,
-                                            .Title = "Select Box Art Directory",
-                                            .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strBoxArtFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtBoxArtPath.Text = strBoxArtFolder
-        frmMain.txtBoxArtPath.Text = strBoxArtFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", strBoxArtFolder)
+        Browse(txtBoxArtPath, "Select the Box Art folder")
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                                           .AutoUpgradeEnabled = True,
-                                           .CreatePrompt = False,
-                                           .OverwritePrompt = False,
-                                           .CheckFileExists = False,
-                                           .CheckPathExists = True,
-                                           .FileName = "Choose Manuals Directory",
-                                           .Filter = "All files (*.*)|*.*",
-                                           .FilterIndex = 1,
-                                           .InitialDirectory = "C:\",
-                                           .SupportMultiDottedExtensions = True,
-                                           .Title = "Select Manuals Directory",
-                                           .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtManualsPath.Text = strManualsFolder
-        frmMain.txtManualsPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", strManualsFolder)
+    Private Sub btnManuals_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Browse(txtManualsPath, "Select the Game Info (manuals and screenshots) folder")
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                                            .AutoUpgradeEnabled = True,
-                                            .CreatePrompt = False,
-                                            .OverwritePrompt = False,
-                                            .CheckFileExists = False,
-                                            .CheckPathExists = True,
-                                            .FileName = "Choose A7800 Directory",
-                                            .Filter = "All files (*.*)|*.*",
-                                            .FilterIndex = 1,
-                                            .InitialDirectory = "C:\",
-                                            .SupportMultiDottedExtensions = True,
-                                            .Title = "Select A7800 Directory",
-                                            .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strA7800Folder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtA7800path.Text = strA7800Folder
-        frmMain.txtA7800path.Text = strA7800Folder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", strA7800Folder)
-    End Sub
-    Public Sub frmSetup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.CenterToScreen()
-
-        'Create Registry folder for Maximus78 (HKCU\Software\Maxmimus78)
-        My.Computer.Registry.CurrentUser.CreateSubKey("Software")
-        My.Computer.Registry.CurrentUser.CreateSubKey("Software\Maximus78")
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", "Change Folder Path")
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", "Change Folder Path")
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", "Change Folder Path")
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", "Change Folder Path")
-
-        txtRomPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 ROM Path", RegistryValueKind.String)
-        txtA7800path.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", RegistryValueKind.String)
-        txtBoxArtPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", RegistryValueKind.String)
-        txtManualsPath.Text = My.Computer.Registry.GetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Manuals Path", RegistryValueKind.String)
-
-        Me.WebBrowser1.Navigate("about:blank")
-        Me.WebBrowser1.Document.Write(String.Empty)
-        Me.WebBrowser1.DocumentText = My.Resources.setup
-
+    Private Sub btnCategory_Click(sender As Object, e As EventArgs) Handles Button3.Click, Button4.Click, Button5.Click, Button6.Click, Button7.Click, Button8.Click, Button9.Click
+        Dim map As New Dictionary(Of Object, Tuple(Of TextBox, String)) From {
+            {Button3, Tuple.Create(txtNTSCRetailPath, "NTSC Retail")},
+            {Button4, Tuple.Create(txtPALRetailPath, "PAL Retail")},
+            {Button5, Tuple.Create(txtHomebrewPath, "Homebrews")},
+            {Button6, Tuple.Create(txtHacksPath, "Hacks")},
+            {Button7, Tuple.Create(txtDemosPath, "Demos")},
+            {Button8, Tuple.Create(txtProtosPath, "Prototypes")},
+            {Button9, Tuple.Create(txtUtilitiesPath, "Utilities")}
+        }
+        Dim target = map(sender)
+        Browse(target.Item1, "Select the " & target.Item2 & " ROM folder")
     End Sub
 
     Private Sub frmContinue_Click(sender As Object, e As EventArgs) Handles frmContinue.Click
+        Dim a7800 = txtA7800path.Text.Trim()
+        If a7800 = "" OrElse Not File.Exists(Path.Combine(a7800, "a7800.exe")) Then
+            If MsgBox("a7800.exe was not found in the A7800 folder:" & vbCrLf & If(a7800 = "", "(blank)", a7800) & vbCrLf & vbCrLf &
+                      "Games cannot be started until this is set. Continue anyway?",
+                      MsgBoxStyle.YesNo Or MsgBoxStyle.Exclamation, "Maximus78") <> MsgBoxResult.Yes Then Return
+        End If
 
-        'Save folder paths to the Registry
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Prototypes ROM Subfolder", txtProtosPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Box Art Path", txtBoxArtPath.Text)
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 A7800 Path", txtA7800path.Text)
+        SaveSetting("Maximus78 A7800 Path", a7800)
+        SaveSetting("Maximus78 ROM Path", txtRomPath.Text.Trim())
+        SaveSetting("Maximus78 Box Art Path", txtBoxArtPath.Text.Trim())
+        SaveSetting("Maximus78 Manuals Path", txtManualsPath.Text.Trim())
+        For Each kv In _categoryBoxes
+            SaveSetting(CategoryRegistryNames(kv.Key), kv.Value.Text.Trim())
+        Next
 
-        frmMain.txtA7800path.Text = txtA7800path.Text
-        frmMain.txtNTSCRetailPath.Text = txtNTSCRetailPath.Text
-        frmMain.txtPALRetailPath.Text = txtPALRetailPath.Text
-        frmMain.txtHomebrewPath.Text = txtHomebrewPath.Text
-        frmMain.txtHacksPath.Text = txtHacksPath.Text
-        frmMain.txtDemosPath.Text = txtDemosPath.Text
-        frmMain.txtProtosPath.Text = txtProtosPath.Text
-        frmMain.txtUtilitiesPath.Text = txtUtilitiesPath.Text
-        frmMain.txtBoxArtPath.Text = txtBoxArtPath.Text
-
-        'Populate ROM Lists on the Main Form
-        Try
-            Dim a78filesMain = txtNTSCRetailPath.Text
-            For Each file As String In System.IO.Directory.GetFiles(a78filesMain, "*.a78")
-                frmMain.lstNTSCRetail.Items.Add(System.IO.Path.GetFileNameWithoutExtension(file))
-            Next
-        Catch ex As Exception
-        End Try
-
-        Try
-            Dim a78filesPAL = txtPALRetailPath.Text
-            For Each filePAL As String In System.IO.Directory.GetFiles(a78filesPAL, "*.a78")
-                frmMain.lstPALRetail.Items.Add(System.IO.Path.GetFileNameWithoutExtension(filePAL))
-            Next
-        Catch ex As Exception
-        End Try
-
-        Try
-            Dim a78filesHomebrews = txtHomebrewPath.Text
-            For Each fileHomebrews As String In System.IO.Directory.GetFiles(a78filesHomebrews, "*.a78")
-                frmMain.lstHomebrews.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileHomebrews))
-            Next
-        Catch ex As Exception
-        End Try
-
-        Try
-            Dim a78filesHacks = txtHacksPath.Text
-            For Each fileHacks As String In System.IO.Directory.GetFiles(a78filesHacks, "*.a78")
-                frmMain.lstHacks.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileHacks))
-            Next
-        Catch ex As Exception
-        End Try
-
-        Try
-            Dim a78filesDemos = txtDemosPath.Text
-            For Each fileDemos As String In System.IO.Directory.GetFiles(a78filesDemos, "*.a78")
-                frmMain.lstDemos.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileDemos))
-            Next
-        Catch ex As Exception
-        End Try
-
-        Try
-            Dim a78filesProtos = txtProtosPath.Text
-            For Each fileProtos As String In System.IO.Directory.GetFiles(a78filesProtos, "*.a78")
-                frmMain.lstProtos.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileProtos))
-            Next
-        Catch ex As Exception
-        End Try
-
-        Try
-            Dim a78filesUtilities = txtUtilitiesPath.Text
-            For Each fileUtilities As String In System.IO.Directory.GetFiles(a78filesUtilities, "*.a78")
-                frmMain.lstUtilities.Items.Add(System.IO.Path.GetFileNameWithoutExtension(fileUtilities))
-            Next
-        Catch ex As Exception
-        End Try
-
-        'Display the blank box art file to start with on the main form.
-        Try
-            frmMain.pctBoxArt.BackgroundImage = Image.FromFile(strBoxArtFolder + "\Blank.jpg")
-        Catch ex As Exception
-        End Try
-
-        frmMain.txtRootROMPath.Text = strFolder
-
-        frmMain.Show()
-
-        Me.Close()
-
+        DialogResult = DialogResult.OK
+        Close()
     End Sub
 
-    Private Sub WebBrowser1_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles WebBrowser1.DocumentCompleted
-
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                                   .AutoUpgradeEnabled = True,
-                                   .CreatePrompt = False,
-                                   .OverwritePrompt = False,
-                                   .CheckFileExists = False,
-                                   .CheckPathExists = True,
-                                   .FileName = "Choose NTSC Retail ROM Subdirectory",
-                                   .Filter = "All files (*.*)|*.*",
-                                   .FilterIndex = 1,
-                                   .InitialDirectory = "C:\",
-                                   .SupportMultiDottedExtensions = True,
-                                   .Title = "Select NTSC Retail ROM Subdirectory",
-                                   .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtNTSCRetailPath.Text = strManualsFolder
-        frmMain.txtNTSCRetailPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 NTSC Retail ROM Subfolder", txtNTSCRetailPath.Text)
-    End Sub
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Application.Exit()
-    End Sub
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                           .AutoUpgradeEnabled = True,
-                           .CreatePrompt = False,
-                           .OverwritePrompt = False,
-                           .CheckFileExists = False,
-                           .CheckPathExists = True,
-                           .FileName = "Choose PAL Retail ROM Subdirectory",
-                           .Filter = "All files (*.*)|*.*",
-                           .FilterIndex = 1,
-                           .InitialDirectory = "C:\",
-                           .SupportMultiDottedExtensions = True,
-                           .Title = "Select PAL Retail ROM Subdirectory",
-                           .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtPALRetailPath.Text = strManualsFolder
-        frmMain.txtPALRetailPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 PAL Retail ROM Subfolder", txtPALRetailPath.Text)
+        DialogResult = DialogResult.Cancel
+        Close()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-                   .AutoUpgradeEnabled = True,
-                   .CreatePrompt = False,
-                   .OverwritePrompt = False,
-                   .CheckFileExists = False,
-                   .CheckPathExists = True,
-                   .FileName = "Choose Homebrew ROM Subdirectory",
-                   .Filter = "All files (*.*)|*.*",
-                   .FilterIndex = 1,
-                   .InitialDirectory = "C:\",
-                   .SupportMultiDottedExtensions = True,
-                   .Title = "Select Homebrew ROM Subdirectory",
-                   .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtHomebrewPath.Text = strManualsFolder
-        frmMain.txtHomebrewPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Homebrews ROM Subfolder", txtHomebrewPath.Text)
-    End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-           .AutoUpgradeEnabled = True,
-           .CreatePrompt = False,
-           .OverwritePrompt = False,
-           .CheckFileExists = False,
-           .CheckPathExists = True,
-           .FileName = "Choose Hacks ROM Subdirectory",
-           .Filter = "All files (*.*)|*.*",
-           .FilterIndex = 1,
-           .InitialDirectory = "C:\",
-           .SupportMultiDottedExtensions = True,
-           .Title = "Select Hacks ROM Subdirectory",
-           .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtHacksPath.Text = strManualsFolder
-        frmMain.txtHacksPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Hacks ROM Subfolder", txtHacksPath.Text)
-    End Sub
-
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-           .AutoUpgradeEnabled = True,
-           .CreatePrompt = False,
-           .OverwritePrompt = False,
-           .CheckFileExists = False,
-           .CheckPathExists = True,
-           .FileName = "Choose Demos ROM Subdirectory",
-           .Filter = "All files (*.*)|*.*",
-           .FilterIndex = 1,
-           .InitialDirectory = "C:\",
-           .SupportMultiDottedExtensions = True,
-           .Title = "Select Demos ROM Subdirectory",
-           .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtDemosPath.Text = strManualsFolder
-        frmMain.txtDemosPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Demos ROM Subfolder", txtDemosPath.Text)
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-           .AutoUpgradeEnabled = True,
-           .CreatePrompt = False,
-           .OverwritePrompt = False,
-           .CheckFileExists = False,
-           .CheckPathExists = True,
-           .FileName = "Choose Protos ROM Subdirectory",
-           .Filter = "All files (*.*)|*.*",
-           .FilterIndex = 1,
-           .InitialDirectory = "C:\",
-           .SupportMultiDottedExtensions = True,
-           .Title = "Select Protos ROM Subdirectory",
-           .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtProtosPath.Text = strManualsFolder
-        frmMain.txtProtosPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Protos ROM Subfolder", txtProtosPath.Text)
-    End Sub
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        Using dlg As New SaveFileDialog With {.AddExtension = True,
-           .AutoUpgradeEnabled = True,
-           .CreatePrompt = False,
-           .OverwritePrompt = False,
-           .CheckFileExists = False,
-           .CheckPathExists = True,
-           .FileName = "Choose Utilities ROM Subdirectory",
-           .Filter = "All files (*.*)|*.*",
-           .FilterIndex = 1,
-           .InitialDirectory = "C:\",
-           .SupportMultiDottedExtensions = True,
-           .Title = "Select Utilities ROM Subdirectory",
-           .ValidateNames = True}
-            If dlg.ShowDialog = DialogResult.OK Then
-                Dim strFilename As String = dlg.FileName
-                strManualsFolder = System.IO.Path.GetDirectoryName(strFilename)
-            End If
-        End Using
-
-        txtUtilitiesPath.Text = strManualsFolder
-        frmMain.txtUtilitiesPath.Text = strManualsFolder
-
-        My.Computer.Registry.SetValue("HKEY_CURRENT_USER\Software\Maximus78", "Maximus78 Utilities ROM Subfolder", txtUtilitiesPath.Text)
-    End Sub
-
-    Private Sub txtRomPath_TextChanged(sender As Object, e As EventArgs) Handles txtRomPath.TextChanged
-
-    End Sub
 End Class
