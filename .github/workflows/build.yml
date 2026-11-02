@@ -1,0 +1,40 @@
+name: Build Maximus78
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out source (skips the large Game Info archives)
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /*
+            !/Maximus78_GameInfo.*
+            !/*.zip
+            !/*.pdf
+          sparse-checkout-cone-mode: false
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build (Release)
+        # Manifest signing needs the author's certificate, which is not in the repository.
+        run: msbuild Maximus78.vbproj /m /p:Configuration=Release /p:SignManifests=false /p:GenerateManifests=false
+
+      - name: Package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item bin\Release\Maximus.exe, bin\Release\Maximus.exe.config, Maximus78.ico, gplv3.htm dist\
+          Compress-Archive -Path dist\* -DestinationPath Maximus78-win.zip -Force
+
+      - name: Upload build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Maximus78-win
+          path: Maximus78-win.zip
