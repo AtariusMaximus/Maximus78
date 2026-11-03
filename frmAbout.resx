@@ -409,7 +409,18 @@
 </value>
   </data>
   <data name="TextBox5.Text" xml:space="preserve">
-    <value>Maximus78 0.99.33b 
+    <value>Maximus78 0.99.40b
+
+- Scans every category folder in Trebor's ROM PROPack recursively and merges the A-Z letter sub-folders into one list per tab (the Concerto folder is skipped).
+- Auto-detects the A7800, ROM, box art, game info and category folders during setup, from the Edit menu, or from the Directory Paths tab. Every path can still be edited. Offer to re-detect at startup when the saved folders no longer exist.
+- Replace about 11,000 lines of per-game If blocks with a box art index that matches by title, plus an optional BoxArtAliases.txt.
+- Merge the duplicated per-tab handlers into shared helpers. Registry keys and the favorites file are unchanged.
+- Added a Find box, Enter to launch, right-click to select, ROM counts in the title bar, a remembered Recent menu, and a working Update Box Art menu.
+- Fix: screenshots deleted before a replacement was picked, images locked while shown, crashes when Blank.jpg or the game info folder is missing, wrong full-screen key in Reset, "1" in empty high score fields, wrong favorites box art, and the Choplifter/Froggie art.
+- Remove the unused frmDowloads and My/Resources.vb files.
+- Add a GitHub Actions workflow that builds Maximus78-win.zip.
+
+Maximus78 0.99.33b 
 
 -This release updates the initial setup screen to support the default paths for Trebor's ROM ProPack version 5.12.
 
