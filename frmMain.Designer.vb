@@ -14,32 +14,6 @@ Partial Class frmMain
         End Try
     End Sub
 
-    'Public strMsg As String
-    'Global Variables (SE)
-    Dim strFolder As String = ""
-    Dim strFolderPAL As String = ""
-    Dim strFolderHomebrews As String = ""
-    Dim strFolderHacks As String = ""
-    Dim strFolderDemos As String = ""
-    Dim strFolderProtos As String = ""
-    Dim strFolderUtilities As String = ""
-    Dim strA7800Folder As String = ""
-    Dim strBoxArtFolder As String = ""
-    Dim strManualsFolder As String = ""
-    Dim strArguments As String = ""
-    Dim strAddArguments As String = ""
-    Dim strDebug As String = ""
-    Dim strFileName As String = ""
-    Dim strTVTYPE As String = ""
-    Dim strWindowMode As String = ""
-    Dim strStatusBar As String = ""
-    Dim strVideo As String = ""
-    Dim strStretch As String = ""
-    Dim strA7800WindowMode As String = ""
-    Dim strVsync As String = ""
-    Dim strTripleBuffer As String = ""
-
-    Private Const MAX_RECENT_FILES As Integer = 10
 
 
     'Required by the Windows Form Designer
@@ -1792,7 +1766,7 @@ Partial Class frmMain
         Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(65, 19)
-        Me.ToolStripStatusLabel1.Text = " v0.99.33b  "
+        Me.ToolStripStatusLabel1.Text = " v0.99.40b  "
         '
         'stripPalette
         '

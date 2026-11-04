@@ -4,6 +4,34 @@ here.</a><br />
 
 <img><img src="https://github.com/AtariusMaximus/Maximus78/blob/master/Maximus78_screenshot1.png">
 
+## What's new in v0.99.40b
+
+**Works with the current Trebor's 7800 ROM PROPack (v8.x).** Newer packs split each category into letter folders (A, B, C, #...). Maximus78 now scans each category folder *and all of its sub-folders* and merges them into one alphabetical list per tab, so the tabs stay the same as before: NTSC Retail, PAL Retail, Homebrews, Hacks, Demos, Protos and Utilities. The pack's `Concerto` folder (alternate builds for that cartridge) is skipped so games don't appear twice.
+
+**Folders are detected automatically.** First-time setup finds the A7800 folder (the one with `a7800.exe`), its `roms`, `boxart` and `gameinfo` sub-folders, and every ROM pack category folder. Every path stays editable before you click Continue. You can run it again any time from **Edit > Folder Setup & Auto-Detect...** or with the **Auto-Detect** button on the Directory Paths tab. If you update the ROM pack and the old folders disappear, Maximus78 offers to find the new ones at startup.
+
+**Other improvements**
+- **Find** box on the menu bar filters every list as you type. Press Esc to clear it.
+- Press Enter to launch the selected game. Right-clicking a game now selects it before the menu opens.
+- The title bar shows how many ROMs are in the current tab.
+- Box art is matched by title when there is no image with the exact ROM name, for example `Donkey Kong (NTSC) (Atari) (1988)` uses `Donkey Kong (USA).jpg`. This replaces about 11,000 lines of per-game code. To point a game at a specific image, add a line such as `My Game = My Game Cover.jpg` to `BoxArtAliases.txt` in the box art folder.
+- Right-click the box art and choose **Update Box Art** to replace it. The old image is kept as `<name>.backup.jpg`.
+- The Recent menu is now remembered between sessions.
+- Fixes:
+  - Clicking a screenshot no longer deletes the saved one before you have picked a replacement.
+  - Unloading a screenshot or clearing favorites asks first.
+  - Images are no longer locked while displayed.
+  - A missing `Blank.jpg` or Game Info folder no longer crashes the app.
+  - The full-screen option is now restored correctly after "Reset All Options".
+  - Empty high score fields no longer show "1".
+  - Favorites now show the right box art.
+  - The Choplifter and Froggie box art mix-ups are fixed.
+
+Existing settings, favorites and high scores carry over unchanged: they use the same registry keys and files as before.
+
+### Building
+Open `Maximus78.sln` in Visual Studio (.NET Framework 4.8) and build. Each push also builds the app on GitHub Actions (**Actions > Build Maximus78**), and you can download the result as `Maximus78-win.zip`.
+
 <body>
 
 <p class="auto-style1"><strong>Welcome to Maximus78!</strong><br />
